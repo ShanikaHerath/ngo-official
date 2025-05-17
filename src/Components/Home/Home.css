@@ -1,0 +1,287 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f9fb;
+  color: #333;
+}
+
+/* Home Container */
+.home {
+  padding: 2rem;
+  animation: fadeIn 1s ease-in;
+}
+
+/* Header */
+.home-header {
+  text-align: center;
+  background: linear-gradient(to right, #72c2d9, #46a29f);
+  color: white;
+  padding: 3rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  animation: slideDown 1s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-header h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.home-header p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  margin-bottom: 2rem;
+}
+
+/* Featured Project Image as a Wide Banner */
+.featured-project-image-wrapper {
+  width: 100%;
+  margin: 2rem 0;
+  overflow: hidden;
+  border-radius: 0; /* Optional: set to 0 for full-width clean edge */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+/* Image fills the entire width of the container */
+.featured-project-image {
+  width: 100%;
+  height: 350px; /* Adjust height as needed */
+  object-fit: cover;
+  display: block;
+}
+
+/* Vision, Mission & Values Section - Images Only */
+.vmv-section {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.vmv-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Each card is now just an image container */
+.vmv-card {
+  flex: 1 1 250px;
+  max-width: 250px;
+  aspect-ratio: 1 / 1; /* ensures 1:1 ratio */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.vmv-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Image styling inside the card */
+.vmv-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Projects Section */
+.home-projects {
+  margin: 3rem auto;
+  text-align: center;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.home-projects h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #005c5c;
+  font-weight: 700;
+}
+
+/* Grid for project cards */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Individual Project Card */
+.project-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 3px solid #46a29f;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-info {
+  padding: 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-info h3 {
+  color: #008080;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.project-info p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+/* More Projects Button */
+.pro-button {
+  margin-top: 2.5rem;
+  padding: 0.9rem 2.5rem;
+  font-size: 1.1rem;
+  background-color: #007373;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.pro-button:hover,
+.pro-button:focus {
+  background-color: #005c5c;
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Call to Action Section */
+.home-cta {
+  text-align: center;
+  margin: 4rem 0 2rem;
+  padding: 2rem;
+  background: #e8f6f6;
+  border-radius: 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.home-cta h2 {
+  color: #007373;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.home-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+.cta-button {
+  background-color: #007373;
+  color: white;
+  border: none;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #005c5c;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .vmv-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-header h1 {
+    font-size: 2rem;
+  }
+
+  .vmv-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .home-intro h2,
+  .home-projects h2,
+  .home-cta h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-button,
+  .pro-button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,144 @@
+.footer {
+  background: linear-gradient(to right, #72c2d9, #46a29f);
+  color: #ffffff;
+  padding: 2rem 1rem 1rem;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+}
+
+.footer-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.footer-section h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-section ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+/* 
+   Social Media Icons Styling
+ */
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffe8cc;
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.social-icons a:focus {
+  outline: 2px dashed #ffffff;
+  outline-offset: 4px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.85rem;
+  color: #fefefe;
+  line-height: 1.6;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-logo {
+    margin: 0 auto 1rem;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+/* Default blue gradient */
+.footer {
+  background: linear-gradient(to right, #72c2d9, #46a29f);
+  color: #ffffff;
+  padding: 2rem 1rem 1rem;
+  font-size: 0.95rem;
+}
+
+/* Ayurvedha green gradient override */
+.footer-green {
+  background: linear-gradient(to right, #82c92a, #56ab2f);
+}
+
+/* The rest stays the same, so no changes below */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ... rest of your CSS unchanged ... */
+

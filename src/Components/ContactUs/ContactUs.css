@@ -1,0 +1,148 @@
+/* Base styles */
+.contact-us {
+    padding: 2rem;
+    background-color: #f4f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: fadeIn 0.8s ease-in;
+  }
+  
+  /* Header Section */
+  .contact-us-header {
+    text-align: center;
+    background: linear-gradient(to right, #72c2d9, #46a29f);
+    color: white;
+    padding: 3rem 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    animation: slideDown 1s ease-in-out;
+  }
+  
+  .contact-us-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-us-header p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+  }
+  
+  /* Contact Info Section */
+  .contact-us-info {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 0.9s ease-in;
+  }
+  
+  .contact-us-info h2 {
+    color: #007373;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+  }
+  
+  .contact-us-info p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Contact Form Section */
+  .contact-us-form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1.2s ease-in;
+  }
+  
+  .contact-us-form h2 {
+    color: #007373;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #007373;
+    box-shadow: 0 0 5px rgba(0, 115, 115, 0.2);
+    outline: none;
+  }
+  
+  /* Submit Button */
+  .submit-button {
+    background-color: #007373;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #005c5c;
+    transform: scale(1.05);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .contact-us-header h1 {
+      font-size: 2rem;
+    }
+  
+    .contact-us-info,
+    .contact-us-form {
+      padding: 1.5rem;
+    }
+  
+    .submit-button {
+      width: 100%;
+    }
+  }
+  

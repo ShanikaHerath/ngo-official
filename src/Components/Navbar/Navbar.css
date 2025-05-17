@@ -1,0 +1,132 @@
+/* Base Styles */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(to right, #72c2d9, #46a29f);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  margin-right: 0.5rem;
+}
+
+.logo-img:hover {
+  transform: scale(0.75);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  display: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+/* Responsive Magic ✨ */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #46a29f;
+    padding: 1rem 2rem;
+    display: none;
+    gap: 1rem;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .navbar-container {
+    flex-wrap: nowrap;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+  }
+}
+
+/* Slide Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ========== GREEN NAVBAR FOR AYURVEDHA PAGES ========== */
+.ayurvedha-navbar {
+  background: linear-gradient(to right, #a8e063, #56ab2f); /* calm green vibes */
+}
+.ayurvedha-navbar .logo-img {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
