@@ -3,63 +3,63 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './Home.css';
 
+// ✅ Image imports (replace with actual images)
+import featuredProjectImage from '../assets/sclB.jpg';
+import schoolSupplies from '../assets/school-supplies.jpg';
+import ayurvedicCamp from '../assets/ayurvedic-camp.jpg';
+import sriPada from '../assets/sri-pada.jpg';
+import ruwanweliseya from '../assets/ruwanweliseya.jpg';
+import vesakDansala from '../assets/vesak-dansala.jpg';
+
 const vmvData = [
   {
     title: 'Vision',
-    description: 'To create a world where every individual, regardless of their background, has access to quality care, education, and empowerment opportunities.',
+    description:
+      'To create a world where every individual, regardless of their background, has access to quality care, education, and empowerment opportunities.',
   },
   {
     title: 'Mission',
-    description: 'To implement inclusive, sustainable programs that address healthcare, education, and social development in underserved communities.',
+    description:
+      'To implement inclusive, sustainable programs that address healthcare, education, and social development in underserved communities.',
   },
   {
     title: 'Values',
-    description: 'We are guided by compassion, integrity, inclusiveness, and a commitment to empowering individuals and communities to thrive.',
+    description:
+      'We are guided by compassion, integrity, inclusiveness, and a commitment to empowering individuals and communities to thrive.',
   },
 ];
 
+// 🎯 Updated Annual Projects
 const projectData = [
   {
     id: 1,
-    title: 'Project 1',
-    description: 'Providing clean water access to rural villages.',
-    image: '/Assets/project1.jpg',
+    title: 'Backpacks of Hope: Supplying Dreams to Underprivileged Schools',
+    description: 'Providing essential school supplies to students in need.',
+    image: schoolSupplies,
   },
   {
     id: 2,
-    title: 'Project 2',
-    description: 'Healthcare outreach and education programs.',
-    image: '/Assets/project2.jpg',
+    title: 'Healing for All: Free Ayurvedic Medical Camp',
+    description: 'Offering free traditional healing and consultations for rural communities.',
+    image: ayurvedicCamp,
   },
   {
     id: 3,
-    title: 'Project 3',
-    description: 'Empowering youth through skill development workshops.',
-    image: '/Assets/project3.jpg',
+    title: 'Sacred Steps & Soothing Hands: Sri Pada Pilgrim Support',
+    description: 'Ayurvedic massage & refreshment for pilgrims after their sacred journey.',
+    image: sriPada,
   },
   {
     id: 4,
-    title: 'Project 4',
-    description: 'Supporting elderly with home-based care services.',
-    image: '/Assets/project4.jpg',
+    title: 'Divine Journey: Ruwanweli Maha Seya Pilgrimage',
+    description: 'Organizing respectful religious tours to one of the most sacred sites.',
+    image: ruwanweliseya,
   },
   {
     id: 5,
-    title: 'Project 5',
-    description: 'Nutrition programs for underprivileged children.',
-    image: '/Assets/project5.jpg',
-  },
-  {
-    id: 6,
-    title: 'Project 6',
-    description: 'Environmental awareness campaigns.',
-    image: '/Assets/project6.jpg',
-  },
-  {
-    id: 7,
-    title: 'Project 7',
-    description: 'Mental health counseling sessions.',
-    image: '/Assets/project7.jpg',
+    title: 'Vesak Kindness Kitchen: Free Dansal for Devotees',
+    description: 'Spreading joy and unity through free meals during Vesak celebrations.',
+    image: vesakDansala,
   },
 ];
 
@@ -69,8 +69,8 @@ const fadeUpVariant = {
 };
 
 const VMVCard = ({ title, description }) => (
-  <motion.article 
-    className="vmv-card-content" 
+  <motion.article
+    className="vmv-card-content"
     role="article"
     variants={fadeUpVariant}
     initial="hidden"
@@ -83,16 +83,21 @@ const VMVCard = ({ title, description }) => (
 );
 
 const ProjectCard = ({ title, description, image }) => (
-  <motion.div 
-    className="project-card" 
-    role="region" 
+  <motion.div
+    className="project-card"
+    role="region"
     aria-label={title}
     variants={fadeUpVariant}
     initial="hidden"
     whileInView="visible"
     viewport={{ once: true, amount: 0.4 }}
   >
-    <img src={image} alt={`${title} image`} className="project-image" loading="lazy" />
+    <img
+      src={image}
+      alt={`${title} image`}
+      className="project-image"
+      loading="lazy"
+    />
     <div className="project-info">
       <h3>{title}</h3>
       <p>{description}</p>
@@ -117,22 +122,30 @@ const Home = () => {
     <main className="home" id="home">
       {/* Hero Section */}
       <header className="home-header">
-        <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           Welcome to Suwa Diwiya Social Care Foundation
         </motion.h1>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }}>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+        >
           Improving lives through compassionate care and community support.
         </motion.p>
 
-        <motion.figure 
-          className="featured-project-image-wrapper" 
+        <motion.figure
+          className="featured-project-image-wrapper"
           aria-label="Featured Project"
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 1, duration: 0.8 }}
         >
           <img
-            src="/Assets/Logo.jpg"
+            src={featuredProjectImage}
             alt="Community volunteers working together"
             className="featured-project-image"
             loading="lazy"
@@ -153,13 +166,23 @@ const Home = () => {
       <section className="home-projects" aria-labelledby="projects-heading">
         <h2 id="projects-heading">Our Annual Projects</h2>
         <div className="projects-wrapper">
-          <button className="scroll-btn scroll-left" onClick={() => scroll('left')}>&lt;</button>
+          <button
+            className="scroll-btn scroll-left"
+            onClick={() => scroll('left')}
+          >
+            &lt;
+          </button>
           <div className="projects-scroll" ref={scrollRef}>
-            {projectData.slice(0, 6).map((project) => (
+            {projectData.map((project) => (
               <ProjectCard key={project.id} {...project} />
             ))}
           </div>
-          <button className="scroll-btn scroll-right" onClick={() => scroll('right')}>&gt;</button>
+          <button
+            className="scroll-btn scroll-right"
+            onClick={() => scroll('right')}
+          >
+            &gt;
+          </button>
         </div>
 
         <Link to="/projects" className="pro-button" aria-label="View more projects">
@@ -168,8 +191,8 @@ const Home = () => {
       </section>
 
       {/* Call to Action */}
-      <motion.section 
-        className="home-cta" 
+      <motion.section
+        className="home-cta"
         aria-labelledby="cta-heading"
         variants={fadeUpVariant}
         initial="hidden"

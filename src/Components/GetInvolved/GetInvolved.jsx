@@ -1,13 +1,16 @@
 import React from 'react';
 import './GetInvolved.css';
+import { Link } from 'react-router-dom';
 
 const GetInvolved = () => {
   return (
+    <div className="get-involved-page">
     <div className="get-involved">
       <header className="get-involved-header">
         <h1>Get Involved</h1>
         <p>Join us in making a difference. Find out how you can contribute to our mission.</p>
       </header>
+
       <section className="get-involved-options">
         <div className="option-card">
           <h2>Volunteer</h2>
@@ -22,13 +25,31 @@ const GetInvolved = () => {
           <p>Join our events and spread the word about our cause. Community support is vital to our success.</p>
         </div>
       </section>
+
       <section className="get-involved-contact">
-        <h2>Contact Us</h2>
-        <p>If you have any questions or need more information, feel free to reach out to us.</p>
-        <button className="contact-button">Contact Us</button>
+        <h2>Join With Us</h2>
+        <p>Ready to take the next step? Fill out our registration form and become a part of our movement.</p>
+        <a
+          href="https://forms.gle/ZpPBjoEkZ36R7qgi6"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-button"
+        >
+          Join With Us
+        </a>
       </section>
+
+      <section className="get-involved-contact">
+          <h2>Contact Us</h2>
+          <p>If you have any questions or need more information, feel free to reach out to us.</p>
+          <Link to="/contact-us" className="contact-button">
+            Contact Us
+          </Link>
+      </section>
+
     </div>
-  );
+    </div>
+  )
 };
 
 export default GetInvolved;

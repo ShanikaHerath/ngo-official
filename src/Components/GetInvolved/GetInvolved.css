@@ -12,6 +12,11 @@
   color: var(--text-dark);
   animation: fadeIn 1s ease-in;
 }
+.get-involved-page {
+  background: linear-gradient(to bottom, #e9f9f4 0%, #ffffff 100%);
+  min-height: 100vh;
+  padding: 2rem 0;
+}
 
 /* Header */
 .get-involved-header {

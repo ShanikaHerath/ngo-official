@@ -1,57 +1,65 @@
 import React, { useRef } from 'react';
 import './About.css';
 
+// Founder & Team Images (upload your own!)
+import founderImg from '../assets/founder.jpg';
+import devaniImg from '../assets/director1.jpg';
+import julianImg from '../assets/director2.jpg';
+import nishanImg from '../assets/director3.jpg';
+import taraImg from '../assets/director4.jpg';
+import harshaImg from '../assets/organizer.jpg';
+
+// Founder Info (for the spotlight section)
 const founder = {
-  name: 'Alex M.',
-  title: 'Founder & CEO',
-  bio: `Visionary, strategist, and the heartbeat behind our mission.
-        Alex has been driving innovation and cultivating creativity since day one.`,
-  img: 'https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/css-trig-functions/images/img-founder.avif',
-  alt: 'Alex M., Founder & CEO',
+  name: ' Bedirekke Suditha Thero.',
+  title: 'Founder',
+  bio: `Ven. Bedireeke Sudith Thero founded this organization with a heart full of kindness and a vision to heal.
+        Guided by the timeless teachings of the Buddha and driven by the needs of the most vulnerable,
+        he has dedicated his life to serving communities through love, care, and unwavering commitment.
+        A spiritual teacher, scholar, and compassionate leader —
+        his work continues to touch lives, uplift spirits, and light the path toward a more just and peaceful world.
+
+`,
+  img: founderImg,
 };
 
+// Team Members (includes Founder too)
 const teamMembers = [
   {
-    name: 'Ethan B.',
-    title: 'DevOps Engineer',
-    bio: 'Master of servers, pipelines, and keeping things running smoothly.',
-    img: 'https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/css-trig-functions/images/img-1.avif',
-    alt: 'Ethan B., DevOps Engineer',
+  name: ' Bedirekke Suditha Thero.',
+    title: 'Founder',
+    img: founderImg,
+    alt: 'Alex M., Founder',
   },
   {
-    name: 'Ava L.',
-    title: 'UI/UX Designer',
-    bio: 'Turning ideas into stunning designs, one pixel at a time.',
-    img: 'https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/css-trig-functions/images/img-2.avif',
-    alt: 'Ava L., UI/UX Designer',
+    name: 'Devani R.',
+    title: 'Director - Ayurvedic Wellness',
+    img: devaniImg,
+    alt: 'Devani R., Director of Operations',
   },
   {
-    name: 'Liam J.',
-    title: 'Mobile Developer',
-    bio: 'Crafting sleek, intuitive apps for users on the go.',
-    img: 'https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/css-trig-functions/images/img-3.avif',
-    alt: 'Liam J., Mobile Developer',
+    name: 'Julian S.',
+    title: 'Director - Education',
+    img: julianImg,
+    alt: 'Julian S., Director of Health Programs',
   },
   {
-    name: 'Sophia K.',
-    title: 'Data Scientist',
-    bio: 'Decoding patterns and finding insights in the chaos.',
-    img: 'https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/css-trig-functions/images/img-4.avif',
-    alt: 'Sophia K., Data Scientist',
+    name: 'L. Thushari',
+    title: 'Director - Health Programs',
+    img: nishanImg,
+    alt: 'L. Thushari, Director of Education',
   },
   {
-    name: 'Codey X',
-    title: 'AI Code Assistant',
-    bio: 'Powered by algorithms, driven by collaboration.',
-    img: 'https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/css-trig-functions/images/img-5.avif',
-    alt: 'Codey X, AI Code Assistant',
+    name: 'M. C. Gunasekara',
+    title: 'Director - Environment',
+    img: taraImg,
+    alt: 'M. C. Gunasekara, Director of Finance',
   },
   {
-    name: 'Maya R.',
-    title: 'Project Manager',
-    bio: 'Keeping the team in sync and deadlines on track.',
-    img: 'https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/css-trig-functions/images/img-6.avif',
-    alt: 'Maya R., Project Manager',
+    name: 'C. Lakmal',
+    title: 'Chief Organizer',
+    img: harshaImg,
+    alt: 'C. Lakmal, Chief Organizer',
   },
 ];
 
@@ -68,7 +76,7 @@ const About = () => {
   };
 
   return (
-    <section className="section">
+    <section className="section" style={{ backgroundColor: 'var(--about-bg-color)' }}>
       <div className="section-wrapper">
         {/* Who We Are */}
         <div className="intro-section">
@@ -125,13 +133,13 @@ const About = () => {
           </hgroup>
         </header>
 
-        {/* Arrows (Mobile only via CSS) */}
+        {/* Arrow Controls */}
         <div className="arrow-controls">
           <button className="arrow arrow-left" onClick={scrollLeft} aria-label="Scroll Left">◀</button>
           <button className="arrow arrow-right" onClick={scrollRight} aria-label="Scroll Right">▶</button>
         </div>
 
-        {/* Team Members List */}
+        {/* Team Members */}
         <ul
           className="cards"
           ref={cardsRef}

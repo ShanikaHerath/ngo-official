@@ -73,19 +73,21 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Featured Image */
 .featured-project-image-wrapper {
-  width: 100%;
-  margin: 2rem 0;
+  width: 80%;
+  margin: 2rem auto;
   border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-md);
   overflow: hidden;
   animation: fadeInUp 1.2s ease forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .featured-project-image {
   width: 100%;
-  height: clamp(250px, 40vw, 350px);
+  height: auto;
   object-fit: cover;
   display: block;
   transition: transform var(--transition-ease);
@@ -94,6 +96,7 @@ body {
 .featured-project-image-wrapper:hover .featured-project-image {
   transform: scale(1.05);
 }
+
 
 /* VMV Section */
 .vmv-section {
