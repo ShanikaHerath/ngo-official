@@ -1,15 +1,7 @@
-<<<<<<< HEAD
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import './Navbar.css';
-
-const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-=======
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './Navbar.css';
-import logo from '../assets/Logo.jpg'; // Make sure it's inside src/assets
+import logo from '../assets/Logo.jpg'; // Adjust path as needed
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,35 +10,12 @@ const Navbar = () => {
   const [pendingScrollId, setPendingScrollId] = useState(null);
 
   const navigate = useNavigate();
->>>>>>> rescue-work
   const location = useLocation();
 
   const toggleMenu = () => setMenuOpen(prev => !prev);
   const closeMenu = () => setMenuOpen(false);
 
-<<<<<<< HEAD
-  // Check if we are on an Ayurvedha-related page
-  const isAyurvedhaPage = location.pathname.startsWith('/ayurvedha');
-
-  return (
-    <header className={`navbar ${isAyurvedhaPage ? 'ayurvedha-navbar' : 'home'}`}>
-      <div className="navbar-container">
-        <div className="logo">
-          <Link to="/" onClick={closeMenu}>
-            <img
-              src="/Assests/NGO Logo.jpg"
-              alt="NGO Logo"
-              className="logo-img"
-            />
-          </Link>
-        </div>
-
-        <button
-          className="menu-toggle"
-          onClick={toggleMenu}
-          aria-label="Toggle navigation"
-        >
-=======
+  // Scroll to element by id with offset (to account for fixed navbar)
   const handleScrollTo = (id) => {
     closeMenu();
     const offset = 80;
@@ -63,6 +32,7 @@ const Navbar = () => {
     }
   };
 
+  // Handle pending scroll after navigation to home page
   useEffect(() => {
     if (location.pathname === '/' && pendingScrollId) {
       const offset = 80;
@@ -75,6 +45,7 @@ const Navbar = () => {
     }
   }, [location, pendingScrollId]);
 
+  // Show/hide navbar on scroll up/down
   useEffect(() => {
     const handleScroll = () => {
       setShowNavbar(window.scrollY <= lastScrollY);
@@ -85,6 +56,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  // Lock body scroll when menu is open (for mobile menu)
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
   }, [menuOpen]);
@@ -94,21 +66,32 @@ const Navbar = () => {
   return (
     <header className={`navbar ${isAyurvedhaPage ? 'ayurvedha-navbar' : 'home'} ${showNavbar ? 'visible' : 'hidden'}`}>
       <div className="navbar-container">
-        <div className="logo" onClick={() => handleScrollTo('home')} style={{ cursor: 'pointer' }}>
+        {/* Logo */}
+        <div
+          className="logo"
+          onClick={() => handleScrollTo('home')}
+          style={{ cursor: 'pointer' }}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => { if (e.key === 'Enter') handleScrollTo('home'); }}
+          aria-label="Scroll to top"
+        >
           <img src={logo} alt="NGO Logo" className="logo-img" />
         </div>
 
-        <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle navigation">
->>>>>>> rescue-work
+        {/* Menu toggle button */}
+        <button
+          className="menu-toggle"
+          onClick={toggleMenu}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+        >
           {menuOpen ? '✖' : '☰'}
         </button>
 
+        {/* Navigation Links */}
         <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
-<<<<<<< HEAD
           <Link to="/" onClick={closeMenu}>Home</Link>
-=======
-         <Link to="/" onClick={closeMenu}>Home</Link>
->>>>>>> rescue-work
           <Link to="/about" onClick={closeMenu}>About</Link>
           <Link to="/projects" onClick={closeMenu}>Projects</Link>
           <Link to="/get-involved" onClick={closeMenu}>Get Involved</Link>

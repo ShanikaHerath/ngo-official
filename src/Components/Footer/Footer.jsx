@@ -1,9 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import './Footer.css';
-=======
 import {
   FaFacebookF,
   FaInstagram,
@@ -13,32 +9,23 @@ import {
 } from 'react-icons/fa6';
 import './Footer.css';
 import logo from '../assets/Logo.jpg';
->>>>>>> rescue-work
 
 const Footer = ({ isAyurvedha }) => {
   return (
     <footer className={`footer ${isAyurvedha ? 'footer-green' : ''}`}>
       <div className="footer-container">
-<<<<<<< HEAD
-        <div className="footer-section logo-section">
-          <img
-            src="/Assests/NGO Logo.jpg"
-=======
+
         {/* Logo and Foundation Name */}
         <div className="footer-section logo-section">
           <img
             src={logo}
->>>>>>> rescue-work
             alt="NGO Logo"
             className="footer-logo"
           />
           <p>Suwa Diwiya Social Care Foundation</p>
         </div>
 
-<<<<<<< HEAD
-=======
         {/* Navigation Links */}
->>>>>>> rescue-work
         <div className="footer-section links-section">
           <h4>Quick Links</h4>
           <ul>
@@ -51,10 +38,7 @@ const Footer = ({ isAyurvedha }) => {
           </ul>
         </div>
 
-<<<<<<< HEAD
-=======
         {/* Contact Info */}
->>>>>>> rescue-work
         <div className="footer-section contact-section">
           <h4>Contact</h4>
           <p>Email: info@suwadiwiya.org</p>
@@ -62,15 +46,6 @@ const Footer = ({ isAyurvedha }) => {
           <p>Address: 123 Kindness Road, Colombo, Sri Lanka</p>
         </div>
 
-<<<<<<< HEAD
-        <div className="footer-section social-section">
-          <h4>Follow Us</h4>
-          <div className="social-icons">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-=======
         {/* Social Icons */}
         <div className="footer-section social-section">
           <h4>Follow Us</h4>
@@ -90,15 +65,12 @@ const Footer = ({ isAyurvedha }) => {
             <a href="https://wa.me/94771234567" target="_blank" rel="noopener noreferrer">
               <FaWhatsapp />
             </a>
->>>>>>> rescue-work
           </div>
         </div>
+
       </div>
 
-<<<<<<< HEAD
-=======
       {/* Footer Bottom */}
->>>>>>> rescue-work
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Suwa Diwiya. All rights reserved.</p>
       </div>

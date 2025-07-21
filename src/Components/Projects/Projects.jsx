@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import './Projects.css';
-
-const Projects = () => {
-=======
 import React, { useState } from 'react';
 import './Projects.css';
 
@@ -94,35 +88,19 @@ const projectsData = [
 const Projects = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Filter projects by title or description matching search term (case insensitive)
+  // Filter projects by title or description (case insensitive)
   const filteredProjects = projectsData.filter(project =>
     project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     project.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
->>>>>>> rescue-work
   return (
     <div className="projects">
       <header className="projects-header">
         <h1>Our Projects</h1>
         <p>Discover the various initiatives and programs we are working on to support our community.</p>
-<<<<<<< HEAD
-      </header>
-      <section className="projects-list">
-        <div className="project-item">
-          <h2>Project 1: Health Outreach Program</h2>
-          <p>Providing essential medical services to underprivileged communities.</p>
-        </div>
-        <div className="project-item">
-          <h2>Project 2: Education for All</h2>
-          <p>Empowering children with quality education and learning resources.</p>
-        </div>
-        <div className="project-item">
-          <h2>Project 3: Community Support</h2>
-          <p>Offering support and resources to families in need.</p>
-        </div>
-=======
-        {/* SEARCH BAR */}
+
+        {/* Search input */}
         <input
           type="search"
           placeholder="Search projects..."
@@ -136,24 +114,35 @@ const Projects = () => {
       <section className="projects-list">
         {filteredProjects.length > 0 ? (
           filteredProjects.map(({ id, title, description, image, photoGalleryLink, youtubeLink }) => (
-            <div key={id} className="project-item" tabIndex="0">
+            <div key={id} className="project-item" tabIndex="0" aria-label={title}>
               <img src={image} alt={title} className="project-image" />
               <h2>{title}</h2>
               <p>{description}</p>
               <div className="project-links">
-                <a href={photoGalleryLink} className="see-more-link" aria-label={`See more photos for ${title}`} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={photoGalleryLink}
+                  className="see-more-link"
+                  aria-label={`See more photos for ${title}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   📸 See More
                 </a>
-                <a href={youtubeLink} className="youtube-link" aria-label={`Watch YouTube video for ${title}`} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={youtubeLink}
+                  className="youtube-link"
+                  aria-label={`Watch YouTube video for ${title}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   ▶️ Watch Video
                 </a>
               </div>
             </div>
           ))
         ) : (
-        <p className="no-results">No projects match your search.</p>
+          <p className="no-results">No projects match your search.</p>
         )}
->>>>>>> rescue-work
       </section>
     </div>
   );
