@@ -285,3 +285,44 @@ body {
     width: 100%;
   }
 }
+.hero-banner {
+  height: 100vh;
+  background-image: url("./assets/whatsapp-hero.jpg"); /* Put your image here */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay for readability */
+  z-index: 1;
+}
+
+.hero-content {
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
