@@ -1,21 +1,50 @@
-/* Root variables assumed to be defined globally as per your theme */
+/* Root variables assumed to be defined globally */
 
-/* Container */
+/* Global Enhancements */
+:root {
+  --primary-color: #087b7b;
+  --primary-dark: #065e5e;
+  --secondary-color: #2ea0c5;
+  --background-light: #f0fdfb;
+  --background-cta: #e6fbf8;
+  --white: #ffffff;
+  --text-dark: #2c3035;
+  --text-muted: #6c757d;
+
+  /* ✅ Pro System Font Stack */
+  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 
+                  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 
+                  'Helvetica Neue', sans-serif;
+
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 20px;
+
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.1);
+
+  --transition-ease: 0.3s ease;
+}
+
+/* Page Wrapper */
+.get-involved-page {
+  background: linear-gradient(to bottom, #e9f9f4 0%, #ffffff 100%);
+  min-height: 100vh;
+  padding: 3rem 1.5rem;
+}
+
+/* Main Container */
 .get-involved {
-  max-width: 1100px;
-  margin: 3rem auto;
-  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
   background-color: var(--background-light);
   border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-md);
   font-family: var(--font-primary);
   color: var(--text-dark);
-  animation: fadeIn 1s ease-in;
-}
-.get-involved-page {
-  background: linear-gradient(to bottom, #e9f9f4 0%, #ffffff 100%);
-  min-height: 100vh;
-  padding: 2rem 0;
+  animation: fadeIn 1.2s ease-in-out;
 }
 
 /* Header */
@@ -25,90 +54,118 @@
 }
 
 .get-involved-header h1 {
-  font-size: clamp(2rem, 5vw, 2.8rem);
-  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
   color: var(--primary-color);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
 }
 
 .get-involved-header p {
-  font-size: 1.1rem;
+  font-size: 1.125rem;
   color: var(--text-muted);
-  max-width: 600px;
+  max-width: 680px;
   margin: 0 auto;
-  line-height: 1.5;
+  line-height: 1.8;
 }
 
-/* Options Section */
+/* Options Grid */
 .get-involved-options {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
 }
 
 .option-card {
   background-color: var(--white);
-  padding: 1.8rem 1.5rem;
-  border-radius: var(--border-radius-md);
+  padding: 2.2rem 2rem;
+  border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition-ease), box-shadow var(--transition-ease);
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  will-change: transform;
+}
+
+.option-card::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  background-color: var(--secondary-color);
+  top: 1rem;
+  left: 1.5rem;
+  border-radius: 2px;
+  transition: width var(--transition-ease);
+}
+
+.option-card:hover::before {
+  width: 100%;
+  left: 0;
 }
 
 .option-card:hover,
 .option-card:focus {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
   outline: none;
 }
 
 .option-card h2 {
-  font-size: 1.5rem;
+  font-size: 1.65rem;
   color: var(--secondary-color);
-  margin-bottom: 0.8rem;
   font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.03em;
+  transition: color 0.3s ease;
+}
+
+.option-card:hover h2 {
+  color: var(--primary-color);
 }
 
 .option-card p {
-  font-size: 1rem;
+  font-size: 1.075rem;
   color: var(--text-muted);
-  line-height: 1.4;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
 /* Contact Section */
 .get-involved-contact {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 3rem 2rem;
   background-color: var(--background-cta);
-  border-radius: var(--border-radius-sm);
+  border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-sm);
-  animation: fadeIn 1s ease-in;
+  animation: fadeIn 1.4s ease-in-out;
 }
 
 .get-involved-contact h2 {
   color: var(--primary-color);
-  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  font-size: clamp(2rem, 4vw, 2.5rem);
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .get-involved-contact p {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--text-dark);
-  margin-bottom: 2rem;
+  margin-bottom: 2.2rem;
 }
 
 /* Contact Button */
 .contact-button {
   background-color: var(--primary-color);
   color: var(--white);
-  font-size: 1.15rem;
+  font-size: 1.125rem;
   font-weight: 600;
-  padding: 0.8rem 2.5rem;
+  padding: 0.9rem 2.8rem;
   border: none;
   border-radius: var(--border-radius-lg);
   cursor: pointer;
@@ -119,33 +176,51 @@
 .contact-button:hover,
 .contact-button:focus {
   background-color: var(--primary-dark);
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: var(--shadow-md);
   outline: none;
 }
 
-/* Responsive adjustments */
+/* Responsive Tweaks */
 @media (max-width: 768px) {
   .get-involved {
-    padding: 1rem 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .option-card {
+    padding: 1.5rem;
   }
 
   .option-card h2 {
-    font-size: 1.3rem;np
-  
+    font-size: 1.4rem;
+  }
+
+  .get-involved-contact {
+    padding: 2rem 1rem;
+  }
 
   .get-involved-contact h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .contact-button {
     width: 100%;
-    padding: 1rem 0;
+    padding: 1rem;
+    font-size: 1.05rem;
   }
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+/* Fix: Remove underline from buttons/links */
+.contact-button,
+.contact-button:visited,
+.contact-button:hover,
+.contact-button:focus,
+.contact-button:active {
+  text-decoration: none;
+  display: inline-block;
 }

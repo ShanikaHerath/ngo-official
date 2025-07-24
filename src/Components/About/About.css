@@ -27,7 +27,7 @@
 }
 
 /* 🧠 Title */
-.about-title {
+.team-title {
   font-size: 7.5rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -41,7 +41,7 @@
   font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
   background: linear-gradient(
     to bottom,
-    rgba(110, 185, 184, 0.35) 30%,
+    rgba(8, 121, 123, 0.6) 30%,
     rgba(3, 243, 243, 0) 76%
   );
   -webkit-background-clip: text;
@@ -279,4 +279,171 @@
   .member-name::after {
     right: -70px;
   }
+}
+/* 🔥 Additional Styles for About Page Sections */
+
+.professional-section {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 100px;
+  padding: 40px 20px;
+  background-color: var(--bg-light);
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease-out forwards;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: fadeDown 1s ease-in-out forwards;
+}
+
+.section-paragraph {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  line-height: 1.8;
+  max-width: 900px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-in-out 0.3s forwards;
+}
+
+/* ✨ Animations */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 📱 Responsive Goodness */
+@media (max-width: 768px) {
+  .founder-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .founder-image img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .founder-details h2,
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .founder-details p,
+  .section-paragraph {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+}
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem; /* spacing between buttons */
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Donate Button - Outlined */
+.donate-button {
+  background-color: var(--white); /* White background */
+  color: var(--primary-color);    /* Text in primary color */
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding: 0.9rem 2.8rem;
+  border: 2px solid var(--primary-color); /* Colored border */
+  border-radius: var(--border-radius-lg);
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: background-color var(--transition-ease), color var(--transition-ease), transform var(--transition-ease);
+}
+
+.donate-button:hover,
+.donate-button:focus {
+  background-color: var(--primary-color); /* Fill it on hover */
+  color: var(--white);                    /* Invert text */
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+  outline: none;
+}
+
+/* Contact Button */
+.contact-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding: 0.9rem 2.8rem;
+  border: none;
+  border-radius: var(--border-radius-lg);
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: background-color var(--transition-ease), transform var(--transition-ease);
+}
+
+.contact-button:hover,
+.contact-button:focus {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+  outline: none;
 }
