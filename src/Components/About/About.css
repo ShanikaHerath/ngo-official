@@ -406,16 +406,16 @@
 /* Donate Button - Outlined */
 .donate-button {
   background-color: var(--white); /* White background */
-  color: var(--primary-color);    /* Text in primary color */
-  font-size: 1.125rem;
+  color: var(--primary-color);   
+  font-size: 1rem;
   font-weight: 600;
   padding: 0.9rem 2.8rem;
-  border: 2px solid var(--primary-color); /* Colored border */
-  border-radius: var(--border-radius-lg);
+  border: 2px solid var(--primary-color);
+  border-radius: 50px; 
   text-decoration: none;
   box-shadow: var(--shadow-sm);
-  transition: background-color var(--transition-ease), color var(--transition-ease), transform var(--transition-ease);
 }
+
 
 .donate-button:hover,
 .donate-button:focus {
