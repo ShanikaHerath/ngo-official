@@ -1,6 +1,4 @@
-/* Root variables assumed to be defined globally */
-
-/* Global Enhancements */
+/* Root variables */
 :root {
   --primary-color: #087b7b;
   --primary-dark: #065e5e;
@@ -11,9 +9,8 @@
   --text-dark: #2c3035;
   --text-muted: #6c757d;
 
-  /* ✅ Pro System Font Stack */
-  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 
-                  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 
+  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
                   'Helvetica Neue', sans-serif;
 
   --border-radius-sm: 8px;
@@ -27,48 +24,48 @@
   --transition-ease: 0.3s ease;
 }
 
-/* Page Wrapper */
+/* General page styles */
 .get-involved-page {
   background: linear-gradient(to bottom, #e9f9f4 0%, #ffffff 100%);
   min-height: 100vh;
   padding: 3rem 1.5rem;
+  font-family: var(--font-primary);
 }
 
-/* Main Container */
+/* Main content wrapper */
 .get-involved {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   padding: 2rem;
   background-color: var(--background-light);
   border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-md);
-  font-family: var(--font-primary);
   color: var(--text-dark);
   animation: fadeIn 1.2s ease-in-out;
 }
 
-/* Header */
+/* Header styles */
 .get-involved-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .get-involved-header h1 {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: bold;
   color: var(--primary-color);
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.5rem;
 }
 
 .get-involved-header p {
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
   max-width: 680px;
   margin: 0 auto;
   line-height: 1.8;
 }
 
-/* Options Grid */
+/* Options grid */
 .get-involved-options {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -76,6 +73,7 @@
   margin-bottom: 4rem;
 }
 
+/* Individual option card */
 .option-card {
   background-color: var(--white);
   padding: 2.2rem 2rem;
@@ -85,11 +83,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  will-change: transform;
 }
 
 .option-card::before {
@@ -121,7 +119,6 @@
   color: var(--secondary-color);
   font-weight: 600;
   margin-bottom: 1rem;
-  letter-spacing: 0.03em;
   transition: color 0.3s ease;
 }
 
@@ -136,7 +133,44 @@
   font-weight: 400;
 }
 
-/* Contact Section */
+.bank-details {
+  background-color: #e8f6f6;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+  font-weight: 500;
+  color: #007373;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin: 2rem auto;
+  user-select: text;
+}
+
+
+
+/* 📅 Event List Section */
+.event-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.event-item {
+  background-color: #e8f6f6;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  font-weight: 500;
+  color: #007373;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* 📞 Contact Section */
 .get-involved-contact {
   text-align: center;
   padding: 3rem 2rem;
@@ -159,9 +193,9 @@
   margin-bottom: 2.2rem;
 }
 
-/* Contact Button */
+/* ✉️ Contact Button */
 .contact-button {
-  background-color: #007373;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   padding: 0.9rem 2rem;
@@ -169,6 +203,10 @@
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  margin: 10px auto 0;
+  text-align: center;
+  text-decoration: none;
 }
 
 .contact-button:hover,
@@ -179,7 +217,7 @@
   outline: none;
 }
 
-/* Responsive Tweaks */
+/* 🎯 Responsive Design */
 @media (max-width: 768px) {
   .get-involved {
     padding: 1.5rem 1rem;
@@ -208,17 +246,14 @@
   }
 }
 
-/* Animations */
+/* 🔮 Fade In Animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-/* Fix: Remove underline from buttons/links */
-.contact-button,
-.contact-button:visited,
-.contact-button:hover,
-.contact-button:focus,
-.contact-button:active {
-  text-decoration: none;
-  display: inline-block;
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

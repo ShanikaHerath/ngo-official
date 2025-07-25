@@ -1,126 +1,61 @@
-import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import './Home.css';
+import Logo from '../assets/Logo.jpg'; // Import the image
 
 const Home = () => {
-  const projectGridRef = useRef(null);
+  const [navActive, setNavActive] = useState(false);
+  const [isFixed, setIsFixed] = useState(false);
+  const [bannerImage, setBannerImage] = useState('https://i.postimg.cc/5t0jYgz7/green.png');
 
-  const scrollProjects = (direction) => {
-    const scrollAmount = 320;
-    if (projectGridRef.current) {
-      projectGridRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth',
-      });
-    }
+  const handleImageChange = (src, index) => {
+    setBannerImage(src);
+    document.querySelectorAll('.image').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('.image')[index].classList.add('selected');
   };
 
+  const toggleNav = () => {
+    setNavActive(!navActive);
+  };
+
+  const closeNav = () => {
+    setNavActive(false);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsFixed(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="home">
-      {/* Hero Section */}
-      <header className="home-header">
-        <div className="hero-text">
-          <h1>Welcome to Suwa Diwiya Social Care Foundation</h1>
-          <p>Improving lives through compassionate care and community support.</p>
-        </div>
-        <img
-          src="/Assests/WhatsApp Image 2025-05-16 at 13.36.14_f38b4d1c.jpg"
-          alt="Community volunteers working together"
-          className="featured-project-image"
-        />
-      </header>
-
-      {/* Vision, Mission, Values Section */}
-      <section className="vmv-section">
-        <h2>Our Vision, Mission & Values</h2>
-        <div className="vmv-cards">
-          <article className="vmv-card">
-            <h3>Vision</h3>
-            <p>Empowering communities through sustainable care and support.</p>
-          </article>
-          <article className="vmv-card">
-            <h3>Mission</h3>
-            <p>To uplift underprivileged lives with health, education, and compassion.</p>
-          </article>
-          <article className="vmv-card">
-            <h3>Values</h3>
-            <p>Compassion, integrity, inclusiveness, and empowerment.</p>
-          </article>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section className="home-projects">
-        <h2>Our Projects</h2>
-
-        <div className="project-carousel-wrapper">
-          {/* Arrows */}
-          <span
-            className="carousel-arrow arrow-left"
-            onClick={() => scrollProjects('left')}
-            aria-label="Scroll Left"
-          >
-            &#8678;
-          </span>
-          <div className="projects-grid" ref={projectGridRef}>
-            <div className="project-card">
-              <img
-                src="/Assests/WhatsApp Image 2025-05-16 at 13.36.11_9b70b061.jpg"
-                alt="Project 1"
-                className="project-image"
-              />
-              <div className="project-info">
-                <h3>Project 1</h3>
-                <p>Providing clean water access to rural villages.</p>
-              </div>
-            </div>
-
-            <div className="project-card">
-              <img
-                src="/Assests/WhatsApp Image 2025-05-16 at 13.36.11_9b70b061.jpg"
-                alt="Project 2"
-                className="project-image"
-              />
-              <div className="project-info">
-                <h3>Project 2</h3>
-                <p>Healthcare outreach and education programs.</p>
-              </div>
-            </div>
-
-            <div className="project-card">
-              <img
-                src="/Assests/WhatsApp Image 2025-05-16 at 13.36.11_9b70b061.jpg"
-                alt="Project 3"
-                className="project-image"
-              />
-              <div className="project-info">
-                <h3>Project 3</h3>
-                <p>Empowering youth through skill development workshops.</p>
-              </div>
-            </div>
-
-            {/* Add more projects here... */}
+    <div>
+      <section className="ngo-section" id="ngo">
+        <div className="animation-wrap">
+          <div className="animation animation1"></div>
+          <div className="animation animation2">
+            {Array(28).fill().map((_, i) => <div key={i}></div>)}
           </div>
-          <span
-            className="carousel-arrow arrow-right"
-            onClick={() => scrollProjects('right')}
-            aria-label="Scroll Right"
-          >
-            &#8680;
-          </span>
+          <div className="animation animation3"></div>
+          <div className="animation animation4">
+            {Array(8).fill().map((_, i) => <div key={i}></div>)}
+          </div>
         </div>
-
-        {/* CTA Button */}
-        <Link to="/projects" className="pro-button" aria-label="View more projects">
-          More projects
-        </Link>
-      </section>
-
-      {/* Call to Action */}
-      <section className="home-cta">
-        <h2>Get Involved</h2>
-        <p>Join us in making a difference. Volunteer, donate, or participate in our events.</p>
-        <button className="cta-button">Learn More</button>
+        <div className="container">
+          <div className="row full-screen align-items-center">
+            <div className="ngo-text">
+              <h2>Support <span>Our</span> Mission</h2>
+              <p>Join us in making a difference with impactful initiatives. Our programs focus on sustainability, community empowerment, innovative solutions, and global outreach.</p>
+              <a href="#" className="btn1">Get Involved</a>
+            </div>
+            <div className="ngo-image">
+              <div className="img-box">
+                <img src={Logo} alt="campaign banner" /> {/* Use the imported image */}
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
