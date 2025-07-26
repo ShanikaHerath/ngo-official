@@ -3,8 +3,8 @@ import './Home.css';
 
 // Logo and Gallery Images
 import logoImage from '../assets/Logo.jpg';
-import gallery1 from '../assets/gallery/ayu3.jpg';
-import gallery2 from '../assets/gallery/Thel1.jpg';
+import gallery1 from '../assets/gallery/kan.jpg';
+import gallery2 from '../assets/gallery/lamai.jpg';
 import gallery3 from '../assets/gallery/girl.jpg';
 import gallery4 from '../assets/gallery/mahaseya.jpg';
 import gallery5 from '../assets/gallery/scloldpolathu.jpg';
@@ -13,8 +13,9 @@ import gallery7 from '../assets/gallery/thel2.jpg';
 import gallery8 from '../assets/gallery/ayu1.jpg';
 import gallery9 from '../assets/gallery/bag.jpg';
 import gallery10 from '../assets/gallery/sclf.jpg';
-import gallery11 from '../assets/gallery/kan.jpg';
-import gallery12 from '../assets/gallery/lamai.jpg';
+import gallery11 from '../assets/gallery/ayu3.jpg';
+import gallery12 from '../assets/gallery/Thel1.jpg';
+import gallery14 from '../assets/gallery/ayu2.jpg';
 import gallery13 from '../assets/gallery/all.jpg';
 import gallery15 from '../assets/gallery/doc.jpg';
 
@@ -36,7 +37,7 @@ const Home = () => {
     gallery1, gallery2, gallery3, gallery4,
     gallery5, gallery6, gallery7, gallery8,
     gallery9, gallery10, gallery11, gallery12,
-    gallery13, gallery15,
+    gallery13,gallery14, gallery15,
   ];
 
   return (

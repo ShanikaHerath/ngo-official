@@ -1,7 +1,45 @@
 import React, { useState } from 'react';
 import './Projects.css';
 
-// Dummy data for projects
+const annualProjects = [
+  {
+    id: 101,
+    title: 'School Supplies Drive',
+    description: 'Distributed books, bags, shoes, and educational toys to children in need.',
+    image: 'https://source.unsplash.com/400x250/?school,supplies',
+  },
+  {
+    id: 102,
+    title: 'Sri Pada Pilgrimage',
+    description: "Organized a sacred journey to Adam's Peak with local devotees.",
+    image: 'https://source.unsplash.com/400x250/?mountain,pilgrimage',
+  },
+  {
+    id: 103,
+    title: 'Community Dansala Events',
+    description: 'Hosted three food donation stalls serving free meals to the public.',
+    image: 'https://source.unsplash.com/400x250/?food,charity',
+  },
+  {
+    id: 104,
+    title: 'Visit to Ruwanweliseya',
+    description: 'Pilgrimage to the sacred stupa, nurturing spiritual growth.',
+    image: 'https://source.unsplash.com/400x250/?temple,buddhism',
+  },
+  {
+    id: 105,
+    title: 'Ayurveda Awareness Camp',
+    description: 'Offered natural healing and wellness education to the public.',
+    image: 'https://source.unsplash.com/400x250/?ayurveda,healing',
+  },
+  {
+    id: 106,
+    title: 'Ayurvedic Oil Workshop',
+    description: 'Demonstrated traditional oil preparation for health and wellbeing.',
+    image: 'https://source.unsplash.com/400x250/?herbal,oil',
+  },
+];
+
 const projectsData = [
   {
     id: 1,
@@ -88,7 +126,6 @@ const projectsData = [
 const Projects = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Filter projects by title or description (case insensitive)
   const filteredProjects = projectsData.filter(project =>
     project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     project.description.toLowerCase().includes(searchTerm.toLowerCase())
@@ -100,7 +137,6 @@ const Projects = () => {
         <h1>Our Projects</h1>
         <p>Discover the various initiatives and programs we are working on to support our community.</p>
 
-        {/* Search input */}
         <input
           type="search"
           placeholder="Search projects..."
@@ -111,39 +147,58 @@ const Projects = () => {
         />
       </header>
 
-      <section className="projects-list">
-        {filteredProjects.length > 0 ? (
-          filteredProjects.map(({ id, title, description, image, photoGalleryLink, youtubeLink }) => (
-            <div key={id} className="project-item" tabIndex="0" aria-label={title}>
-              <img src={image} alt={title} className="project-image" />
-              <h2>{title}</h2>
-              <p>{description}</p>
-              <div className="project-links">
-                <a
-                  href={photoGalleryLink}
-                  className="see-more-link"
-                  aria-label={`See more photos for ${title}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  📸 See More
-                </a>
-                <a
-                  href={youtubeLink}
-                  className="youtube-link"
-                  aria-label={`Watch YouTube video for ${title}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  ▶️ Watch Video
-                </a>
+      {searchTerm && (
+        <section className="projects-list">
+          {filteredProjects.length > 0 ? (
+            filteredProjects.map(({ id, title, description, image, photoGalleryLink, youtubeLink }) => (
+              <div key={id} className="project-item" tabIndex="0" aria-label={title}>
+                <img src={image} alt={title} className="project-image" />
+                <h2>{title}</h2>
+                <p>{description}</p>
+                <div className="project-links">
+                  <a href={photoGalleryLink} className="see-more-link" target="_blank" rel="noopener noreferrer">📸 See More</a>
+                  <a href={youtubeLink} className="youtube-link" target="_blank" rel="noopener noreferrer">▶️ Watch Video</a>
+                </div>
               </div>
+            ))
+          ) : (
+            <p className="no-results">No projects match your search.</p>
+          )}
+        </section>
+      )}
+
+      {!searchTerm && (
+        <>
+          <section className="annual-projects">
+            <h2>🌟 1st Annual Projects (2025)</h2>
+            <div className="projects-list">
+              {annualProjects.map(({ id, title, description, image }) => (
+                <div key={id} className="project-item" tabIndex="0" aria-label={title}>
+                  <img src={image} alt={title} className="project-image" />
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                </div>
+              ))}
             </div>
-          ))
-        ) : (
-          <p className="no-results">No projects match your search.</p>
-        )}
-      </section>
+          </section>
+
+          <hr style={{ margin: '3rem auto', borderTop: '1.5px solid #ccc', maxWidth: '800px' }} />
+
+          <section className="projects-list">
+            {projectsData.map(({ id, title, description, image, photoGalleryLink, youtubeLink }) => (
+              <div key={id} className="project-item" tabIndex="0" aria-label={title}>
+                <img src={image} alt={title} className="project-image" />
+                <h2>{title}</h2>
+                <p>{description}</p>
+                <div className="project-links">
+                  <a href={photoGalleryLink} className="see-more-link" target="_blank" rel="noopener noreferrer">📸 See More</a>
+                  <a href={youtubeLink} className="youtube-link" target="_blank" rel="noopener noreferrer">▶️ Watch Video</a>
+                </div>
+              </div>
+            ))}
+          </section>
+        </>
+      )}
     </div>
   );
 };
