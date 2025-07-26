@@ -299,12 +299,20 @@
 }
 
 .section-title {
-  font-size: 2.8rem;
-  color: var(--primary);
-  font-weight: 700;
-  margin-bottom: 20px;
+  margin: 4rem 0 2rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
   text-align: center;
-  animation: fadeDown 1s ease-in-out forwards;
+  font-weight: 700;
+  background-image: linear-gradient(
+    45deg,
+    var(--primary-light),
+    var(--accent),
+    var(--primary),
+    var(--text-dark)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .section-paragraph {
