@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
 :root {
   --primary: #007373;
   --primary-dark: #005c5c;
@@ -9,7 +10,6 @@
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   --radius: 10px;
   --transition: 0.25s ease-in-out;
-  --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --gradient: linear-gradient(135deg, #007373, #46a29f);
   --highlight: #e0f7f7;
 }

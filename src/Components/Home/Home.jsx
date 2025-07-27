@@ -59,7 +59,7 @@ const Home = () => {
                 Our programs focus on sustainability, community empowerment,
                 innovative solutions, and global outreach.
               </p>
-              <a href="get-involved" className="btn1">Donate</a>
+              <a href="donate" className="btn1">Donate</a>
             </div>
             <div className="ngo-image">
               <div className="img-box">

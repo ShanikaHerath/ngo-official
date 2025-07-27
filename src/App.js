@@ -13,6 +13,7 @@ import Campaign from './Components/Ayurvedha/Campaign/Campaign';
 import Products from './Components/Ayurvedha/Products/Products';
 import Footer from './Components/Footer/Footer';
 import ScrollToTop from './Components/ScrollToTop';
+import Donate from './Components/Donate/Donate';
 
 import './App.css';
 
@@ -34,6 +35,7 @@ function AppContent() {
         <Route path="/ayurvedha/classes" element={<Classes />} />
         <Route path="/ayurvedha/campaign" element={<Campaign />} />
         <Route path="/ayurvedha/products" element={<Products />} />
+        <Route path="/donate" element={<Donate />} />
       </Routes>
       <Footer isAyurvedha={isAyurvedhaPage} />
     </div>

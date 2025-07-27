@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+:root {
+  --primary: #007373;
+  --primary-dark: #005c5c;
+  --secondary: #46a29f;
+  --bg: #f0f4f5;
+  --text: #222;
+  --muted: #555;
+  --white: #ffffff;
+  --radius: 12px;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  --transition: 0.3s ease-in-out;
+}
+
+/* === PAGE BASE === */
+.donate-page {
+  padding: 4rem 1rem;
+  font-family: 'Quicksand', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* === HERO === */
+.donate-hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.donate-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--primary);
+  font-weight: 700;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.donate-hero p {
+  font-size: 1.2rem;
+  color: var(--muted);
+  max-width: 650px;
+  margin: 1.25rem auto 0;
+  line-height: 1.6;
+}
+
+/* === METHOD LAYOUT === */
+.donate-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+/* === CARD BOX BASE === */
+.donate-box {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem 2rem 2.5rem;
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid #e4e4e4;
+}
+
+.donate-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* === QR STYLE IF USED === */
+.qr-code {
+  width: 160px;
+  margin: 1rem auto;
+  display: block;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+}
+
+/* === BANK TRANSFER GRADIENT BOX === */
+.bank-transfer-box {
+  background: linear-gradient(135deg, #007373, #46a29f);
+  color: #eaffff;
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow);
+  text-align: left;
+  position: relative;
+}
+
+.bank-transfer-box h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.bank-details {
+  display: grid;
+  gap: 1.25rem;
+  font-size: 1.05rem;
+}
+
+.bank-details-row {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1rem;
+  border-left: 4px solid #ffffff88;
+  border-radius: 8px;
+}
+
+.bank-details-row label {
+  display: block;
+  font-size: 0.9rem;
+  color: #e0f7f7;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.bank-details-row span {
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+
+/* === WHITE CTA BOX === */
+.highlight-box {
+  background: var(--white);
+  color: var(--text);
+}
+
+.highlight-box h2 {
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+
+.highlight-box p {
+  margin-top: 0.75rem;
+  color: var(--muted);
+}
+
+/* === CTA BUTTON GROUP === */
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* === PRIMARY BUTTON === */
+.donate-btn {
+  padding: 0.8rem 1.6rem;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 6px 16px rgba(0, 115, 115, 0.2);
+}
+
+.donate-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* === SECONDARY BUTTONS === */
+.secondary-btn {
+  padding: 0.7rem 1.4rem;
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.secondary-btn:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: scale(1.02);
+}
+
+/* === MOBILE RESPONSIVE === */
+@media (max-width: 500px) {
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .donate-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+  .donate-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .donate-hero p {
+    font-size: 1rem;
+  }
+}

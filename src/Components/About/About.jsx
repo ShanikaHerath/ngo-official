@@ -124,7 +124,7 @@ const About = () => {
             ayurvedic session, and every act of kindness — we move closer to our goal of
             a better tomorrow.
           </p> <br></br>
-          <a href="/get-involved" className="cta donate-button">Donate</a>
+          <a href="/donate" className="cta donate-button">Donate</a>
         </section>
 
         {/* Why We Do This */}

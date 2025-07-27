@@ -278,6 +278,7 @@ img {
   -webkit-text-fill-color: transparent;
 }
 
+
 .ngo-section .ngo-text p {
   color: var(--dark900); /* Changed to dark color for visibility */
   font-size: 18px;
