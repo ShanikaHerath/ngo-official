@@ -123,7 +123,8 @@ const About = () => {
             outreach and grew into a national movement. With every school supply, every
             ayurvedic session, and every act of kindness — we move closer to our goal of
             a better tomorrow.
-          </p>
+          </p> <br></br>
+          <a href="/get-involved" className="cta donate-button">Donate</a>
         </section>
 
         {/* Why We Do This */}
@@ -138,7 +139,6 @@ const About = () => {
 
         {/* Call to Action */}
         <div className="cta-buttons">
-          <a href="/get-involved" className="cta donate-button">Donate</a>
           <a href="/contact-us" className="cta contact-button">Contact Us</a>
         </div>
       </div>

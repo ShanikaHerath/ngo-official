@@ -28,7 +28,7 @@
 
 /* 🧠 Title */
 .team-title {
-  font-size: 7.5rem;
+  font-size: clamp(5rem, 8vw, 7.5rem);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -0.02em;
@@ -53,10 +53,12 @@
 .carousel-container {
   width: 100%;
   max-width: 1200px;
-  height: 450px;
+  height: 400px;
   position: relative;
   perspective: 1000px;
   margin-top: 80px;
+  overflow: hidden;
+ 
 }
 
 .carousel-track {
@@ -134,7 +136,7 @@
 /* 👥 Member Info */
 .member-info {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 20px;
   transition: all 0.5s ease-out;
 }
 

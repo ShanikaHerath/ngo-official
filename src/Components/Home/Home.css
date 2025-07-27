@@ -262,7 +262,20 @@ img {
 }
 
 .ngo-section .ngo-text h2 span {
-  color: var(--primary-color);
+  margin: 4rem 0 2rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  text-align: center;
+  font-weight: 700;
+  background-image: linear-gradient(
+    45deg,
+    var(--primary-light),
+    var(--accent),
+    var(--primary),
+    var(--text-dark)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .ngo-section .ngo-text p {
@@ -308,6 +321,45 @@ img {
   }
 }
 
+/* 📱 Responsive Fix for NGO Section */
+@media screen and (max-width: 768px) {
+  .ngo-section .row {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .ngo-section .ngo-text,
+  .ngo-section .ngo-image {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    padding: 20px 10px;
+  }
+
+  .ngo-section .ngo-text h2 {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .ngo-section .ngo-text p {
+    font-size: 16px;
+    margin: 20px 0 40px;
+    line-height: 26px;
+    text-align: center;
+  }
+
+  .img-box {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 2rem;
+  }
+
+  .btn1 {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
+}
 
 /* === MASONRY GALLERY STYLES (THEMED) === */
 
@@ -327,6 +379,17 @@ img {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.subtitle {
+  font-size: 18px;
+  color: var(--dark400);
+  line-height: 28px;
+  margin: -40px auto 40px auto;
+  max-width: 700px;
+  text-align: center;
+  font-weight: 500;
+}
+
 
 /* === 3D Carousel Styles === */
 
@@ -419,6 +482,21 @@ img {
   }
 
   .ss-icon {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    background-color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+  }
+
+  .ss-icon:hover {
+    color: #888;
+    background-color: #f0f0f0;
   }
 }
+

@@ -5,7 +5,7 @@ import './Home.css';
 import logoImage from '../assets/Logo.jpg';
 import gallery1 from '../assets/gallery/kan.jpg';
 import gallery2 from '../assets/gallery/lamai.jpg';
-import gallery3 from '../assets/gallery/girl.jpg';
+import gallery3 from '../assets/gallery/bag.jpg';
 import gallery4 from '../assets/gallery/mahaseya.jpg';
 import gallery5 from '../assets/gallery/scloldpolathu.jpg';
 import gallery6 from '../assets/gallery/sriPada.jpg';
@@ -72,6 +72,8 @@ const Home = () => {
 
       {/* ==== 3D CAROUSEL GALLERY SECTION ==== */}
       <h1 className="title">What We Did?</h1>
+      <p className="subtitle">
+        Explore our gallery showcasing the impact of our projects and initiatives.</p>
       <section className="carousel-container">
         <div id="carousel">
           <figure

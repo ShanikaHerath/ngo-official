@@ -170,7 +170,7 @@ const Projects = () => {
       {!searchTerm && (
         <>
           <section className="annual-projects">
-            <h2>🌟 1st Annual Projects (2025)</h2>
+            <h2>Annual Projects (2025)</h2>
             <div className="projects-list">
               {annualProjects.map(({ id, title, description, image }) => (
                 <div key={id} className="project-item" tabIndex="0" aria-label={title}>

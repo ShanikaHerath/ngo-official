@@ -35,20 +35,21 @@ body {
   animation: fadeIn 0.6s ease-in-out;
 }
 
-.projects-header {
-  text-align: center;
-  margin-bottom: 2.5rem;
-  padding: 0 1rem;
-}
-
 .projects-header h1 {
-  font-size: 2.75rem;
-  color: var(--primary);
-  letter-spacing: 1px;
-  background: var(--gradient);
+  margin: 4rem 0 2rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  text-align: center;
+  font-weight: 700;
+  background-image: linear-gradient(
+    45deg,
+    var(--primary-light),
+    var(--accent),
+    var(--primary),
+    var(--text-dark)
+  );
   background-clip: text;
   -webkit-background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .projects-header p {
