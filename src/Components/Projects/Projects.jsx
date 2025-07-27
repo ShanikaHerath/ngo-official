@@ -147,7 +147,7 @@ const Projects = () => {
         />
       </header>
 
-      {searchTerm && (
+      {searchTerm ? (
         <section className="projects-list">
           {filteredProjects.length > 0 ? (
             filteredProjects.map(({ id, title, description, image, photoGalleryLink, youtubeLink }) => (
@@ -165,10 +165,8 @@ const Projects = () => {
             <p className="no-results">No projects match your search.</p>
           )}
         </section>
-      )}
-
-      {!searchTerm && (
-        <>
+      ) : (
+        <div className="pro-page">
           <section className="annual-projects">
             <h2>Annual Projects (2025)</h2>
             <div className="projects-list">
@@ -197,7 +195,7 @@ const Projects = () => {
               </div>
             ))}
           </section>
-        </>
+        </div>
       )}
     </div>
   );
