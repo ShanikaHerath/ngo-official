@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
 
-// Logo and Gallery Images
+// Logo and Gallery Images (local)
 import logoImage from '../assets/Logo.jpg';
 import gallery1 from '../assets/gallery/kan.jpg';
 import gallery2 from '../assets/gallery/lamai.jpg';
@@ -11,18 +11,11 @@ import gallery5 from '../assets/gallery/scloldpolathu.jpg';
 import gallery6 from '../assets/gallery/sriPada.jpg';
 import gallery7 from '../assets/gallery/thel2.jpg';
 import gallery8 from '../assets/gallery/ayu1.jpg';
-import gallery9 from '../assets/gallery/bag.jpg';
-import gallery10 from '../assets/gallery/sclf.jpg';
-import gallery11 from '../assets/gallery/ayu3.jpg';
-import gallery12 from '../assets/gallery/Thel1.jpg';
-import gallery14 from '../assets/gallery/ayu2.jpg';
-import gallery13 from '../assets/gallery/all.jpg';
-import gallery15 from '../assets/gallery/doc.jpg';
-
 
 const Home = () => {
   const [navActive, setNavActive] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
+  const [angle, setAngle] = useState(0);
 
   const toggleNav = () => setNavActive(!navActive);
   const closeNav = () => setNavActive(false);
@@ -36,9 +29,11 @@ const Home = () => {
   const galleryImages = [
     gallery1, gallery2, gallery3, gallery4,
     gallery5, gallery6, gallery7, gallery8,
-    gallery9, gallery10, gallery11, gallery12,
-    gallery13,gallery14, gallery15,
   ];
+
+  const handleGallerySpin = (direction) => {
+    setAngle((prevAngle) => prevAngle + (direction === '-' ? -45 : 45));
+  };
 
   return (
     <div className={`home-page ${isFixed ? 'fixed-nav' : ''}`}>
@@ -75,17 +70,28 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ==== GALLERY SECTION ==== */}
+      {/* ==== 3D CAROUSEL GALLERY SECTION ==== */}
       <h1 className="title">What We Did?</h1>
-      <section className="masonry__container">
-        {galleryImages.map((imgSrc, i) => (
-          <img
-            key={i}
-            className="masonry__item"
-            src={imgSrc}
-            alt={`gallery image ${i + 1}`}
-          />
-        ))}
+      <section className="carousel-container">
+        <div id="carousel">
+          <figure
+            id="spinner"
+            style={{ transform: `rotateY(${angle}deg)` }}
+          >
+            {galleryImages.map((img, index) => (
+              <img
+                key={index}
+                src={img}
+                alt={`Gallery image ${index + 1}`}
+                style={{
+                  transform: `translate(-50%, -50%) rotateY(${-45 * index}deg)`
+                }}
+              />
+            ))}
+          </figure>
+        </div>
+        <span className="ss-icon left-arrow" onClick={() => handleGallerySpin('-')}>&lt;</span>
+        <span className="ss-icon right-arrow" onClick={() => handleGallerySpin('')}>&gt;</span>
       </section>
     </div>
   );

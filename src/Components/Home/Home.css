@@ -308,91 +308,6 @@ img {
   }
 }
 
-/* ---------- RESPONSIVE DESIGN ---------- */
-
-/* Tablets - 992px and down */
-@media screen and (max-width: 992px) {
-  .ngo-section .ngo-text,
-  .ngo-section .ngo-image {
-    flex: 0 0 100%;
-    max-width: 100%;
-    text-align: center;
-    padding: 20px 15px;
-  }
-
-  .ngo-section .ngo-text h2 {
-    font-size: 40px;
-    line-height: 48px;
-  }
-
-  .ngo-section .ngo-text p {
-    font-size: 16px;
-    line-height: 26px;
-    text-align: center;
-  }
-
-  .img-box {
-    width: 300px;
-    height: 300px;
-  }
-}
-
-/* Mobile - 768px and down */
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 0 15px;
-  }
-
-  .section-title .subtitle {
-    font-size: 24px;
-    line-height: 32px;
-  }
-
-  .btn1 {
-    padding: 0.8rem 2rem;
-    font-size: 0.9rem;
-  }
-
-  .ngo-section .ngo-text h2 {
-    font-size: 32px;
-    line-height: 40px;
-  }
-
-  .img-box {
-    width: 250px;
-    height: 250px;
-  }
-
-  .animation1,
-  .animation2,
-  .animation3,
-  .animation4 {
-    display: none; /* hide animations on small screens to improve performance */
-  }
-}
-
-/* Very Small Devices - 480px and down */
-@media screen and (max-width: 480px) {
-  .ngo-section .ngo-text h2 {
-    font-size: 26px;
-    line-height: 34px;
-  }
-
-  .ngo-section .ngo-text p {
-    font-size: 14px;
-    line-height: 22px;
-  }
-
-  .img-box {
-    width: 200px;
-    height: 200px;
-  }
-
-  .btn1 {
-    font-size: 0.85rem;
-    padding: 0.7rem 1.5rem;
-  }
-}
 
 /* === MASONRY GALLERY STYLES (THEMED) === */
 
@@ -413,67 +328,97 @@ img {
   -webkit-text-fill-color: transparent;
 }
 
-.masonry__container {
-  column-count: 4;
-  column-gap: 1rem;
-  padding: 0 1rem;
-  
+/* === 3D Carousel Styles === */
+
+.carousel-container {
+  max-width: 900px;
+  margin: 2rem auto 5rem auto;
+  position: relative;
+  user-select: none;
+  overflow-x: hidden;
 }
 
-.masonry__item {
+#carousel {
+  perspective: 1200px;
+  background: #f7f7f7;
+  padding-top: 10%;
+  font-size: 0;
+  margin-bottom: 3rem;
+  overflow: visible;
+  position: relative;
   width: 100%;
-  margin-bottom: 1rem;
-  break-inside: avoid;
-  border-radius: 10px;
-  box-shadow: var(--shadow-md);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 350px;
 }
 
-.masonry__item:hover {
-  transform: scale(1.02);
-  box-shadow: var(--shadow-hover);
-  cursor: pointer;
-  filter: brightness(1.03);
-  border: 2px solid var(--accent);
-}
-
-/* Responsive Breakpoints */
-@media screen and (max-width: 1024px) {
-  .masonry__container {
-    column-count: 3;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .masonry__container {
-    column-count: 2;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .masonry__container {
-    column-count: 1;
-  }
-}
-.masonry__container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 16px;
-}
-
-.masonry__item {
+#spinner {
+  transform-style: preserve-3d;
+  transform-origin: 50% 50% -500px;
+  transition: transform 1s ease;
+  position: relative;
   width: 100%;
-  border-radius: 8px;
+  height: 100%;
+}
+
+#spinner img {
+  width: 70vw;
+  max-width: 350px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  /* Ensures the image covers the container without distortion */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: 50% 50% -500px;
+  transform: translate(-50%, -50%);
+  outline: 1px solid transparent;
+  user-select: none;
+  pointer-events: none;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
 }
 
-.masonry__item:nth-child(odd) {
-  aspect-ratio: 1 / 1;
+.ss-icon {
+  color: rgb(42, 176, 176);
+  font-size: 2.5rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
 }
 
-.masonry__item:nth-child(even) {
-  aspect-ratio: 1 / 1;
+.left-arrow, .right-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-    
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.ss-icon:hover {
+  color: #888;
+}
+
+/* 📱 MEDIA QUERY FOR SMALL SCREENS */
+@media screen and (max-width: 768px) {
+  #carousel {
+    height: 280px;
+  }
+
+  #spinner img {
+    width: 85vw;
+    max-width: 95%;
+    aspect-ratio: 4 / 3;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .ss-icon {
+    font-size: 2rem;
+  }
+}
