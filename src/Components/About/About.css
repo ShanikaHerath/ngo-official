@@ -497,7 +497,7 @@
 /* Each card styling */
 .timeline-card {
   flex: 0 0 280px; /* fixed width for cards */
-  background: rgb(212, 245, 245);
+  background: rgb(202, 245, 245);
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(6, 94, 94, 0.1);
   padding: 1.25rem 1.5rem;
@@ -594,9 +594,83 @@
   display: none;
 }
 
-/* Show arrows on tablet and smaller screens */
-@media (max-width: 1024px) {
-  .timeline-arrow {
-    display: flex; /* flex because we used flexbox styles for centering */
+.journey-detail-section {
+  padding: 3rem 1.5rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.journey-detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  width: 100%;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.journey-image {
+  width: 100%;
+}
+
+.journey-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.journey-description {
+  padding: 0 1rem;
+}
+
+.journey-description h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.journey-description p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #007b77;
+  color: #fff;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #005f5c;
+}
+
+/* ✅ Optional: make things scale slightly better on big screens */
+@media (min-width: 768px) {
+  .journey-description h3 {
+    font-size: 2rem;
+  }
+
+  .journey-description p {
+    font-size: 1.2rem;
+  }
+
+  .journey-detail-wrapper {
+    padding: 0 2rem;
   }
 }
+

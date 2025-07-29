@@ -244,21 +244,30 @@ const About = () => {
           </div>
         </section>
 
-        {/* Why We Do This */}
-        <section className="why-section professional-section">
-          <h2 className="section-title">Why We Do This</h2>
-          <p className="section-paragraph">
-            Because everyone deserves dignity, health, and opportunity. Whether
-            it's remote villages or sacred pilgrim paths, we serve where help is
-            needed the most. We believe in action, not just intention.
-          </p>
-        </section>
-
+<section className="journey-detail-section">
+  <div className="journey-detail-wrapper">
+    <div className="journey-image">
+      <img
+        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+        alt="Healing hands helping community"
+      />
+    </div>
+    <div className="journey-description">
+      <h3>Healing Hands, Growing Hope</h3>
+      <p>
+        Our foundation believes in the power of small actions with big impacts. This
+        image captures the essence of our work — healing, nurturing, and supporting
+        those in need through compassionate care and mindful service. Together, we
+        plant seeds for a brighter tomorrow.
+      </p>
+    </div>
+  </div>
+</section>
         {/* Call to Action */}
         <div className="cta-buttons">
-          <a href="/contact-us" className="cta contact-button">
-            Contact Us
-          </a>
+        <a href="/contact-us" className="cta contact-button">
+        Contact Us
+      </a>
         </div>
       </div>
     </div>
