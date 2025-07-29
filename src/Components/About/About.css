@@ -301,7 +301,7 @@
 }
 
 .section-title {
-  margin: 2rem 0 2rem;
+  margin: rem 0 2rem;
   font-size: clamp(2.5rem, 6vw, 4rem);
   text-align: center;
   font-weight: 700;
@@ -455,4 +455,148 @@
   transform: scale(1.05);
   box-shadow: var(--shadow-md);
   outline: none;
+}
+/* Journey Section Wrapper */
+.journey-section {
+  padding: 2rem 1rem;
+  background: #f9fafb;
+  position: relative;
+  font-family: 'Quicksand', sans-serif;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+/* Section title */
+.journey-section > .section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #065e5e; /* subtle teal */
+}
+
+/* Timeline container: horizontal scroll on mobile */
+.timeline-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide default scrollbar (for modern browsers) */
+.timeline-container::-webkit-scrollbar {
+  display: none;
+}
+.timeline-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Each card styling */
+.timeline-card {
+  flex: 0 0 280px; /* fixed width for cards */
+  background: rgb(212, 245, 245);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(6, 94, 94, 0.1);
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.timeline-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(6, 94, 94, 0.15);
+}
+
+/* Icon style */
+.timeline-card .icon {
+  font-size: 2.8rem;
+  color: #087b7b;
+  margin-bottom: 0.8rem;
+}
+
+/* Year */
+.timeline-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0a4a4a;
+  margin-bottom: 0.3rem;
+}
+
+/* Title */
+.timeline-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c5050;
+  margin-bottom: 0.7rem;
+}
+
+/* Description */
+.timeline-card p {
+  font-size: 0.9rem;
+  color: #455a5a;
+  line-height: 1.4;
+  user-select: none;
+}
+
+/* Timeline arrows */
+.timeline-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #087b7b;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+  user-select: none;
+}
+
+.timeline-arrow:hover {
+  opacity: 1;
+}
+
+.timeline-arrow.left {
+  left: 0.5rem;
+}
+
+.timeline-arrow.right {
+  right: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .timeline-card {
+    flex: 0 0 220px; /* smaller cards on small screens */
+    padding: 1rem 1.2rem;
+  }
+
+  .timeline-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 1.1rem;
+  }
+}
+/* Hide arrows by default (desktop/laptop) */
+.timeline-arrow {
+  display: none;
+}
+
+/* Show arrows on tablet and smaller screens */
+@media (max-width: 1024px) {
+  .timeline-arrow {
+    display: flex; /* flex because we used flexbox styles for centering */
+  }
 }

@@ -55,9 +55,7 @@ const Home = () => {
             <div className="ngo-text">
               <h2>Support Our Mission</h2>
               <p>
-                Join us in making a difference with impactful initiatives.
-                Our programs focus on sustainability, community empowerment,
-                innovative solutions, and global outreach.
+                Join <strong>Suwa Diwiya Social Care Foundation</strong> in creating change through compassion and community.
               </p>
               <a href="donate" className="btn1">Donate</a>
             </div>

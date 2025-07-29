@@ -6,7 +6,7 @@ const annualProjects = [
     id: 101,
     title: 'School Supplies Drive',
     description: 'Distributed books, bags, shoes, and educational toys to children in need.',
-    image: 'https://source.unsplash.com/400x250/?school,supplies',
+    image: 'src/Components/assets/gallery/bag.jpg',
   },
   {
     id: 102,
