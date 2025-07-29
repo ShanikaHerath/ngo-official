@@ -301,7 +301,7 @@
 }
 
 .section-title {
-  margin: 4rem 0 2rem;
+  margin: 2rem 0 2rem;
   font-size: clamp(2.5rem, 6vw, 4rem);
   text-align: center;
   font-weight: 700;
@@ -314,8 +314,7 @@
   );
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+  -webkit-text-fill-color: transparent;}
 
 .section-paragraph {
   font-size: 1.2rem;

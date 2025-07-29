@@ -53,7 +53,7 @@ const Home = () => {
         <div className="container">
           <div className="row full-screen align-items-center">
             <div className="ngo-text">
-              <h2>Support <span>Our</span> Mission</h2>
+              <h2>Support Our Mission</h2>
               <p>
                 Join us in making a difference with impactful initiatives.
                 Our programs focus on sustainability, community empowerment,
@@ -73,7 +73,8 @@ const Home = () => {
       {/* ==== 3D CAROUSEL GALLERY SECTION ==== */}
       <h1 className="title">What We Did?</h1>
       <p className="subtitle">
-        Explore our gallery showcasing the impact of our projects and initiatives.</p>
+        Explore our gallery showcasing the impact of our projects and initiatives.
+      </p>
       <section className="carousel-container">
         <div id="carousel">
           <figure
@@ -95,6 +96,42 @@ const Home = () => {
         <span className="ss-icon left-arrow" onClick={() => handleGallerySpin('-')}>&lt;</span>
         <span className="ss-icon right-arrow" onClick={() => handleGallerySpin('')}>&gt;</span>
       </section>
+
+      {/* ==== VISION | MISSION | VALUES ACCORDION ==== */}
+<section className="vmv-accordion-section" id="vmv">
+  <h2 className="vmv-title">Our Vision, Mission & Values</h2>
+
+  <div className="vmv-accordion">
+    <details>
+      <summary> Vision</summary>
+      <p>A world where every life is lived with dignity, wellness, and peace.</p>
+    </details>
+
+    <details>
+      <summary> Mission</summary>
+      <p>
+        Our mission is to promote social justice and fight against poverty, illiteracy, and health challenges.<br /><br />
+        Through holistic Ayurvedic healing, we aim to enhance health and well-being.<br /><br />
+        We are committed to empowering the next generation by supporting education for success in the digital age.<br /><br />
+        We promote innovative economic models, animal welfare, and environmental protection to build self-reliance and sustainability.<br /><br />
+        By encouraging community participation, we create a culture of unity and cooperation.
+      </p>
+    </details>
+
+    <details>
+      <summary> Values</summary>
+      <ul>
+        <li>Integrity</li>
+        <li>Compassion</li>
+        <li>Empowerment</li>
+        <li>Sustainability</li>
+        <li>Unity</li>
+      </ul>
+    </details>
+  </div>
+</section>
+
+
     </div>
   );
 };

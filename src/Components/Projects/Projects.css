@@ -22,7 +22,6 @@
 
 body {
   font-family: var(--font);
-  background: var(--bg);
   color: var(--text);
   line-height: 1.6;
   scroll-behavior: smooth;
@@ -54,7 +53,7 @@ body {
 }
 
 .projects-header p {
-  max-width: 700px;
+  max-width: 400px;
   margin: 0.75rem auto 0;
   font-size: 1.1rem;
   color: var(--muted);
