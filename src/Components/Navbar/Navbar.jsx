@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './Navbar.css';
-import logo from '../assets/Logo.jpg'; // Adjust path as needed
+
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -76,7 +76,11 @@ const Navbar = () => {
           onKeyDown={(e) => { if (e.key === 'Enter') handleScrollTo('home'); }}
           aria-label="Scroll to top"
         >
-          <img src={logo} alt="NGO Logo" className="logo-img" />
+          <img
+            src="https://i.postimg.cc/HndXLWmM/Logo.jpg"
+            alt="NGO Logo"
+            className="logo-img"
+          />
         </div>
 
         {/* Menu toggle button */}

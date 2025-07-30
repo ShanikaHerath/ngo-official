@@ -4,22 +4,14 @@ import { FiFeather } from "react-icons/fi";
 import { BiLeaf } from "react-icons/bi";
 import { BsClipboardCheck, BsHeart } from "react-icons/bs";
 
-// Images
-import emilyImg from "../assets/founder.jpg";
-import michaelImg from "../assets/director1.jpg";
-import emmaImg from "../assets/director2.jpg";
-import juliaImg from "../assets/director3.jpg";
-import lisaImg from "../assets/director4.jpg";
-import jamesImg from "../assets/organizer.jpg";
-
-
+// Team Members with online image links
 const teamMembers = [
-  { name: "Ven. Suditha Thero", role: "Founder", image: emilyImg },
-  { name: "C. Sooriyabandara", role: "Director", image: michaelImg },
-  { name: "Emma Rodriguez", role: "Director", image: emmaImg },
-  { name: "L. Thushari", role: "Director", image: juliaImg },
-  { name: "Lisa Anderson", role: "Director", image: lisaImg },
-  { name: "C. Lakmal", role: "Chief Organizer", image: jamesImg },
+  { name: "Ven. Suditha Thero", role: "Founder", image: "https://i.postimg.cc/bwsbrF7m/founder.jpg" },
+  { name: "C. Sooriyabandara", role: "Director", image: "https://i.postimg.cc/85hLDJ2D/director1.jpg" },
+  { name: "Emma Rodriguez", role: "Director", image: "https://i.postimg.cc/XYzfg0KM/director2.jpg" },
+  { name: "L. Thushari", role: "Director", image: "https://i.postimg.cc/G20vZJSq/director4.jpg" },
+  { name: "Lisa Anderson", role: "Director", image: "https://i.postimg.cc/hGQ9y3MX/director3.jpg" },
+  { name: "C. Lakmal", role: "Chief Organizer", image: "https://i.postimg.cc/wxQDGN5Q/organizer.jpg" },
 ];
 
 const journeyData = [
@@ -27,8 +19,7 @@ const journeyData = [
     year: "2019",
     icon: <FiFeather />,
     title: "Quiet Beginnings",
-    description:
-      "A small group of kind souls quietly serving communities with compassion.",
+    description: "A small group of kind souls quietly serving communities with compassion.",
   },
   {
     year: "2023",
@@ -40,15 +31,13 @@ const journeyData = [
     year: "2024",
     icon: <BsClipboardCheck />,
     title: "Legal Registration",
-    description:
-      "We officially registered the Suwa Diwiya Social Care Foundation as a non-profit.",
+    description: "We officially registered the Suwa Diwiya Social Care Foundation as a non-profit.",
   },
   {
     year: "Now",
     icon: <BsHeart />,
     title: "The Journey Continues...",
-    description:
-      "We continue to grow with small, impactful projects rooted in healing and hope.",
+    description: "We continue to grow with small, impactful projects rooted in healing and hope.",
   },
 ];
 
@@ -56,23 +45,18 @@ const About = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // For team carousel swipe handling
   const touchStartX = useRef(0);
-
-  // For timeline scroll container
   const timelineRef = useRef(null);
 
-  // Update team carousel index safely with animation lock
   const updateCarousel = (newIndex) => {
     if (isAnimating) return;
     setIsAnimating(true);
     const total = teamMembers.length;
     const index = (newIndex + total) % total;
     setCurrentIndex(index);
-    setTimeout(() => setIsAnimating(false), 800); // animation duration
+    setTimeout(() => setIsAnimating(false), 800);
   };
 
-  // Keyboard navigation for team carousel
   const handleKeyDown = (e) => {
     if (e.key === "ArrowLeft") updateCarousel(currentIndex - 1);
     if (e.key === "ArrowRight") updateCarousel(currentIndex + 1);
@@ -83,7 +67,6 @@ const About = () => {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [currentIndex]);
 
-  // Swipe detection for team carousel
   const handleSwipe = (start, end) => {
     const diff = start - end;
     if (Math.abs(diff) > 50) {
@@ -92,8 +75,7 @@ const About = () => {
     }
   };
 
-  // Timeline scroll functions for arrows
-  const scrollAmount = 400; // should match CSS card width + gap (adjust if needed)
+  const scrollAmount = 400;
 
   const scrollLeft = () => {
     if (timelineRef.current) {
@@ -129,7 +111,6 @@ const About = () => {
           <div className="carousel-track">
             {teamMembers.map((member, index) => {
               let className = "card";
-              // Calculate offset relative to current index, circularly
               const total = teamMembers.length;
               const offset = (index - currentIndex + total) % total;
 
@@ -244,30 +225,32 @@ const About = () => {
           </div>
         </section>
 
-<section className="journey-detail-section">
-  <div className="journey-detail-wrapper">
-    <div className="journey-image">
-      <img
-        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
-        alt="Healing hands helping community"
-      />
-    </div>
-    <div className="journey-description">
-      <h3>Healing Hands, Growing Hope</h3>
-      <p>
-        Our foundation believes in the power of small actions with big impacts. This
-        image captures the essence of our work — healing, nurturing, and supporting
-        those in need through compassionate care and mindful service. Together, we
-        plant seeds for a brighter tomorrow.
-      </p>
-    </div>
-  </div>
-</section>
+        {/* Journey Detail with Image */}
+        <section className="journey-detail-section">
+          <div className="journey-detail-wrapper">
+            <div className="journey-image">
+              <img
+                src="https://i.postimg.cc/2yhcsSwB/bag.jpg"
+                alt="Healing hands helping community"
+              />
+            </div>
+            <div className="journey-description">
+              <h3>Healing Hands, Growing Hope</h3>
+              <p>
+                Our foundation believes in the power of small actions with big impacts. This
+                image captures the essence of our work — healing, nurturing, and supporting
+                those in need through compassionate care and mindful service. Together, we
+                plant seeds for a brighter tomorrow.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Call to Action */}
         <div className="cta-buttons">
-        <a href="/contact-us" className="cta contact-button">
-        Contact Us
-      </a>
+          <a href="/contact-us" className="cta contact-button">
+            Contact Us
+          </a>
         </div>
       </div>
     </div>

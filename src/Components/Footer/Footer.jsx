@@ -8,7 +8,6 @@ import {
   FaWhatsapp,
 } from 'react-icons/fa6';
 import './Footer.css';
-import logo from '../assets/Logo.jpg';
 
 const Footer = ({ isAyurvedha }) => {
   return (
@@ -18,11 +17,12 @@ const Footer = ({ isAyurvedha }) => {
         {/* Logo and Foundation Name */}
         <div className="footer-section logo-section">
           <img
-            src={logo}
+            src="https://i.postimg.cc/HndXLWmM/Logo.jpg"
             alt="NGO Logo"
             className="footer-logo"
           />
           <p>Suwa Diwiya Social Care Foundation</p>
+
         </div>
 
         {/* Navigation Links */}

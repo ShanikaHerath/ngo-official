@@ -1,17 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
 
-// Logo and Gallery Images (local)
-import logoImage from '../assets/Logo.jpg';
-import gallery1 from '../assets/gallery/kan.jpg';
-import gallery2 from '../assets/gallery/lamai.jpg';
-import gallery3 from '../assets/gallery/bag.jpg';
-import gallery4 from '../assets/gallery/mahaseya.jpg';
-import gallery5 from '../assets/gallery/scloldpolathu.jpg';
-import gallery6 from '../assets/gallery/sriPada.jpg';
-import gallery7 from '../assets/gallery/thel2.jpg';
-import gallery8 from '../assets/gallery/ayu1.jpg';
-
 const Home = () => {
   const [navActive, setNavActive] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
@@ -27,9 +16,17 @@ const Home = () => {
   }, []);
 
   const galleryImages = [
-    gallery1, gallery2, gallery3, gallery4,
-    gallery5, gallery6, gallery7, gallery8,
+    "https://i.postimg.cc/2yhcsSwB/bag.jpg",
+    "https://i.postimg.cc/ZKzDr6bP/kan.jpg",
+    "https://i.postimg.cc/1tNJF3bY/lamai.jpg",
+    "https://i.postimg.cc/yNxfVPjK/mahaseya.jpg",
+    "https://i.postimg.cc/mkfVyGsZ/sclenter.jpg",
+    "https://i.postimg.cc/tTHVrRYc/project4.jpg",
+    "https://i.postimg.cc/VkptCW1m/project3.jpg",
+    "https://i.postimg.cc/5NPLxMRH/project1.jpg"
   ];
+
+  const logoImage = "https://i.postimg.cc/HndXLWmM/Logo.jpg";
 
   const handleGallerySpin = (direction) => {
     setAngle((prevAngle) => prevAngle + (direction === '-' ? -45 : 45));
@@ -96,40 +93,38 @@ const Home = () => {
       </section>
 
       {/* ==== VISION | MISSION | VALUES ACCORDION ==== */}
-<section className="vmv-accordion-section" id="vmv">
-  <h2 className="vmv-title">Our Vision, Mission & Values</h2>
+      <section className="vmv-accordion-section" id="vmv">
+        <h2 className="vmv-title">Our Vision, Mission & Values</h2>
 
-  <div className="vmv-accordion">
-    <details>
-      <summary> Vision</summary>
-      <p>A world where every life is lived with dignity, wellness, and peace.</p>
-    </details>
+        <div className="vmv-accordion">
+          <details>
+            <summary> Vision</summary>
+            <p>A world where every life is lived with dignity, wellness, and peace.</p>
+          </details>
 
-    <details>
-      <summary> Mission</summary>
-      <p>
-        Our mission is to promote social justice and fight against poverty, illiteracy, and health challenges.<br /><br />
-        Through holistic Ayurvedic healing, we aim to enhance health and well-being.<br /><br />
-        We are committed to empowering the next generation by supporting education for success in the digital age.<br /><br />
-        We promote innovative economic models, animal welfare, and environmental protection to build self-reliance and sustainability.<br /><br />
-        By encouraging community participation, we create a culture of unity and cooperation.
-      </p>
-    </details>
+          <details>
+            <summary> Mission</summary>
+            <p>
+              Our mission is to promote social justice and fight against poverty, illiteracy, and health challenges.<br /><br />
+              Through holistic Ayurvedic healing, we aim to enhance health and well-being.<br /><br />
+              We are committed to empowering the next generation by supporting education for success in the digital age.<br /><br />
+              We promote innovative economic models, animal welfare, and environmental protection to build self-reliance and sustainability.<br /><br />
+              By encouraging community participation, we create a culture of unity and cooperation.
+            </p>
+          </details>
 
-    <details>
-      <summary> Values</summary>
-      <ul>
-        <li>Integrity</li>
-        <li>Compassion</li>
-        <li>Empowerment</li>
-        <li>Sustainability</li>
-        <li>Unity</li>
-      </ul>
-    </details>
-  </div>
-</section>
-
-
+          <details>
+            <summary> Values</summary>
+            <ul>
+              <li>Integrity</li>
+              <li>Compassion</li>
+              <li>Empowerment</li>
+              <li>Sustainability</li>
+              <li>Unity</li>
+            </ul>
+          </details>
+        </div>
+      </section>
     </div>
   );
 };
