@@ -44,7 +44,7 @@ function AppContent() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/ngo-official">
       <AppContent />
     </Router>
   );
