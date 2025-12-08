@@ -8,9 +8,9 @@ import { BsClipboardCheck, BsHeart } from "react-icons/bs";
 const teamMembers = [
   { name: "Ven. Suditha Thero", role: "Founder", image: "https://i.postimg.cc/bwsbrF7m/founder.jpg" },
   { name: "C. Sooriyabandara", role: "Director", image: "https://i.postimg.cc/85hLDJ2D/director1.jpg" },
-  { name: "Emma Rodriguez", role: "Director", image: "https://i.postimg.cc/XYzfg0KM/director2.jpg" },
-  { name: "L. Thushari", role: "Director", image: "https://i.postimg.cc/G20vZJSq/director4.jpg" },
-  { name: "Lisa Anderson", role: "Director", image: "https://i.postimg.cc/hGQ9y3MX/director3.jpg" },
+  { name: "Emma", role: "Director", image: "https://i.postimg.cc/XYzfg0KM/director2.jpg" },
+  { name: "Emma", role: "Director", image: "https://i.postimg.cc/G20vZJSq/director4.jpg" },
+  { name: "L. Thushari", role: "Director", image: "https://i.postimg.cc/hGQ9y3MX/director3.jpg" },
   { name: "C. Lakmal", role: "Chief Organizer", image: "https://i.postimg.cc/wxQDGN5Q/organizer.jpg" },
 ];
 
