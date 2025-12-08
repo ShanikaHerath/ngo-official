@@ -2,6 +2,7 @@
   "name": "ngo-website",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ShanikaHerath.github.io/ngo-official",
   "dependencies": {
     "@tanstack/react-query": "^5.76.1",
     "cra-template": "1.2.0",
@@ -15,7 +16,8 @@
     "react-pageflip": "^2.0.3",
     "react-router-dom": "^7.1.0",
     "react-scripts": "5.0.1",
-    "styled-components": "^6.1.18"
+    "styled-components": "^6.1.18",
+    "web-vitals": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
