@@ -4,14 +4,38 @@ import { FiFeather } from "react-icons/fi";
 import { BiLeaf } from "react-icons/bi";
 import { BsClipboardCheck, BsHeart } from "react-icons/bs";
 
-// Team Members with online image links
+// Team Members
 const teamMembers = [
-  { name: "Ven. Suditha Thero", role: "Founder", image: "https://i.postimg.cc/bwsbrF7m/founder.jpg" },
-  { name: "C. Sooriyabandara", role: "Director", image: "https://i.postimg.cc/85hLDJ2D/director1.jpg" },
-  { name: "S. R. Herath", role: "Director", image: "https://i.postimg.cc/XYzfg0KM/director2.jpg" },
-  { name: "aaaa", role: "Director", image: "https://i.postimg.cc/G20vZJSq/director4.jpg" },
-  { name: "L. Thushari", role: "Director", image: "https://i.postimg.cc/hGQ9y3MX/director3.jpg" },
-  { name: "C. Lakmal", role: "Chief Organizer", image: "https://i.postimg.cc/wxQDGN5Q/organizer.jpg" },
+  {
+    name: "Ven. Suditha Thero",
+    role: "Founder",
+    image: "https://i.postimg.cc/bwsbrF7m/founder.jpg",
+  },
+  {
+    name: "C. D. Silva",
+    role: "Director",
+    image: "https://i.postimg.cc/85hLDJ2D/director1.jpg",
+  },
+  {
+    name: "S. R. Herath",
+    role: "Director",
+    image: "https://i.postimg.cc/XYzfg0KM/director2.jpg",
+  },
+  {
+    name: "aaaa",
+    role: "Director",
+    image: "https://i.postimg.cc/G20vZJSq/director4.jpg",
+  },
+  {
+    name: "L. Thushari",
+    role: "Director",
+    image: "https://i.postimg.cc/hGQ9y3MX/director3.jpg",
+  },
+  {
+    name: "C. Lakmal",
+    role: "Chief Organizer",
+    image: "https://i.postimg.cc/wxQDGN5Q/organizer.jpg",
+  },
 ];
 
 const journeyData = [
@@ -19,7 +43,8 @@ const journeyData = [
     year: "2019",
     icon: <FiFeather />,
     title: "Quiet Beginnings",
-    description: "A small group of kind souls quietly serving communities with compassion.",
+    description:
+      "A small group of kind souls quietly serving communities with compassion.",
   },
   {
     year: "2023",
@@ -31,13 +56,15 @@ const journeyData = [
     year: "2024",
     icon: <BsClipboardCheck />,
     title: "Legal Registration",
-    description: "We officially registered the Suwa Diwiya Social Care Foundation as a non-profit.",
+    description:
+      "We officially registered the Suwa Diwiya Social Care Foundation as a non-profit.",
   },
   {
     year: "Now",
     icon: <BsHeart />,
     title: "The Journey Continues...",
-    description: "We continue to grow with small, impactful projects rooted in healing and hope.",
+    description:
+      "We continue to grow with small, impactful projects rooted in healing and hope.",
   },
 ];
 
@@ -93,8 +120,9 @@ const About = () => {
     <div
       className="about-page"
       onTouchStart={(e) => (touchStartX.current = e.changedTouches[0].screenX)}
-      onTouchEnd={(e) => handleSwipe(touchStartX.current, e.changedTouches[0].screenX)}
-    >
+      onTouchEnd={(e) =>
+        handleSwipe(touchStartX.current, e.changedTouches[0].screenX)
+      }>
       <div className="about-wrapper">
         {/* OUR TEAM */}
         <h1 className="team-title">OUR TEAM</h1>
@@ -103,8 +131,7 @@ const About = () => {
           <button
             className="nav-arrow left"
             aria-label="Previous team member"
-            onClick={() => updateCarousel(currentIndex - 1)}
-          >
+            onClick={() => updateCarousel(currentIndex - 1)}>
             ‹
           </button>
 
@@ -125,8 +152,7 @@ const About = () => {
                 <div
                   key={index}
                   className={className}
-                  onClick={() => updateCarousel(index)}
-                >
+                  onClick={() => updateCarousel(index)}>
                   <img src={member.image} alt={`Team Member ${member.name}`} />
                 </div>
               );
@@ -136,8 +162,7 @@ const About = () => {
           <button
             className="nav-arrow right"
             aria-label="Next team member"
-            onClick={() => updateCarousel(currentIndex + 1)}
-          >
+            onClick={() => updateCarousel(currentIndex + 1)}>
             ›
           </button>
         </div>
@@ -154,8 +179,7 @@ const About = () => {
             <div
               key={index}
               className={`dot ${index === currentIndex ? "active" : ""}`}
-              onClick={() => updateCarousel(index)}
-            ></div>
+              onClick={() => updateCarousel(index)}></div>
           ))}
         </div>
 
@@ -163,30 +187,30 @@ const About = () => {
         <section className="story-section professional-section">
           <h2 className="section-title">Our Story</h2>
           <p className="section-paragraph">
-            What began as a humble effort by a small group of devoted individuals
-            has grown into a meaningful journey of service. For many years, our
-            team quietly engaged in social work, driven by compassion and a shared
-            vision for a better future. In 2023, that collective spirit gave birth
-            to a formal mission — the founding of the Suwa Diwiya Social Care
-            Foundation.
+            What began as a humble effort by a small group of devoted
+            individuals has grown into a meaningful journey of service. For many
+            years, our team quietly engaged in social work, driven by compassion
+            and a shared vision for a better future. In 2023, that collective
+            spirit gave birth to a formal mission — the founding of the Suwa
+            Diwiya Social Care Foundation.
             <br />
             <br />
             Under the guidance and leadership of our founder,{" "}
             <strong>Ven. Bedirekke Suditha Thero</strong>, the foundation was
             legally registered in 2024. Rooted in traditional values and the
-            healing wisdom of Ayurveda, we focus on community wellness, education,
-            and mindful service.
+            healing wisdom of Ayurveda, we focus on community wellness,
+            education, and mindful service.
             <br />
             <br />
             While our projects may not be large in scale, they are rich in
-            purpose. Every school supply given, every healing session shared, and
-            every act of kindness delivered is a step toward building a healthier,
-            more compassionate world.
+            purpose. Every school supply given, every healing session shared,
+            and every act of kindness delivered is a step toward building a
+            healthier, more compassionate world.
             <br />
             <br />
-            <strong>We invite you to join us</strong> — as a volunteer, supporter,
-            or friend — in this journey of care and connection. Together, we can
-            sow seeds of healing and hope across the world.
+            <strong>We invite you to join us</strong> — as a volunteer,
+            supporter, or friend — in this journey of care and connection.
+            Together, we can sow seeds of healing and hope across the world.
           </p>
           <br />
           <a href="/get-involved" className="cta donate-button">
@@ -201,15 +225,13 @@ const About = () => {
           <button
             className="timeline-arrow left"
             aria-label="Scroll Left"
-            onClick={scrollLeft}
-          >
+            onClick={scrollLeft}>
             &lt;
           </button>
           <button
             className="timeline-arrow right"
             aria-label="Scroll Right"
-            onClick={scrollRight}
-          >
+            onClick={scrollRight}>
             &gt;
           </button>
 
@@ -237,10 +259,11 @@ const About = () => {
             <div className="journey-description">
               <h3>Healing Hands, Growing Hope</h3>
               <p>
-                Our foundation believes in the power of small actions with big impacts. This
-                image captures the essence of our work — healing, nurturing, and supporting
-                those in need through compassionate care and mindful service. Together, we
-                plant seeds for a brighter tomorrow.
+                Our foundation believes in the power of small actions with big
+                impacts. This image captures the essence of our work — healing,
+                nurturing, and supporting those in need through compassionate
+                care and mindful service. Together, we plant seeds for a
+                brighter tomorrow.
               </p>
             </div>
           </div>

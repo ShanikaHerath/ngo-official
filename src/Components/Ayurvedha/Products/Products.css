@@ -1,0 +1,312 @@
+/* --- 1. Variables & Color Palette --- */
+:root {
+  --primary-green: #2d6a4f;   /* Deep herbal green */
+  --secondary-green: #40916c; /* Lighter green for hover states */
+  --accent-gold: #d4a373;     /* Gold for categories/accents */
+  --bg-cream: #fefae0;        /* Soft background color */
+  --text-dark: #1b4332;       /* Dark green text */
+  --white: #ffffff;
+  --gray-light: #eeeeee;
+}
+
+/* --- 2. Main Layout --- */
+.products-container {
+  padding: 2rem;
+  background-color: var(--bg-cream);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+.products-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-dark);
+}
+
+.products-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.products-header p {
+  font-size: 1.1rem;
+  color: var(--secondary-green);
+}
+
+/* Grid Layout */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- 3. Product Card Styles --- */
+.product-card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Placeholder */
+.card-image-placeholder {
+  height: 200px;
+  background-color: #e9edc9; /* Light sage green background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-green);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Card Body */
+.card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.category-tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-gold);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.product-card h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--text-dark);
+}
+
+.sinhala-title {
+  margin: 4px 0 12px 0;
+  font-size: 1rem;
+  color: var(--secondary-green);
+  font-weight: normal;
+}
+
+.product-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1; /* Pushes footer to bottom */
+}
+
+/* Card Footer */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  border-top: 1px solid var(--gray-light);
+  padding-top: 1rem;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* "Buy Now" Button */
+.add-btn {
+  background-color: var(--primary-green);
+  color: var(--white);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.add-btn:hover {
+  background-color: var(--secondary-green);
+}
+
+/* "Ingredients" Button (Outline) */
+.outline-btn {
+  background-color: transparent;
+  color: var(--primary-green);
+  border: 1px solid var(--primary-green);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.outline-btn:hover {
+  background-color: #e9edc9;
+}
+
+/* --- 4. Popup Modal Styles --- */
+
+/* Dark Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Modal Box */
+.modal-content {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  animation: slideUp 0.3s ease;
+}
+
+.modal-content h2 {
+  color: var(--primary-green);
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1.8rem;
+}
+
+.modal-sinhala-subtitle {
+  color: var(--accent-gold);
+  margin-top: 0;
+  font-weight: normal;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--gray-light);
+  padding-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.modal-body p {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+/* Ingredient List */
+.ingredient-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 2rem;
+  background-color: #f9f9f9;
+  padding: 1.5rem 1.5rem 1.5rem 2.5rem; /* extra padding for bullets */
+  border-radius: 8px;
+  color: #444;
+}
+
+.ingredient-list li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* Close 'X' Button (Top Right) */
+.close-modal-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s;
+}
+
+.close-modal-btn:hover {
+  color: var(--text-dark);
+}
+
+/* Bottom Close Button */
+.modal-action-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-green);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.modal-action-btn:hover {
+  background-color: var(--secondary-green);
+}
+
+/* --- 5. Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* --- 6. Responsive Styles --- */
+@media (max-width: 600px) {
+  .products-container {
+    padding: 1rem;
+  }
+  
+  .products-header h1 {
+    font-size: 2rem;
+  }
+  
+  .card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .button-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .add-btn, .outline-btn {
+    flex: 1; /* Make buttons equal width on mobile */
+    text-align: center;
+  }
+}
