@@ -186,23 +186,3 @@
   color: var(--white);
   transform: scale(1.02);
 }
-
-/* === MOBILE RESPONSIVE === */
-@media (max-width: 500px) {
-  .cta-buttons {
-    flex-direction: column;
-  }
-
-  .donate-btn,
-  .secondary-btn {
-    width: 100%;
-  }
-
-  .donate-hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .donate-hero p {
-    font-size: 1rem;
-  }
-}

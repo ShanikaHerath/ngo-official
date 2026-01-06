@@ -659,18 +659,3 @@
   background-color: #005f5c;
 }
 
-/* ✅ Optional: make things scale slightly better on big screens */
-@media (min-width: 768px) {
-  .journey-description h3 {
-    font-size: 2rem;
-  }
-
-  .journey-description p {
-    font-size: 1.2rem;
-  }
-
-  .journey-detail-wrapper {
-    padding: 0 2rem;
-  }
-}
-

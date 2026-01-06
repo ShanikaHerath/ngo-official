@@ -1,0 +1,146 @@
+/* Variables for Earthy Ayurveda Theme */
+:root {
+  --primary-green: #3a5a40;
+  --secondary-green: #588157;
+  --light-bg: #fdfbf7;
+  --card-bg: #ffffff;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --accent-gold: #dad7cd;
+  --highlight-gold: #a3b18a;
+}
+
+.campaign-section {
+  background-color: var(--light-bg);
+  padding: 4rem 2rem;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* --- HEADER STYLING (Safe from overlap) --- */
+.header-content {
+  text-align: center;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* Controls space between elements */
+}
+
+.header-content h1 {
+  color: var(--primary-green);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.tagline {
+  display: inline-block;
+  background-color: var(--highlight-gold);
+  color: #fff;
+  padding: 0.25rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: var(--text-light);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0;
+}
+
+.divider {
+  height: 4px;
+  width: 80px;
+  background-color: var(--secondary-green);
+  border-radius: 2px;
+  margin-top: 0.5rem;
+}
+
+/* Grid Layout */
+.campaign-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+/* Card Styling */
+.service-card {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 20px rgba(58, 90, 64, 0.08);
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(58, 90, 64, 0.15);
+  border-color: var(--accent-gold);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  background: var(--light-bg);
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid var(--accent-gold);
+  color: var(--primary-green);
+}
+
+.card-content h3 {
+  color: var(--primary-green);
+  margin: 0 0 1rem 0;
+  font-size: 1.35rem;
+}
+
+.card-content p {
+  color: var(--text-light);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .campaign-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .header-content h1 {
+    font-size: 2rem;
+  }
+  
+  .campaign-grid {
+    gap: 1.5rem;
+  }
+}

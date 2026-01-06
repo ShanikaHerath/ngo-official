@@ -21,7 +21,7 @@ const GetInvolved = () => {
               <p>Become part of our dedicated team and help create positive change.</p>
 
             <a
-              href="https://your-google-auth-link.com" // Replace with actual OAuth link
+              href="https://forms.gle/ZpPBjoEkZ36R7qgi6"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-button"

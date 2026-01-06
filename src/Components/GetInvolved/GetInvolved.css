@@ -226,36 +226,6 @@
   box-shadow: var(--shadow-md);
   outline: none;
 }
-
-/* 🎯 Responsive Design */
-@media (max-width: 768px) {
-  .get-involved {
-    padding: 1.5rem 1rem;
-  }
-
-  .option-card {
-    padding: 1.5rem;
-  }
-
-  .option-card h2 {
-    font-size: 1.4rem;
-  }
-
-  .get-involved-contact {
-    padding: 2rem 1rem;
-  }
-
-  .get-involved-contact h2 {
-    font-size: 1.8rem;
-  }
-
-  .contact-button {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.05rem;
-  }
-}
-
 /* 🔮 Fade In Animation */
 @keyframes fadeIn {
   from {

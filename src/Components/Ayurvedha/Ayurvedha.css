@@ -16,16 +16,9 @@
   flex-direction: column;
   gap: 2rem;
 }
-
-@media (min-width: 768px) {
-  .bars-container {
-    flex-direction: row;
-  }
-}
-
 .ayurvedha-bar {
   flex: 1;
-  background: linear-gradient(145deg,#81c784, #0cbe12,  #86fced);
+  background: linear-gradient(145deg, #81c784, #0cbe12, #86fced);
   padding: 3rem 2rem;
   border-radius: 16px;
   text-decoration: none;
@@ -35,12 +28,12 @@
   flex-direction: column;
   justify-content: center;
   height: 300px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .ayurvedha-bar:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .ayurvedha-bar h2 {
