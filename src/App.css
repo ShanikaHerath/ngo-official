@@ -1,0 +1,35 @@
+/* index.css */
+
+/* 1. Reset Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box; /* This prevents padding from breaking your layout */
+}
+
+/* 2. Global Body Settings */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scrollbar on mobile */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 3. Global Typography for Mobile */
+html {
+  font-size: 16px; /* Base size */
+}
+
+/* On small screens, slightly reduce text size globally */
+@media (max-width: 600px) {
+  html {
+    font-size: 14px; 
+  }
+}
+
+/* 4. Make Images Responsive by Default */
+img, video, iframe {
+  max-width: 100%; /* Never let an image overflow its container */
+  height: auto;    /* Maintain aspect ratio */
+  display: block;
+}
