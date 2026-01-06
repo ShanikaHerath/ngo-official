@@ -14,18 +14,19 @@ const Footer = ({ isAyurvedha }) => {
     <footer className={`footer ${isAyurvedha ? 'footer-green' : ''}`}>
       <div className="footer-container">
 
-        {/* Logo and Foundation Name */}
+        {/* 1. Logo Section */}
         <div className="footer-section logo-section">
           <img
             src="https://i.postimg.cc/HndXLWmM/Logo.jpg"
             alt="NGO Logo"
             className="footer-logo"
           />
-          <p>Suwa Diwiya Social Care Foundation</p>
-
+          <p style={{ fontWeight: 'bold', maxWidth: '200px' }}>
+            Suwa Diwiya Social Care Foundation
+          </p>
         </div>
 
-        {/* Navigation Links */}
+        {/* 2. Navigation Links */}
         <div className="footer-section links-section">
           <h4>Quick Links</h4>
           <ul>
@@ -38,15 +39,15 @@ const Footer = ({ isAyurvedha }) => {
           </ul>
         </div>
 
-        {/* Contact Info */}
+        {/* 3. Contact Info */}
         <div className="footer-section contact-section">
           <h4>Contact</h4>
           <p>Email: info@suwadiwiya.org</p>
           <p>Phone: +94 77 123 4567</p>
-          <p>Address: 123 Kindness Road, Colombo, Sri Lanka</p>
+          <p>Address: 123 Kindness Road,<br/>Colombo, Sri Lanka</p>
         </div>
 
-        {/* Social Icons */}
+        {/* 4. Social Icons */}
         <div className="footer-section social-section">
           <h4>Follow Us</h4>
           <div className="social-icons">
@@ -70,7 +71,6 @@ const Footer = ({ isAyurvedha }) => {
 
       </div>
 
-      {/* Footer Bottom */}
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Suwa Diwiya. All rights reserved.</p>
       </div>
