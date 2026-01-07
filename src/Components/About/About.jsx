@@ -22,9 +22,24 @@ const teamMembers = [
     image: "https://i.postimg.cc/XYzfg0KM/director2.jpg",
   },
   {
-    name: "aaaa",
+    name: "K. M. C. Gunasekara",
     role: "Director",
     image: "https://i.postimg.cc/G20vZJSq/director4.jpg",
+  },
+  {
+    name: "D. G. S. Karunarathne",
+    role: "Director",
+    image: "",
+  },
+  {
+    name: "S. Herath",
+    role: "IT Director",
+    image: "https://i.postimg.cc/XYzfg0KM/director2.jpg",
+  },
+  {
+    name: "S. Dissanayake",
+    role: "Executive Manager",
+    image: "",
   },
   {
     name: "L. Thushari",
@@ -36,6 +51,7 @@ const teamMembers = [
     role: "Chief Organizer",
     image: "https://i.postimg.cc/wxQDGN5Q/organizer.jpg",
   },
+
 ];
 
 const journeyData = [

@@ -67,9 +67,6 @@ const Home = () => {
 
       {/* ==== 3D CAROUSEL GALLERY SECTION ==== */}
       <h1 className="title">What We Did?</h1>
-      <p className="subtitle">
-        Explore our gallery showcasing the impact of our projects and initiatives.
-      </p>
       <section className="carousel-container">
         <div id="carousel">
           <figure

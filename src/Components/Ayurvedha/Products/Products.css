@@ -12,7 +12,7 @@
 /* --- 2. Main Layout --- */
 .products-container {
   padding: 2rem;
-  background-color: var(--bg-cream);
+  background-color: #ffffff;
   min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

@@ -361,16 +361,6 @@ img {
   -webkit-text-fill-color: transparent;
 }
 
-.subtitle {
-  font-size: 18px;
-  color: var(--dark400);
-  line-height: 28px;
-  margin: -40px auto 40px auto;
-  max-width: 700px;
-  text-align: center;
-  font-weight: 500;
-}
-
 
 /* === 3D Carousel Styles === */
 
