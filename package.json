@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    
     "@tanstack/react-query": "^5.76.1",
     "cra-template": "1.2.0",
     "emailjs-com": "^3.2.0",
