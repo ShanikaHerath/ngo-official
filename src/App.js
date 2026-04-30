@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 
 import Home from './Components/Home/Home';
 import About from './Components/About/About';
@@ -19,34 +20,33 @@ import './App.css';
 
 function AppContent() {
   const location = useLocation();
-  const isAyurvedhaPage = location.pathname.startsWith('/ayurvedha');
 
   return (
     <div className="App">
       <Navbar />
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/get-involved" element={<GetInvolved />} />
-        <Route path="/contact-us" element={<ContactUs />} />
-        <Route path="/ayurvedha" element={<Ayurvedha />} />
-        <Route path="/ayurvedha/classes" element={<Classes />} />
-        <Route path="/ayurvedha/campaign" element={<Campaign />} />
-        <Route path="/ayurvedha/products" element={<Products />} />
-        <Route path="/donate" element={<Donate />} />
-      </Routes>
-      <Footer isAyurvedha={isAyurvedhaPage} />
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/get-involved" element={<GetInvolved />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/ayurvedha" element={<Ayurvedha />} />
+          <Route path="/ayurvedha/classes" element={<Classes />} />
+          <Route path="/ayurvedha/campaign" element={<Campaign />} />
+          <Route path="/ayurvedha/products" element={<Products />} />
+          <Route path="/donate" element={<Donate />} />
+        </Routes>
+      </AnimatePresence>
+      <Footer />
     </div>
   );
 }
 
 function App() {
- const basename = '/';
-
   return (
-    <Router basename={basename}>
+    <Router>
       <AppContent />
     </Router>
   );
