@@ -43,7 +43,7 @@ function AppContent() {
 }
 
 function App() {
-  const basename = process.env.NODE_ENV === 'production' ? '/ngo-official' : '/';
+ const basename = '/';
 
   return (
     <Router basename={basename}>

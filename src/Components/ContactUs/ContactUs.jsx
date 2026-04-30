@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
-import emailjs from 'emailjs-com'; // ✅ Make sure this package is installed
+import emailjs from 'emailjs-com';
+import { motion } from 'framer-motion';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import './ContactUs.css';
 
 const ContactUs = () => {
@@ -7,14 +9,13 @@ const ContactUs = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs.sendForm(
-      'service_lcdm5vy',         // 🔁 Replace with your actual Service ID
-      'template_92zmnzl',        // 🔁 Replace with your actual Template ID
+      'service_lcdm5vy',
+      'template_92zmnzl',
       form.current,
-      '9r-eqLyBbM_pMgY_H'        // 🔁 Replace with your actual Public Key
+      '9r-eqLyBbM_pMgY_H'
     ).then(
-      (result) => {
+      () => {
         alert("✅ Message sent successfully!");
         form.current.reset();
       },
@@ -26,37 +27,76 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="contact-us">
-      <header className="contact-us-header">
-        <h1>Contact Us</h1>
-        <p>We'd love to hear from you! Reach out with any questions, comments, or to get involved.</p>
-      </header>
+    <div className="contact-page">
+      <div className="container">
+        <motion.div 
+          className="contact-header"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <h1>Let's Connect</h1>
+          <p>Have questions or want to get involved? We're here to help.</p>
+        </motion.div>
 
-      <section className="contact-us-info">
-        <h2>Our Contact Information</h2>
-        <p><strong>Email:</strong> info@suwadiwiya.org</p>
-        <p><strong>Phone:</strong> +94 11 234 5678</p>
-        <p><strong>Address:</strong> 123 Main Street, Colombo, Sri Lanka</p>
-      </section>
+        <div className="contact-grid">
+          <motion.div 
+            className="contact-info-cards"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="info-card">
+              <div className="icon-box"><Mail /></div>
+              <div>
+                <h4>Email Us</h4>
+                <p>info@suwadiwiya.org</p>
+              </div>
+            </div>
+            <div className="info-card">
+              <div className="icon-box"><Phone /></div>
+              <div>
+                <h4>Call Us</h4>
+                <p>+94 11 234 5678</p>
+              </div>
+            </div>
+            <div className="info-card">
+              <div className="icon-box"><MapPin /></div>
+              <div>
+                <h4>Visit Us</h4>
+                <p>123 Main Street, Colombo, Sri Lanka</p>
+              </div>
+            </div>
+          </motion.div>
 
-      <section className="contact-us-form">
-        <h2>Send Us a Message</h2>
-        <form ref={form} onSubmit={sendEmail}>
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" className="submit-button">Send Message</button>
-        </form>
-      </section>
+          <motion.div 
+            className="contact-form-wrapper"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <form ref={form} onSubmit={sendEmail} className="premium-form">
+              <div className="form-row">
+                <div className="input-group">
+                  <label>Full Name</label>
+                  <input type="text" name="name" placeholder="John Doe" required />
+                </div>
+                <div className="input-group">
+                  <label>Email Address</label>
+                  <input type="email" name="email" placeholder="john@example.com" required />
+                </div>
+              </div>
+              <div className="input-group">
+                <label>Message</label>
+                <textarea name="message" rows="6" placeholder="How can we help you?" required></textarea>
+              </div>
+              <button type="submit" className="submit-btn">
+                <span>Send Message</span>
+                <Send size={18} />
+              </button>
+            </form>
+          </motion.div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,188 +1,167 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
-
-:root {
-  --primary: #007373;
-  --primary-dark: #005c5c;
-  --secondary: #46a29f;
-  --bg: #f0f4f5;
-  --text: #222;
-  --muted: #555;
-  --white: #ffffff;
-  --radius: 12px;
-  --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  --transition: 0.3s ease-in-out;
-}
-
-/* === PAGE BASE === */
 .donate-page {
-  padding: 4rem 1rem;
-  font-family: 'Quicksand', sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  padding: 150px 0 100px;
+  background: var(--bg-soft);
 }
 
-/* === HERO === */
-.donate-hero {
+.donate-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
 }
 
-.donate-hero h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  color: var(--primary);
-  font-weight: 700;
-  background: linear-gradient(45deg, var(--primary), var(--secondary));
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.donate-hero p {
-  font-size: 1.2rem;
-  color: var(--muted);
-  max-width: 650px;
-  margin: 1.25rem auto 0;
-  line-height: 1.6;
-}
-
-/* === METHOD LAYOUT === */
-.donate-methods {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
-  margin-top: 2rem;
-}
-
-/* === CARD BOX BASE === */
-.donate-box {
-  background: var(--white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 2rem 2rem 2.5rem;
-  text-align: center;
-  transition: var(--transition);
-  border: 1px solid #e4e4e4;
-}
-
-.donate-box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
-}
-
-/* === QR STYLE IF USED === */
-.qr-code {
-  width: 160px;
-  margin: 1rem auto;
-  display: block;
-  border-radius: 10px;
-  border: 2px solid #ddd;
-}
-
-/* === BANK TRANSFER GRADIENT BOX === */
-.bank-transfer-box {
-  background: linear-gradient(135deg, #007373, #46a29f);
-  color: #eaffff;
-  border-radius: var(--radius);
-  padding: 2.5rem 2rem;
-  box-shadow: var(--shadow);
-  text-align: left;
-  position: relative;
-}
-
-.bank-transfer-box h2 {
-  font-size: 1.75rem;
+.heart-icon {
+  color: #e63946;
   margin-bottom: 1.5rem;
-  text-align: center;
-  color: #ffffff;
+  display: inline-block;
+  animation: pulse 2s infinite;
 }
 
-.bank-details {
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.donate-header h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.donate-header p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.donate-grid {
   display: grid;
-  gap: 1.25rem;
-  font-size: 1.05rem;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: stretch;
 }
 
-.bank-details-row {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 1rem;
-  border-left: 4px solid #ffffff88;
-  border-radius: 8px;
+.donate-card {
+  background: white;
+  padding: 3rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-premium);
+  display: flex;
+  flex-direction: column;
 }
 
-.bank-details-row label {
-  display: block;
-  font-size: 0.9rem;
-  color: #e0f7f7;
-  font-weight: bold;
-  margin-bottom: 0.25rem;
-}
-
-.bank-details-row span {
-  font-size: 1.1rem;
-  color: #ffffff;
-  font-weight: 600;
-  word-break: break-word;
-}
-
-
-/* === WHITE CTA BOX === */
-.highlight-box {
-  background: var(--white);
-  color: var(--text);
-}
-
-.highlight-box h2 {
-  font-size: 1.8rem;
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
   color: var(--primary);
 }
 
-.highlight-box p {
-  margin-top: 0.75rem;
-  color: var(--muted);
+.card-header h3 {
+  font-size: 1.6rem;
+  color: var(--primary-dark);
 }
 
-/* === CTA BUTTON GROUP === */
-.cta-buttons {
+.bank-info {
+  flex-grow: 1;
+}
+
+.info-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.info-row span {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+}
+
+.info-row strong {
+  font-size: 1.1rem;
+  color: var(--primary-dark);
+}
+
+.card-footer {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-light);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.cta-card {
+  background: var(--primary-dark);
+  color: white;
+}
+
+.cta-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+}
+
+.cta-card p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.cta-actions {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 
-/* === PRIMARY BUTTON === */
-.donate-btn {
-  padding: 0.8rem 1.6rem;
+.donate-now-btn {
   background: var(--primary);
-  color: var(--white);
-  border: none;
-  border-radius: var(--radius);
-  font-size: 1rem;
+  color: white;
+  padding: 1.2rem;
+  border-radius: 15px;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.support-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 1.2rem;
+  border-radius: 15px;
   font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition);
-  box-shadow: 0 6px 16px rgba(0, 115, 115, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.donate-btn:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
+.impact-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* === SECONDARY BUTTONS === */
-.secondary-btn {
-  padding: 0.7rem 1.4rem;
-  background: transparent;
-  color: var(--primary);
-  border: 2px solid var(--primary);
-  border-radius: var(--radius);
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition);
+.stat strong {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--accent);
 }
 
-.secondary-btn:hover {
-  background: var(--primary);
-  color: var(--white);
-  transform: scale(1.02);
+.stat span {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 968px) {
+  .donate-grid { grid-template-columns: 1fr; }
+  .donate-card { padding: 2rem; }
 }

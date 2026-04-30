@@ -76,7 +76,9 @@ const Products = () => {
     <div className="products-container">
       <header className="products-header">
         <h1>Ayurvedic Wellness</h1>
-        <p>100% Natural remedies crafted with traditional Sri Lankan herbs.</p>
+        <p>100% Natural remedies crafted with traditional Sri Lankan herbs.
+         Our products are crafted using 100% traditional methods, free from all harmful chemicals. We believe in purity for your body and health for our nation. That is why every purchase is a direct contribution to the Suwa Diviya Social Care Foundation.
+        </p>
       </header>
 
       <div className="product-grid">

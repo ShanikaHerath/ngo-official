@@ -1,25 +1,110 @@
+/* index.css - Global Design System */
+
 :root {
+  /* Colors */
+  --primary: #2e7d65;
+  --primary-light: #40916c;
+  --primary-dark: #1b4332;
+  --accent: #d4a373;
+  --bg-soft: #fdfaf5;
+  --white: #ffffff;
+  --text-main: #2d3436;
+  --text-muted: #636e72;
+  
+  /* Glassmorphism */
+  --glass: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  
+  /* Shadows & Radius */
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.05);
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-xl: 40px;
+
+  /* Fonts */
   --font-body: 'Poppins', sans-serif;
   --font-heading: 'Quicksand', sans-serif;
+
+  /* Transitions */
+  --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html { font-size: 14px; }
 }
 
 body {
   font-family: var(--font-body);
-  background: var(--bg);
-  color: var(--text);
-  margin: 0;
-  padding: 0;
+  background: var(--bg-soft);
+  color: var(--text-main);
   line-height: 1.6;
-  scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  margin-bottom: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-p, span, li, a, input, button {
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
   font-family: var(--font-body);
+}
+
+/* Global Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--primary);
+  color: white;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 10px 20px rgba(46, 125, 101, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  background: var(--primary-dark);
+  box-shadow: 0 15px 30px rgba(46, 125, 101, 0.3);
 }
