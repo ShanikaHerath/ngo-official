@@ -1,108 +1,85 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 import './Navbar.css';
-
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(window.scrollY);
-  const [pendingScrollId, setPendingScrollId] = useState(null);
-
+  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
-  const toggleMenu = () => setMenuOpen(prev => !prev);
-  const closeMenu = () => setMenuOpen(false);
-
-  // Scroll to element by id with offset (to account for fixed navbar)
-  const handleScrollTo = (id) => {
-    closeMenu();
-    const offset = 80;
-
-    if (location.pathname !== '/') {
-      setPendingScrollId(id);
-      navigate('/');
-    } else {
-      const element = document.getElementById(id);
-      if (element) {
-        const y = element.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-    }
-  };
-
-  // Handle pending scroll after navigation to home page
   useEffect(() => {
-    if (location.pathname === '/' && pendingScrollId) {
-      const offset = 80;
-      const element = document.getElementById(pendingScrollId);
-      if (element) {
-        const y = element.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-        setPendingScrollId(null);
-      }
-    }
-  }, [location, pendingScrollId]);
-
-  // Show/hide navbar on scroll up/down
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowNavbar(window.scrollY <= lastScrollY);
-      setLastScrollY(window.scrollY);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
-  // Lock body scroll when menu is open (for mobile menu)
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
-  }, [menuOpen]);
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
 
-  const isAyurvedhaPage = location.pathname.startsWith('/ayurvedha');
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'Get Involved', path: '/get-involved' },
+    { name: 'Ayurvedha', path: '/ayurvedha' },
+    { name: 'Contact Us', path: '/contact-us' },
+  ];
 
   return (
-    <header className={`navbar ${isAyurvedhaPage ? 'ayurvedha-navbar' : 'home'} ${showNavbar ? 'visible' : 'hidden'}`}>
+    <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
-        {/* Logo */}
-        <div
-          className="logo"
-          onClick={() => handleScrollTo('home')}
-          style={{ cursor: 'pointer' }}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => { if (e.key === 'Enter') handleScrollTo('home'); }}
-          aria-label="Scroll to top"
-        >
-          <img
-            src="https://i.postimg.cc/HndXLWmM/Logo.jpg"
-            alt="NGO Logo"
-            className="logo-img"
-          />
-        </div>
+        <Link to="/" className="logo" onClick={closeMenu}>
+          <img src="https://i.postimg.cc/HndXLWmM/Logo.jpg" alt="Logo" />
+          <span>Suwa Diwiya</span>
+        </Link>
 
-        {/* Menu toggle button */}
-        <button
-          className="menu-toggle"
-          onClick={toggleMenu}
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={menuOpen}
-        >
-          {menuOpen ? '✖' : '☰'}
-        </button>
-
-        {/* Navigation Links */}
-        <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          <Link to="/" onClick={closeMenu}>Home</Link>
-          <Link to="/about" onClick={closeMenu}>About</Link>
-          <Link to="/projects" onClick={closeMenu}>Projects</Link>
-          <Link to="/get-involved" onClick={closeMenu}>Get Involved</Link>
-          <Link to="/ayurvedha" onClick={closeMenu}>Ayurvedha</Link>
-          <Link to="/contact-us" onClick={closeMenu}>Contact Us</Link>
+        {/* Desktop Nav */}
+        <nav className="desktop-nav">
+          {navLinks.map((link) => (
+            <Link 
+              key={link.name} 
+              to={link.path} 
+              className={location.pathname === link.path ? 'active' : ''}
+            >
+              {link.name}
+            </Link>
+          ))}
+          <Link to="/donate" className="donate-btn">Donate</Link>
         </nav>
+
+        {/* Mobile Toggle */}
+        <button className="mobile-toggle" onClick={toggleMenu}>
+          {menuOpen ? <X /> : <Menu />}
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.nav 
+            className="mobile-nav"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            {navLinks.map((link) => (
+              <Link 
+                key={link.name} 
+                to={link.path} 
+                onClick={closeMenu}
+                className={location.pathname === link.path ? 'active' : ''}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <Link to="/donate" className="donate-btn-mobile" onClick={closeMenu}>Donate</Link>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
