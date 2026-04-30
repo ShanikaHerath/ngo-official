@@ -8,14 +8,7 @@
   transition: var(--transition-smooth);
 }
 
-.navbar.scrolled {
-  padding: 0.8rem 0;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(15px);
-  box-shadow: var(--shadow-sm);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
+/* Default state (White pages or Scrolled) */
 .navbar-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -28,31 +21,33 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
   text-decoration: none;
 }
 
 .logo img {
-  height: 45px;
-  width: 45px;
+  height: 48px;
+  width: 48px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid white;
   box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
 }
 
 .logo span {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: var(--primary-dark);
   letter-spacing: -0.5px;
+  transition: var(--transition-smooth);
 }
 
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
 }
 
 .desktop-nav a {
@@ -60,22 +55,25 @@
   font-weight: 600;
   color: var(--text-main);
   position: relative;
-}
-
-.desktop-nav a:hover,
-.desktop-nav a.active {
-  color: var(--primary);
+  padding: 0.5rem 0;
+  transition: var(--transition-smooth);
 }
 
 .desktop-nav a::after {
   content: '';
   position: absolute;
-  bottom: -5px;
-  left: 0;
+  bottom: 0;
+  left: 50%;
   width: 0;
   height: 2px;
   background: var(--primary);
   transition: var(--transition-smooth);
+  transform: translateX(-50%);
+}
+
+.desktop-nav a:hover,
+.desktop-nav a.active {
+  color: var(--primary);
 }
 
 .desktop-nav a.active::after,
@@ -84,63 +82,164 @@
 }
 
 .donate-btn {
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   color: white !important;
   padding: 0.7rem 1.8rem;
-  border-radius: 50px;
+  border-radius: 100px;
   font-weight: 700;
-  box-shadow: 0 4px 15px rgba(46, 125, 101, 0.2);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 8px 20px rgba(46, 125, 101, 0.25);
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.donate-btn svg {
+  transition: transform 0.3s ease;
 }
 
 .donate-btn:hover {
-  background: var(--primary-dark) !important;
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(46, 125, 101, 0.4);
 }
 
-.mobile-toggle {
-  display: none;
+.donate-btn:hover svg {
+  transform: scale(1.2);
+  animation: heartPulse 0.8s infinite;
+}
+
+@keyframes heartPulse {
+  0% { transform: scale(1.2); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1.2); }
+}
+
+/* Home Page Initial State (Dark Green Background) */
+.navbar.is-home:not(.scrolled) .logo span {
+  color: white;
+}
+
+.navbar.is-home:not(.scrolled) .desktop-nav a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar.is-home:not(.scrolled) .desktop-nav a::after {
+  background: white;
+}
+
+.navbar.is-home:not(.scrolled) .desktop-nav a:hover,
+.navbar.is-home:not(.scrolled) .desktop-nav a.active {
+  color: white;
+}
+
+.navbar.is-home:not(.scrolled) .mobile-toggle {
+  color: white;
+}
+
+.navbar.is-home:not(.scrolled) .donate-btn {
+  background: white;
+  color: var(--primary-dark) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.navbar.is-home:not(.scrolled) .donate-btn:hover {
+  background: var(--accent);
+  color: var(--primary-dark) !important;
+  box-shadow: 0 12px 30px rgba(212, 163, 115, 0.4);
+}
+
+/* Scrolled State */
+.navbar.scrolled {
+  padding: 0.8rem 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.navbar.scrolled .logo span {
   color: var(--primary-dark);
 }
 
-/* Mobile Nav */
+.navbar.scrolled .desktop-nav a {
+  color: var(--text-main);
+}
+
+/* Mobile Styling */
+.mobile-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--primary-dark);
+  transition: var(--transition-smooth);
+}
+
 .mobile-nav {
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
   background: white;
-  padding: 2rem;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 .mobile-nav a {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
   color: var(--text-main);
   text-align: center;
+  padding: 0.5rem;
+  border-radius: 12px;
+  transition: var(--transition-smooth);
+}
+
+.mobile-nav a:hover,
+.mobile-nav a.active {
+  background: var(--bg-soft);
+  color: var(--primary);
 }
 
 .donate-btn-mobile {
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   color: white !important;
   padding: 1rem;
-  border-radius: 12px;
+  border-radius: 15px;
   text-align: center;
-  font-weight: 700;
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  box-shadow: 0 10px 20px rgba(46, 125, 101, 0.2);
 }
 
 @media (max-width: 968px) {
   .desktop-nav { display: none; }
-  .mobile-toggle { display: block; }
+  .mobile-toggle { display: flex; align-items: center; }
+  .navbar { padding: 1rem 0; }
+}
+
+@media (max-width: 480px) {
   .logo span { font-size: 1.2rem; }
+  .logo img { height: 40px; width: 40px; }
+  .navbar-container { padding: 0 1.5rem; }
 }
 
 @media (max-width: 360px) {
-  .logo span { font-size: 1rem; }
+  .logo span { font-size: 1.1rem; }
   .logo img { height: 35px; width: 35px; }
   .navbar-container { padding: 0 1rem; }
 }

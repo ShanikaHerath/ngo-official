@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Heart } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -28,8 +28,10 @@ const Navbar = () => {
     { name: 'Contact Us', path: '/contact-us' },
   ];
 
+  const isHome = location.pathname === '/';
+
   return (
-    <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <header className={`navbar ${scrolled ? 'scrolled' : ''} ${isHome ? 'is-home' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="logo" onClick={closeMenu}>
           <img src="https://i.postimg.cc/HndXLWmM/Logo.jpg" alt="Logo" />
@@ -47,7 +49,10 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <Link to="/donate" className="donate-btn">Donate</Link>
+          <Link to="/donate" className="donate-btn">
+            <Heart size={18} fill="currentColor" />
+            Donate
+          </Link>
         </nav>
 
         {/* Mobile Toggle */}
@@ -76,7 +81,10 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <Link to="/donate" className="donate-btn-mobile" onClick={closeMenu}>Donate</Link>
+            <Link to="/donate" className="donate-btn-mobile" onClick={closeMenu}>
+              <Heart size={20} fill="currentColor" />
+              Donate
+            </Link>
           </motion.nav>
         )}
       </AnimatePresence>
