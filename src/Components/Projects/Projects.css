@@ -150,3 +150,16 @@
   .projects-grid { grid-template-columns: 1fr; }
   .project-content { padding: 1.5rem; }
 }
+
+@media (max-width: 480px) {
+  .projects-page { padding-top: 120px; }
+  .projects-grid { gap: 2rem; }
+  .project-image-wrapper { height: 200px; }
+  .search-wrapper input { padding: 1rem 1.5rem 1rem 3.5rem; }
+}
+
+@media (max-width: 360px) {
+  .project-content { padding: 1.2rem; }
+  .project-content h3 { font-size: 1.3rem; }
+  .project-actions { gap: 1rem; }
+}

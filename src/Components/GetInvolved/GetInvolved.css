@@ -150,3 +150,14 @@
   .options-grid { grid-template-columns: 1fr; }
   .cta-btns { flex-direction: column; gap: 1rem; }
 }
+
+@media (max-width: 480px) {
+  .get-involved-page { padding-top: 120px; }
+  .cta-banner { padding: 3rem 1.5rem; }
+  .option-card-premium { padding: 2rem 1.5rem; }
+}
+
+@media (max-width: 360px) {
+  .page-header h1 { font-size: 2.2rem; }
+  .cta-content h2 { font-size: 1.8rem; }
+}

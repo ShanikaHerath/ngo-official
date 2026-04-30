@@ -138,3 +138,9 @@
   .mobile-toggle { display: block; }
   .logo span { font-size: 1.2rem; }
 }
+
+@media (max-width: 360px) {
+  .logo span { font-size: 1rem; }
+  .logo img { height: 35px; width: 35px; }
+  .navbar-container { padding: 0 1rem; }
+}

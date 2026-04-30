@@ -45,6 +45,10 @@ html {
   html { font-size: 14px; }
 }
 
+@media (max-width: 360px) {
+  html { font-size: 13px; }
+}
+
 body {
   font-family: var(--font-body);
   background: var(--bg-soft);
@@ -85,6 +89,12 @@ button {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 0 1rem;
+  }
 }
 
 .section-padding {

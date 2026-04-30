@@ -165,3 +165,16 @@
   .donate-grid { grid-template-columns: 1fr; }
   .donate-card { padding: 2rem; }
 }
+
+@media (max-width: 480px) {
+  .donate-page { padding-top: 120px; }
+  .donate-card { padding: 2rem 1.5rem; }
+  .cta-card h3 { font-size: 1.5rem; }
+  .stat strong { font-size: 1.2rem; }
+}
+
+@media (max-width: 360px) {
+  .donate-header h1 { font-size: 2.2rem; }
+  .card-header h3 { font-size: 1.3rem; }
+  .info-row strong { font-size: 0.95rem; }
+}
