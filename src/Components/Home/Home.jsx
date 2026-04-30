@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { ArrowRight, Heart, Target, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import './Home.css';
 
 const Home = () => {
-  const [isFixed, setIsFixed] = useState(false);
   const [angle, setAngle] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => setIsFixed(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const galleryImages = [
     "https://i.postimg.cc/2yhcsSwB/bag.jpg",
@@ -26,113 +20,126 @@ const Home = () => {
   const logoImage = "https://i.postimg.cc/HndXLWmM/Logo.jpg";
 
   const handleGallerySpin = (direction) => {
-    setAngle((prevAngle) => prevAngle + (direction === '-' ? -45 : 45));
+    setAngle((prevAngle) => prevAngle + (direction === 'left' ? 45 : -45));
   };
 
   return (
-    <div className={`home-page ${isFixed ? 'fixed-nav' : ''}`}>
+    <div className="home-page">
       {/* ==== HERO SECTION ==== */}
-      <section className="ngo-section">
-        <div className="animation-wrap">
-          <div className="animation animation1"></div>
-          <div className="animation animation2"></div>
-        </div>
-
+      <section className="hero-section">
+        <div className="hero-overlay"></div>
         <div className="container">
-          <motion.div 
-            className="row"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="ngo-text">
-              <h2>Support Our Mission</h2>
+          <div className="hero-grid">
+            <motion.div 
+              className="hero-content"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="badge">Compassion in Action</span>
+              <h1>Empowering Lives, <span>Restoring Hope.</span></h1>
               <p>
-                Join <strong>Suwa Diwiya Social Care Foundation</strong> in creating change through compassion and community.
+                Join <strong>Suwa Diwiya Social Care Foundation</strong> in our mission to uplift communities through wellness, education, and compassion.
               </p>
-              <a href="donate" className="btn1">Donate Now</a>
-            </div>
-            <div className="ngo-image">
-              <div className="img-box">
-                <img src={logoImage} alt="NGO Logo" />
+              <div className="hero-btns">
+                <a href="/donate" className="btn-primary">
+                  Support Our Mission <ArrowRight size={18} />
+                </a>
+                <a href="/get-involved" className="btn-outline">Join As Volunteer</a>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+            
+            <motion.div 
+              className="hero-visual"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+            >
+              <div className="logo-glow">
+                <img src={logoImage} alt="Suwa Diwiya Logo" />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* ==== GALLERY SECTION ==== */}
-      <div className="container">
-        <h1 className="title">Impact in Action</h1>
-      </div>
-      
-      <section className="carousel-container">
-        <div id="carousel">
-          <figure
-            id="spinner"
-            style={{ transform: `rotateY(${angle}deg)` }}
-          >
-            {galleryImages.map((img, index) => (
-              <img
-                key={index}
-                src={img}
-                alt={`Gallery image ${index + 1}`}
-                style={{
-                  transform: `rotateY(${-45 * index}deg) translateZ(500px)`
-                }}
-              />
-            ))}
-          </figure>
+      {/* ==== IMPACT GALLERY ==== */}
+      <section className="impact-gallery">
+        <div className="container">
+          <header className="section-header">
+            <h2>Impact in Action</h2>
+            <p>A glimpse into our community initiatives and the lives we touch.</p>
+          </header>
+          
+          <div className="gallery-carousel-wrapper">
+            <div className="carousel-3d">
+              <div 
+                className="carousel-spinner" 
+                style={{ transform: `rotateY(${angle}deg)` }}
+              >
+                {galleryImages.map((img, index) => (
+                  <div 
+                    key={index}
+                    className="carousel-item"
+                    style={{
+                      transform: `rotateY(${index * 45}deg) translateZ(450px)`
+                    }}
+                  >
+                    <img src={img} alt={`Impact ${index + 1}`} />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="carousel-nav">
+              <button onClick={() => handleGallerySpin('left')}><ChevronLeft /></button>
+              <button onClick={() => handleGallerySpin('right')}><ChevronRight /></button>
+            </div>
+          </div>
         </div>
-        <div className="ss-icon left-arrow" onClick={() => handleGallerySpin('-')}>&lt;</div>
-        <div className="ss-icon right-arrow" onClick={() => handleGallerySpin('')}>&gt;</div>
       </section>
 
       {/* ==== VISION | MISSION | VALUES ==== */}
-      <section className="vmv-accordion-section">
+      <section className="vmv-section">
         <div className="container">
-          <h2 className="vmv-title">Vision, Mission & Values</h2>
-
-          <div className="vmv-accordion">
-            <motion.details 
-              initial={{ opacity: 0 }} 
-              whileInView={{ opacity: 1 }} 
+          <div className="vmv-grid">
+            <motion.div 
+              className="vmv-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <summary>Our Vision</summary>
-              <p>A world where every life is lived with dignity, wellness, and peace.</p>
-            </motion.details>
+              <div className="icon-circle"><Star size={32} /></div>
+              <h3>Our Vision</h3>
+              <p>A world where every individual lives with dignity, holistic wellness, and spiritual peace.</p>
+            </motion.div>
 
-            <motion.details 
-              initial={{ opacity: 0 }} 
-              whileInView={{ opacity: 1 }} 
+            <motion.div 
+              className="vmv-card highlight"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <summary>Our Mission</summary>
-              <p>
-                Our mission is to promote social justice and fight against poverty, illiteracy, and health challenges. 
-                Through holistic Ayurvedic healing, we aim to enhance health and well-being. 
-                We are committed to empowering the next generation by supporting education for success in the digital age.
-              </p>
-            </motion.details>
+              <div className="icon-circle"><Target size={32} /></div>
+              <h3>Our Mission</h3>
+              <p>Promoting social justice, fighting poverty through holistic healing, and empowering the next generation with digital education.</p>
+            </motion.div>
 
-            <motion.details 
-              initial={{ opacity: 0 }} 
-              whileInView={{ opacity: 1 }} 
+            <motion.div 
+              className="vmv-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <summary>Our Values</summary>
+              <div className="icon-circle"><Heart size={32} /></div>
+              <h3>Our Values</h3>
               <ul>
                 <li>Integrity & Transparency</li>
                 <li>Compassion in Action</li>
-                <li>Empowerment through Knowledge</li>
-                <li>Sustainable Development</li>
                 <li>Unity & Community</li>
               </ul>
-            </motion.details>
+            </motion.div>
           </div>
         </div>
       </section>
