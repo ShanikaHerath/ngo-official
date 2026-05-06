@@ -16,13 +16,11 @@ import Footer from './Components/Footer/Footer';
 import ScrollToTop from './Components/ScrollToTop';
 import Donate from './Components/Donate/Donate';
 
-import './App.css';
-
 function AppContent() {
   const location = useLocation();
 
   return (
-    <div className="App">
+    <div className="App page-fade-in">
       <Navbar />
       <ScrollToTop />
       <AnimatePresence mode="wait">

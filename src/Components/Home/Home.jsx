@@ -64,7 +64,7 @@ const Home = () => {
       </section>
 
       {/* ==== IMPACT GALLERY ==== */}
-      <section className="impact-gallery">
+      <section className="impact-gallery section-padding">
         <div className="container">
           <header className="section-header">
             <h2>Impact in Action</h2>
@@ -99,7 +99,7 @@ const Home = () => {
       </section>
 
       {/* ==== VISION | MISSION | VALUES ==== */}
-      <section className="vmv-section">
+      <section className="vmv-section section-padding">
         <div className="container">
           <div className="vmv-grid">
             <motion.div 

@@ -27,7 +27,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="contact-page">
+    <div className="contact-page section-padding">
       <div className="container">
         <motion.div 
           className="contact-header"

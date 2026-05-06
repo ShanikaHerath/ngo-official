@@ -3,13 +3,11 @@
 .about-page {
   background-color: var(--bg-soft);
   color: var(--text-main);
-  padding: 100px 0;
 }
 
 .about-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
 }
 
 /* ==== TEAM SECTION ==== */

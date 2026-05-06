@@ -44,7 +44,7 @@ const Projects = () => {
   );
 
   return (
-    <div className="projects-page">
+    <div className="projects-page section-padding">
       <div className="container">
         <motion.header 
           className="page-header"

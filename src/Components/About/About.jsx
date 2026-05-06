@@ -32,10 +32,10 @@ const About = () => {
 
   return (
     <div className="about-page">
-      <div className="about-wrapper">
+      <div className="container">
         
         {/* TEAM SECTION */}
-        <section className="team-section">
+        <section className="team-section section-padding">
           <h1 className="team-title">Our Dedicated Team</h1>
           
           <div className="carousel-container">
@@ -93,7 +93,7 @@ const About = () => {
 
         {/* STORY SECTION */}
         <motion.section 
-          className="story-section"
+          className="story-section section-padding"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -112,7 +112,7 @@ const About = () => {
         </motion.section>
 
         {/* JOURNEY TIMELINE */}
-        <section className="journey-section">
+        <section className="journey-section section-padding">
           <h2 className="section-title">The Journey</h2>
           <div className="timeline-container" ref={timelineRef}>
             {journeyData.map((item, index) => (
@@ -134,7 +134,7 @@ const About = () => {
         </section>
 
         {/* JOURNEY DETAIL */}
-        <section className="journey-detail-section">
+        <section className="journey-detail-section section-padding">
           <div className="journey-detail-wrapper">
             <motion.div 
               className="journey-image"

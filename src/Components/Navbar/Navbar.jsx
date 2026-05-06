@@ -41,9 +41,9 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <nav className="desktop-nav">
           {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              to={link.path} 
+            <Link
+              key={link.name}
+              to={link.path}
               className={location.pathname === link.path ? 'active' : ''}
             >
               {link.name}
@@ -64,7 +64,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
-          <motion.nav 
+          <motion.nav
             className="mobile-nav"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -72,9 +72,9 @@ const Navbar = () => {
             transition={{ duration: 0.3 }}
           >
             {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                to={link.path} 
+              <Link
+                key={link.name}
+                to={link.path}
                 onClick={closeMenu}
                 className={location.pathname === link.path ? 'active' : ''}
               >

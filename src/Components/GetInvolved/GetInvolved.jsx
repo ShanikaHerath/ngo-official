@@ -33,7 +33,7 @@ const GetInvolved = () => {
   ];
 
   return (
-    <div className="get-involved-page">
+    <div className="get-involved-page section-padding">
       <div className="container">
         <motion.header 
           className="page-header"

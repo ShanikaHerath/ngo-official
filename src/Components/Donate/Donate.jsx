@@ -5,7 +5,7 @@ import './Donate.css';
 
 const Donate = () => {
   return (
-    <div className="donate-page">
+    <div className="donate-page section-padding">
       <div className="container">
         <motion.section 
           className="donate-header"

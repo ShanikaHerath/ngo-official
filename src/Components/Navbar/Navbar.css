@@ -82,36 +82,47 @@
 }
 
 .donate-btn {
-  background: var(--primary-gradient);
-  color: white !important;
-  padding: 0.7rem 1.8rem;
-  border-radius: 100px;
-  font-weight: 700;
-  font-size: 0.95rem;
+  background: transparent;
+  color: var(--primary) !important;
+  border: 2px solid var(--primary);
+  padding: 0.8rem 2.4rem;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.25);
-  transition: var(--transition-smooth);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 4px 10px rgba(var(--primary-rgb), 0.05);
   position: relative;
-  overflow: hidden;
+  z-index: 1;
+  text-decoration: none;
+  outline: none;
+}
+
+.donate-btn::after {
+  display: none !important;
 }
 
 .donate-btn svg {
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5px;
 }
 
-.donate-btn:hover {
-  background: var(--primary-dark);
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 12px 25px rgba(var(--primary-rgb), 0.4);
+
+
+/* Home page initial state override */
+.navbar.is-home:not(.scrolled) .donate-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white !important;
+  border-color: white;
 }
 
-.donate-btn:hover svg {
-  transform: scale(1.2);
-  animation: heartPulse 0.8s infinite;
-}
+
 
 @keyframes heartPulse {
   0% { transform: scale(1.2); }
@@ -141,17 +152,7 @@
   color: white;
 }
 
-.navbar.is-home:not(.scrolled) .donate-btn {
-  background: white;
-  color: var(--primary-dark) !important;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
 
-.navbar.is-home:not(.scrolled) .donate-btn:hover {
-  background: var(--accent);
-  color: var(--primary-dark) !important;
-  box-shadow: 0 12px 30px rgba(212, 163, 115, 0.4);
-}
 
 /* Scrolled State */
 .navbar.scrolled {
@@ -211,10 +212,11 @@
 }
 
 .donate-btn-mobile {
-  background: var(--primary-gradient);
-  color: white !important;
+  background: transparent;
+  color: var(--primary) !important;
+  border: 2px solid var(--primary);
   padding: 1rem;
-  border-radius: 15px;
+  border-radius: 12px;
   text-align: center;
   font-weight: 800;
   font-size: 1.1rem;
@@ -223,8 +225,9 @@
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.2);
+  transition: all 0.3s ease;
 }
+
 
 @media (max-width: 968px) {
   .desktop-nav { display: none; }
