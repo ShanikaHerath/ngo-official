@@ -117,13 +117,13 @@
 .input-group textarea:focus {
   background: white;
   border-color: var(--primary-light);
-  box-shadow: 0 0 0 4px rgba(46, 125, 101, 0.1);
+  box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.1);
 }
 
 .submit-btn {
   width: 100%;
   padding: 1.2rem;
-  background: var(--primary);
+  background: var(--primary-gradient);
   color: white;
   border-radius: 15px;
   font-weight: 800;
@@ -132,13 +132,13 @@
   justify-content: center;
   gap: 1rem;
   transition: var(--transition-smooth);
-  box-shadow: 0 10px 20px rgba(46, 125, 101, 0.2);
+  box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.2);
 }
 
 .submit-btn:hover {
   background: var(--primary-dark);
   transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(46, 125, 101, 0.3);
+  box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.3);
 }
 
 @media (max-width: 968px) {

@@ -124,12 +124,12 @@
 }
 
 .donate-now-btn {
-  background: var(--primary);
+  background: var(--primary-gradient);
   color: white;
   padding: 1.2rem;
   border-radius: 15px;
   font-weight: 700;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.2);
 }
 
 .support-btn {

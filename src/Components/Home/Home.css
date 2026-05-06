@@ -6,7 +6,7 @@
 .hero-section {
   min-height: 100vh;
   padding: 150px 0 100px;
-  background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+  background: var(--primary-gradient);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -160,7 +160,7 @@
   background: white;
   color: var(--primary);
   border: none;
-  box-shadow: var(--shadow-premium);
+  box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.15);
   display: flex;
   align-items: center;
   justify-content: center;

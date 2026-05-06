@@ -82,7 +82,7 @@
 }
 
 .donate-btn {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  background: var(--primary-gradient);
   color: white !important;
   padding: 0.7rem 1.8rem;
   border-radius: 100px;
@@ -91,7 +91,7 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  box-shadow: 0 8px 20px rgba(46, 125, 101, 0.25);
+  box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.25);
   transition: var(--transition-smooth);
   border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
@@ -103,9 +103,9 @@
 }
 
 .donate-btn:hover {
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  background: var(--primary-dark);
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 12px 25px rgba(46, 125, 101, 0.4);
+  box-shadow: 0 12px 25px rgba(var(--primary-rgb), 0.4);
 }
 
 .donate-btn:hover svg {
@@ -211,7 +211,7 @@
 }
 
 .donate-btn-mobile {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  background: var(--primary-gradient);
   color: white !important;
   padding: 1rem;
   border-radius: 15px;
@@ -223,7 +223,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  box-shadow: 0 10px 20px rgba(46, 125, 101, 0.2);
+  box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.2);
 }
 
 @media (max-width: 968px) {

@@ -1,17 +1,5 @@
 /* About.css - Advanced & Neat Refactor */
 
-:root {
-  --primary: #2e7d65;
-  --primary-light: #40916c;
-  --primary-dark: #1b4332;
-  --accent: #d4a373;
-  --bg-soft: #fdfaf5;
-  --text-main: #2d3436;
-  --text-muted: #636e72;
-  --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.05);
-  --radius-lg: 24px;
-}
-
 .about-page {
   background-color: var(--bg-soft);
   color: var(--text-main);
@@ -138,7 +126,7 @@
 .cta.donate-button {
   display: inline-block;
   padding: 1.2rem 3.5rem;
-  background: var(--primary);
+  background: var(--primary-gradient);
   color: white;
   border-radius: 50px;
   font-weight: 700;
@@ -146,7 +134,7 @@
   transition: all 0.3s ease;
 }
 
-.cta.donate-button:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(46, 125, 101, 0.2); }
+.cta.donate-button:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.2); }
 
 /* ==== JOURNEY SECTION ==== */
 .journey-section { margin-top: 120px; text-align: center; }

@@ -2,9 +2,11 @@
 
 :root {
   /* Colors */
-  --primary: #2e7d65;
-  --primary-light: #40916c;
-  --primary-dark: #1b4332;
+  --primary: #46a29f;
+  --primary-light: #72c2d9;
+  --primary-dark: #2d6a68;
+  --primary-rgb: 70, 162, 159;
+  --primary-gradient: linear-gradient(to right, #72c2d9, #46a29f);
   --accent: #d4a373;
   --bg-soft: #fdfaf5;
   --white: #ffffff;
@@ -104,17 +106,17 @@ button {
 .btn-primary {
   display: inline-block;
   padding: 1rem 2.5rem;
-  background: var(--primary);
+  background: var(--primary-gradient);
   color: white;
   border-radius: 50px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 0 10px 20px rgba(46, 125, 101, 0.2);
+  box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.2);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
   background: var(--primary-dark);
-  box-shadow: 0 15px 30px rgba(46, 125, 101, 0.3);
+  box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.3);
 }

@@ -32,7 +32,7 @@
 .search-wrapper input:focus {
   border-color: var(--primary-light);
   outline: none;
-  box-shadow: 0 15px 30px rgba(46, 125, 101, 0.1);
+  box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.1);
 }
 
 .projects-grid {
