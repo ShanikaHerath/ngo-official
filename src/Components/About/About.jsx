@@ -36,9 +36,22 @@ const About = () => {
         
         {/* TEAM SECTION */}
         <section className="team-section section-padding">
-          <h1 className="team-title">Our Dedicated Team</h1>
+          <motion.h1 
+            className="team-title"
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            Our Dedicated Team
+          </motion.h1>
           
-          <div className="carousel-container">
+          <motion.div 
+            className="carousel-container"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+          >
+
             <button className="nav-arrow left" onClick={() => updateCarousel(currentIndex - 1)}>‹</button>
             
             <div className="carousel-track">
@@ -63,7 +76,7 @@ const About = () => {
             </div>
 
             <button className="nav-arrow right" onClick={() => updateCarousel(currentIndex + 1)}>›</button>
-          </div>
+          </motion.div>
 
           <div className="member-info">
             <AnimatePresence mode="wait">
@@ -94,22 +107,44 @@ const About = () => {
         {/* STORY SECTION */}
         <motion.section 
           className="story-section section-padding"
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          viewport={{ once: false }}
+          transition={{ duration: 1, ease: "easeOut" }}
         >
-          <h2 className="section-title">Our Story</h2>
-          <p className="section-paragraph">
+          <motion.h2 
+            className="section-title"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Our Story
+          </motion.h2>
+          <motion.p 
+            className="section-paragraph"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             What began as a humble effort by a small group of devoted individuals has grown into a meaningful journey of service. 
             For many years, our team quietly engaged in social work, driven by compassion and a shared vision for a better future. 
             In 2023, that collective spirit gave birth to a formal mission — the founding of the <strong>Suwa Diwiya Social Care Foundation</strong>.
             <br /><br />
             Under the guidance of our founder, <strong>Ven. Bedirekke Suditha Thero</strong>, we focus on community wellness, education, and mindful service.
             Every act of kindness is a step toward building a healthier, more compassionate world.
-          </p>
-          <a href="/get-involved" className="cta donate-button">Join Our Mission</a>
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <a href="/get-involved" className="cta donate-button">Join Our Mission</a>
+          </motion.div>
         </motion.section>
+
 
         {/* JOURNEY TIMELINE */}
         <section className="journey-section section-padding">
@@ -121,7 +156,7 @@ const About = () => {
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ delay: index * 0.1 }}
               >
                 <div className="icon">{item.icon}</div>
@@ -138,30 +173,51 @@ const About = () => {
           <div className="journey-detail-wrapper">
             <motion.div 
               className="journey-image"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, x: -80, scale: 0.9 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 1 }}
             >
               <img src="https://i.postimg.cc/2yhcsSwB/bag.jpg" alt="Community Support" />
             </motion.div>
             <motion.div 
               className="journey-description"
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 80 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
+              transition={{ duration: 1, delay: 0.2 }}
             >
-              <h3>Healing Hands, Growing Hope</h3>
-              <p>
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                Healing Hands, Growing Hope
+              </motion.h3>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
                 Our foundation believes in the power of small actions with big impacts. 
                 We capture the essence of our work — healing, nurturing, and supporting those in need through compassionate care and mindful service. 
                 Together, we plant seeds for a brighter tomorrow.
-              </p>
-              <div className="cta-buttons">
+              </motion.p>
+              <motion.div 
+                className="cta-buttons"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+              >
                 <a href="/contact-us" className="contact-button">Contact Us</a>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
         </section>
+
 
       </div>
     </div>

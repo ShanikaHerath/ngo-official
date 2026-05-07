@@ -12,11 +12,12 @@
 
 .campaign-section {
   background-color: var(--light-bg);
-  padding: 4rem 2rem;
+  padding: 2rem;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   min-height: 100vh;
   box-sizing: border-box;
 }
+
 
 *, *::before, *::after {
   box-sizing: inherit;

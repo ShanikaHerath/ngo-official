@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 import './Products.css';
+
 
 const Products = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -62,6 +65,8 @@ const Products = () => {
     }
   ];
 
+  const navigate = useNavigate();
+
   // Function to open the popup
   const handleOpenIngredients = (product) => {
     setSelectedProduct(product);
@@ -74,12 +79,18 @@ const Products = () => {
 
   return (
     <div className="products-container">
+      <button className="back-btn" onClick={() => navigate('/ayurvedha')}>
+        <ArrowLeft size={20} />
+        <span>Back to Offerings</span>
+      </button>
+
       <header className="products-header">
         <h1>Ayurvedic Wellness</h1>
         <p>100% Natural remedies crafted with traditional Sri Lankan herbs.
          Our products are crafted using 100% traditional methods, free from all harmful chemicals. We believe in purity for your body and health for our nation. That is why every purchase is a direct contribution to the Suwa Diviya Social Care Foundation.
         </p>
       </header>
+
 
       <div className="product-grid">
         {productList.map((product) => (

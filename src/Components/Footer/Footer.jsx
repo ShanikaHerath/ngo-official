@@ -19,34 +19,33 @@ const Footer = () => {
           <span className="tagline">Wisdom, Wellness, and Wellness for All.</span>
         </div>
 
-        <div className="footer-grid">
-          <div className="footer-col">
-            <h4>Quick Links</h4>
-            <Link to="/">Home</Link>
-            <Link to="/about">About Us</Link>
-            <Link to="/projects">Our Projects</Link>
-            <Link to="/get-involved">Get Involved</Link>
-            <Link to="/ayurvedha">Ayurvedha Hub</Link>
-          </div>
+        <div className="footer-col">
+          <h4>Quick Links</h4>
+          <Link to="/">Home</Link>
+          <Link to="/about">About Us</Link>
+          <Link to="/projects">Our Projects</Link>
+          <Link to="/get-involved">Get Involved</Link>
+          <Link to="/ayurvedha">Ayurvedha Hub</Link>
+        </div>
 
-          <div className="footer-col">
-            <h4>Contact</h4>
-            <p>Email: info@suwadiwiya.org</p>
-            <p>Phone: +94 77 123 4567</p>
-            <p>Colombo, Sri Lanka</p>
-          </div>
+        <div className="footer-col">
+          <h4>Contact</h4>
+          <p>Email: info@suwadiwiya.org</p>
+          <p>Phone: +94 77 123 4567</p>
+          <p>Colombo, Sri Lanka</p>
+        </div>
 
-          <div className="footer-col">
-            <h4>Social Media</h4>
-            <div className="social-links">
-              <a href="#"><FaFacebookF /></a>
-              <a href="#"><FaInstagram /></a>
-              <a href="#"><FaTiktok /></a>
-              <a href="#"><FaYoutube /></a>
-              <a href="#"><FaWhatsapp /></a>
-            </div>
+        <div className="footer-col">
+          <h4>Social Media</h4>
+          <div className="social-links">
+            <a href="#"><FaFacebookF /></a>
+            <a href="#"><FaInstagram /></a>
+            <a href="#"><FaTiktok /></a>
+            <a href="#"><FaYoutube /></a>
+            <a href="#"><FaWhatsapp /></a>
           </div>
         </div>
+
       </div>
 
       <div className="footer-bottom">

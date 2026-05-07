@@ -51,7 +51,7 @@ const GetInvolved = () => {
               className="option-card-premium"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ delay: index * 0.1 }}
             >
               <div className="card-icon">{opt.icon}</div>
@@ -75,7 +75,7 @@ const GetInvolved = () => {
             className="cta-content"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
           >
             <h2>Ready to Join Us?</h2>
             <p>Become a part of our movement today and help us sow seeds of hope.</p>

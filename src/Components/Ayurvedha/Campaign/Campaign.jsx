@@ -1,5 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 import './Campaign.css';
+
 
 // Placeholder data for the campaign services
 const campaignServices = [
@@ -30,9 +33,16 @@ const campaignServices = [
 ];
 
 const Campaign = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="campaign-section">
       <div className="container">
+        <button className="back-btn" onClick={() => navigate('/ayurvedha')}>
+          <ArrowLeft size={20} />
+          <span>Back to Offerings</span>
+        </button>
+
         <div className="header-content">
           <h1>Ayurvedic Medical Clinic</h1>
           <span className="tagline">Free Health Campaign</span>

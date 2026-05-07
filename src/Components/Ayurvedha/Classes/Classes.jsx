@@ -1,5 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 import './Classes.css';
+
 
 const courseData = [
   {
@@ -40,9 +43,16 @@ const courseData = [
 ];
 
 const Classes = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="ayurveda-section">
       <div className="container">
+        <button className="back-btn" onClick={() => navigate('/ayurvedha')}>
+          <ArrowLeft size={20} />
+          <span>Back to Offerings</span>
+        </button>
+
         <div className="header-content">
           <h1>Ayurveda Learning Programs</h1>
           <p className="subtitle">

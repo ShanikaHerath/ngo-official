@@ -71,7 +71,13 @@ const Home = () => {
             <p>A glimpse into our community initiatives and the lives we touch.</p>
           </header>
           
-          <div className="gallery-carousel-wrapper">
+          <motion.div 
+            className="gallery-carousel-wrapper"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1 }}
+          >
             <div className="carousel-3d">
               <div 
                 className="carousel-spinner" 
@@ -94,7 +100,7 @@ const Home = () => {
               <button onClick={() => handleGallerySpin('left')}><ChevronLeft /></button>
               <button onClick={() => handleGallerySpin('right')}><ChevronRight /></button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -106,7 +112,7 @@ const Home = () => {
               className="vmv-card"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
             >
               <div className="icon-circle"><Star size={32} /></div>
               <h3>Our Vision</h3>
@@ -117,7 +123,7 @@ const Home = () => {
               className="vmv-card highlight"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ delay: 0.1 }}
             >
               <div className="icon-circle"><Target size={32} /></div>
@@ -129,7 +135,7 @@ const Home = () => {
               className="vmv-card"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ delay: 0.2 }}
             >
               <div className="icon-circle"><Heart size={32} /></div>

@@ -1,10 +1,12 @@
 .ayurvedha-landing {
-  padding: 8rem 2rem;
-  background-color: #fdfaf5;
+  padding: 3rem 2rem 8rem;
+  background-color: var(--bg-soft);
   min-height: 100vh;
   position: relative;
   overflow: hidden;
 }
+
+
 
 .overlay-glow {
   position: absolute;
@@ -35,18 +37,23 @@
 }
 
 .ayurvedha-header h1 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  color: #1b4332;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  color: var(--primary-dark);
   margin-bottom: 1.5rem;
   line-height: 1.1;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -1px;
 }
 
 .header-desc {
-  font-size: 1.1rem;
-  color: #555;
-  max-width: 600px;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 700px;
   margin: 0 auto;
+  line-height: 1.8;
 }
+
 
 .offerings-grid {
   display: grid;
@@ -59,77 +66,100 @@
 }
 
 .offering-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   background: white;
-  border-radius: 24px;
+  border-radius: 32px;
   text-decoration: none;
-  color: #333;
+  color: var(--text-main);
   overflow: hidden;
   height: 100%;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: var(--shadow-premium);
 }
 
 .offering-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 40px rgba(46, 125, 101, 0.1);
-  border-color: rgba(46, 125, 101, 0.2);
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+  border-color: var(--primary-light);
 }
 
-.card-image-placeholder {
-  height: 240px;
-  background: #f0f4f2;
+.card-image-wrapper {
+  height: 280px;
   position: relative;
   overflow: hidden;
-  transition: all 0.5s ease;
 }
 
-/* Base gradients for cards before user adds images */
-.classes .card-image-placeholder { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); }
-.campaign .card-image-placeholder { background: linear-gradient(135deg, #f1f8e9, #dcedc8); }
-.products .card-image-placeholder { background: linear-gradient(135deg, #e0f2f1, #b2dfdb); }
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
-.offering-card:hover .card-image-placeholder {
-  transform: scale(1.05);
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+  opacity: 0.5;
+  transition: opacity 0.5s ease;
+}
+
+.offering-card:hover .card-image-wrapper img {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.offering-card:hover .card-overlay {
+  opacity: 0.2;
 }
 
 .card-content {
-  padding: 2.5rem;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  position: relative;
+  padding: 3rem 2.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
 }
 
 .card-content h2 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  color: #1b4332;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: var(--primary-dark);
+  font-weight: 700;
 }
 
 .card-content p {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
 }
 
 .card-action {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.8rem;
   font-weight: 700;
-  color: #2e7d65;
-  font-size: 0.9rem;
+  color: var(--primary);
+  font-size: 0.95rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  transition: gap 0.3s ease;
+}
+
+.offering-card:hover .card-action {
+  color: var(--primary-dark);
+  gap: 1.2rem;
 }
 
 .card-action svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   transition: transform 0.3s ease;
 }
+
 
 .offering-card:hover .card-action svg {
   transform: translateX(5px);

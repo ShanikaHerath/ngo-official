@@ -24,19 +24,22 @@ function AppContent() {
       <Navbar />
       <ScrollToTop />
       <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/get-involved" element={<GetInvolved />} />
-          <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/ayurvedha" element={<Ayurvedha />} />
-          <Route path="/ayurvedha/classes" element={<Classes />} />
-          <Route path="/ayurvedha/campaign" element={<Campaign />} />
-          <Route path="/ayurvedha/products" element={<Products />} />
-          <Route path="/donate" element={<Donate />} />
-        </Routes>
+        <div className="main-content">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/get-involved" element={<GetInvolved />} />
+            <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/ayurvedha" element={<Ayurvedha />} />
+            <Route path="/ayurvedha/classes" element={<Classes />} />
+            <Route path="/ayurvedha/campaign" element={<Campaign />} />
+            <Route path="/ayurvedha/products" element={<Products />} />
+            <Route path="/donate" element={<Donate />} />
+          </Routes>
+        </div>
       </AnimatePresence>
+
       <Footer />
     </div>
   );

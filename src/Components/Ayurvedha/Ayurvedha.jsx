@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './Ayurvedha.css';
+import classesImg from '../../assets/ayurvedha/classes.png';
+import campaignImg from '../../assets/ayurvedha/campaign.png';
+import productsImg from '../../assets/ayurvedha/products.png';
+
 
 const Ayurvedha = () => {
   const containerVariants = {
@@ -26,23 +30,28 @@ const Ayurvedha = () => {
   const offerings = [
     {
       title: "Ayurvedha Classes",
-      description: "Learn ancient healing techniques with modern guidance from experts.",
+      description: "Learn ancient healing techniques with modern guidance from experts in holistic wellness.",
+      image: classesImg,
       link: "/ayurvedha/classes",
       id: "classes"
     },
     {
       title: "Free Ayurvedha Campaign",
-      description: "Join community events and free health check-ups for everyone.",
+      description: "Join our community outreach programs and receive free traditional health check-ups.",
+      image: campaignImg,
       link: "/ayurvedha/campaign",
       id: "campaign"
     },
     {
       title: "Ayurvedha Products",
-      description: "Shop natural remedies, essential oils, and herbal wonders.",
+      description: "Explore our curated collection of natural remedies, essential oils, and herbal treasures.",
+      image: productsImg,
       link: "/ayurvedha/products",
       id: "products"
     }
+
   ];
+
 
   return (
     <div className="ayurvedha-landing">
@@ -54,7 +63,6 @@ const Ayurvedha = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <span className="subtitle">Wisdom of Ages</span>
         <h1>Explore Our Ayurvedha Offerings</h1>
         <p className="header-desc">
           Discover the profound impact of traditional healing tailored for the modern world.
@@ -63,22 +71,24 @@ const Ayurvedha = () => {
 
       <motion.div
         className="offerings-grid"
-        variants={containerVariants}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: false }}
+        variants={containerVariants}
       >
         {offerings.map((item) => (
           <motion.div key={item.id} variants={itemVariants}>
             <Link to={item.link} className={`offering-card ${item.id}`}>
-              <div className="card-image-placeholder">
-                {/* User will add images here manually */}
+              <div className="card-image-wrapper">
+                <img src={item.image} alt={item.title} />
+                <div className="card-overlay"></div>
               </div>
               <div className="card-content">
                 <h2>{item.title}</h2>
                 <p>{item.description}</p>
                 <div className="card-action">
-                  <span>Learn More</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <span>Explore Offering</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </div>
@@ -87,6 +97,7 @@ const Ayurvedha = () => {
           </motion.div>
         ))}
       </motion.div>
+
     </div>
   );
 };
