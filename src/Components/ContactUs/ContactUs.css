@@ -105,19 +105,24 @@
   width: 100%;
   padding: 1.2rem;
   background: var(--bg-soft);
-  border: 2px solid transparent;
+  border: 2px solid rgba(0, 0, 0, 0.05);
   border-radius: 15px;
   font-family: var(--font-body);
   font-size: 1rem;
-  transition: var(--transition-smooth);
+  color: var(--text-main);
+  transition: all 0.3s ease;
+  outline: none;
+  box-sizing: border-box;
 }
 
 .input-group input:focus,
 .input-group textarea:focus {
-  background: white;
-  border-color: var(--primary-light);
-  box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.1);
+  background: var(--white);
+  border-color: var(--primary);
+  box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.1);
+  transform: translateY(-2px);
 }
+
 
 .submit-btn {
   width: 100%;
