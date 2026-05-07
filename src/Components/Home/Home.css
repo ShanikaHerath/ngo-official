@@ -199,16 +199,21 @@
 
 .carousel-item {
   position: absolute;
-  width: 400px;
-  height: 280px;
+  width: 450px;
+  height: 320px;
   left: 50%;
   top: 50%;
-  margin-left: -200px;
-  margin-top: -140px;
+  margin-left: -225px;
+  margin-top: -160px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s ease;
+  --carousel-radius: 600px;
+  /* Add a glass-like border */
+  backface-visibility: hidden;
 }
+
 
 .carousel-item img {
   width: 100%;
@@ -366,11 +371,13 @@
     font-size: 3.5rem;
   }
   .carousel-item {
-    width: 300px;
-    height: 200px;
-    margin-left: -150px;
-    margin-top: -100px;
+    width: 350px;
+    height: 240px;
+    margin-left: -175px;
+    margin-top: -120px;
+    --carousel-radius: 450px;
   }
+
   .gallery-carousel-wrapper {
     height: 450px;
   }
@@ -388,6 +395,13 @@
 @media (max-width: 360px) {
   .hero-content h1 { font-size: 2.8rem; }
   .logo-glow { width: 240px; height: 240px; }
-  .carousel-item { width: 240px; height: 170px; margin-left: -120px; margin-top: -85px; }
-  .carousel-3d { perspective: 1000px; }
+  .carousel-item { 
+    width: 280px; 
+    height: 200px; 
+    margin-left: -140px; 
+    margin-top: -100px; 
+    --carousel-radius: 350px;
+  }
+  .carousel-3d { perspective: 1200px; }
+
 }

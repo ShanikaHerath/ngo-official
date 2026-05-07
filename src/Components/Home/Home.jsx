@@ -82,7 +82,7 @@ const Home = () => {
                     key={index}
                     className="carousel-item"
                     style={{
-                      transform: `rotateY(${index * 45}deg) translateZ(450px)`
+                      transform: `rotateY(${index * 45}deg) translateZ(var(--carousel-radius))`
                     }}
                   >
                     <img src={img} alt={`Impact ${index + 1}`} />
