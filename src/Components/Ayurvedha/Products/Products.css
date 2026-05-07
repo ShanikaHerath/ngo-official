@@ -11,13 +11,12 @@
 
 /* --- 2. Main Layout --- */
 .products-container {
-  padding: 2rem;
+  padding: 4rem 2rem;
   background-color: #ffffff;
   min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: relative;
 }
-
 
 .back-btn {
   display: flex;
@@ -310,6 +309,17 @@
 }
 
 /* --- 6. Responsive Styles --- */
+@media (max-width: 360px) {
+  .products-header h1 { font-size: 1.8rem; }
+  .products-header p { font-size: 0.95rem; }
+  .product-card h3 { font-size: 1.2rem; }
+  .price { font-size: 1.1rem; }
+  .button-group { flex-direction: column; width: 100%; }
+  .modal-content { padding: 1.5rem; }
+  .card-image-placeholder { height: 120px; }
+}
+
+
 @media (max-width: 600px) {
   .products-container {
     padding: 1rem;

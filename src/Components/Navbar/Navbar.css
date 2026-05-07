@@ -238,7 +238,10 @@
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
+  max-height: 85vh;
+  overflow-y: auto;
 }
+
 
 .mobile-nav a {
   font-size: 1.2rem;
@@ -297,4 +300,8 @@
   .logo span { font-size: 1.1rem; }
   .logo img { height: 35px; width: 35px; }
   .navbar-container { padding: 0 1rem; }
+  .mobile-nav { padding: 1.5rem; gap: 1rem; }
+  .mobile-nav a { font-size: 1.1rem; padding: 0.4rem; }
+  .donate-btn-mobile { padding: 0.8rem; margin-top: 0.5rem; font-size: 1rem; }
 }
+

@@ -133,15 +133,14 @@
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .campaign-section {
-    padding: 3rem 1.5rem;
-  }
-
-  .header-content h1 {
-    font-size: 2rem;
-  }
-  
-  .campaign-grid {
-    gap: 1.5rem;
-  }
+  .campaign-section { padding: 3rem 1.5rem; }
+  .header-content h1 { font-size: 2rem; }
+  .campaign-grid { gap: 1.5rem; }
 }
+
+@media (max-width: 360px) {
+  .header-content h1 { font-size: 1.8rem; }
+  .subtitle { font-size: 1rem; }
+  .service-card { padding: 1.5rem; }
+  .card-icon { width: 60px; height: 60px; font-size: 1.8rem; margin-bottom: 1rem; }
+}

@@ -346,7 +346,9 @@
     grid-template-columns: 1fr;
     text-align: center;
     gap: 3rem;
+    justify-items: center;
   }
+
   .hero-content p {
     margin-left: auto;
     margin-right: auto;
@@ -393,15 +395,21 @@
 }
 
 @media (max-width: 360px) {
-  .hero-content h1 { font-size: 2.8rem; }
-  .logo-glow { width: 240px; height: 240px; }
+  .hero-content h1 { font-size: 2.5rem; }
+  .hero-content p { font-size: 1rem; }
+  .logo-glow { width: 180px; height: 180px; margin: 0 auto; }
+  .logo-glow img { width: 180px; height: 180px; }
   .carousel-item { 
-    width: 280px; 
-    height: 200px; 
-    margin-left: -140px; 
-    margin-top: -100px; 
-    --carousel-radius: 350px;
+    width: 240px; 
+    height: 180px; 
+    margin-left: -120px; 
+    margin-top: -90px; 
+    --carousel-radius: 280px;
   }
-  .carousel-3d { perspective: 1200px; }
-
+  .carousel-3d { perspective: 1000px; height: 220px; }
+  .gallery-carousel-wrapper { height: 350px; }
+  .section-header h2 { font-size: 2rem; }
+  .vmv-card { padding: 2rem 1.5rem; }
 }
+
+
