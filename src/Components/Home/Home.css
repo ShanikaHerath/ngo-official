@@ -33,7 +33,6 @@
     linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
   background-size: 50px 50px;
-  /* mask-image: radial-gradient(circle at center, black, transparent 80%); */
   z-index: 1;
 }
 
@@ -62,7 +61,7 @@
 }
 
 .hero-content h1 {
-  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
   line-height: 1.1;
   margin-bottom: 1.5rem;
   font-weight: 800;
@@ -76,7 +75,7 @@
 }
 
 .hero-content p {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   line-height: 1.7;
   opacity: 0.9;
   margin-bottom: 2.5rem;
@@ -85,17 +84,21 @@
 
 .hero-btns {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-/* Unique Modern Hero Buttons */
+/* Hero Buttons */
 .hero-btns .btn-primary {
   background: white;
   color: var(--primary) !important;
   border: none;
   font-weight: 800;
-  padding: 1.2rem 2.8rem;
+  padding: 1rem 2rem;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  flex: 1 1 auto;
+  text-align: center;
+  justify-content: center;
 }
 
 .hero-btns .btn-primary:hover {
@@ -109,10 +112,15 @@
   backdrop-filter: blur(10px);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 1.2rem 2.8rem;
+  padding: 1rem 2rem;
   border-radius: 50px;
   font-weight: 700;
   transition: var(--transition-bounce);
+  flex: 1 1 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .hero-btns .btn-outline:hover {
@@ -138,8 +146,9 @@
 }
 
 .logo-glow img {
-  width: 350px;
-  height: 350px;
+  width: min(350px, 100%);
+  height: auto;
+  aspect-ratio: 1;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
@@ -159,32 +168,33 @@
 
 .section-header {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 }
 
 .section-header h2 {
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 5vw, 3rem);
   margin-bottom: 1rem;
   color: var(--primary-dark);
 }
 
 .section-header p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
 }
 
 .gallery-carousel-wrapper {
   perspective: 2000px;
-  height: 600px;
+  height: 560px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .carousel-3d {
   width: 100%;
-  height: 400px;
+  height: 380px;
   position: relative;
   transform-style: preserve-3d;
 }
@@ -199,18 +209,17 @@
 
 .carousel-item {
   position: absolute;
-  width: 450px;
-  height: 320px;
+  width: 400px;
+  height: 300px;
   left: 50%;
   top: 50%;
-  margin-left: -225px;
-  margin-top: -160px;
+  margin-left: -200px;
+  margin-top: -150px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
   transition: all 0.5s ease;
-  --carousel-radius: 600px;
-  /* Add a glass-like border */
+  --carousel-radius: 560px;
   backface-visibility: hidden;
 }
 
@@ -227,14 +236,14 @@
 }
 
 .carousel-nav {
-  margin-top: 4rem;
+  margin-top: 3rem;
   display: flex;
   gap: 2rem;
 }
 
 .carousel-nav button {
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   border: 2px solid var(--primary-light);
   background: transparent;
@@ -266,7 +275,7 @@
 
 .vmv-card {
   background: white;
-  padding: 3.5rem 2.5rem;
+  padding: 3rem 2rem;
   border-radius: 30px;
   text-align: center;
   transition: all 0.4s ease;
@@ -288,8 +297,8 @@
 }
 
 .icon-circle {
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   background: rgba(var(--primary-rgb), 0.1);
   color: var(--primary);
   border-radius: 50%;
@@ -307,14 +316,15 @@
 }
 
 .vmv-card h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1.2rem;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
   color: var(--primary-dark);
 }
 
 .vmv-card p {
   color: var(--text-muted);
   line-height: 1.7;
+  font-size: 0.95rem;
 }
 
 .vmv-card ul {
@@ -332,6 +342,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  font-size: 0.95rem;
 }
 
 .vmv-card ul li::before {
@@ -347,61 +358,66 @@
     text-align: center;
     gap: 3rem;
   }
-  .hero-content p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hero-btns {
-    justify-content: center;
-  }
-  .logo-glow img {
-    width: 280px;
-    height: 280px;
-  }
-  .vmv-grid {
-    grid-template-columns: 1fr;
-  }
-  .vmv-card.highlight {
-    transform: none;
-  }
+  .hero-content p { margin-left: auto; margin-right: auto; }
+  .hero-btns { justify-content: center; }
+  .logo-glow img { width: min(280px, 80%); }
+  .vmv-grid { grid-template-columns: 1fr; }
+  .vmv-card.highlight { transform: none; }
 }
 
 @media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 3.5rem;
-  }
+  .hero-content h1 { font-size: clamp(2rem, 7vw, 3.5rem); }
   .carousel-item {
-    width: 350px;
-    height: 240px;
-    margin-left: -175px;
-    margin-top: -120px;
-    --carousel-radius: 450px;
+    width: 320px;
+    height: 220px;
+    margin-left: -160px;
+    margin-top: -110px;
+    --carousel-radius: 420px;
   }
-
-  .gallery-carousel-wrapper {
-    height: 450px;
-  }
+  .gallery-carousel-wrapper { height: 420px; }
+  .carousel-3d { height: 320px; }
 }
 
 @media (max-width: 480px) {
-  .hero-section { padding-top: 120px; }
-  .hero-btns { flex-direction: column; gap: 1rem; }
-  .logo-glow { width: 280px; height: 280px; }
-  .carousel-3d { height: 280px; }
-  .gallery-carousel-wrapper { height: 450px; }
-  .section-header h2 { font-size: 2.2rem; }
+  .hero-section { padding-top: 100px; }
+  .hero-btns { flex-direction: column; align-items: stretch; }
+  .logo-glow img { width: min(220px, 70%); }
+  .carousel-3d { height: 260px; }
+  .gallery-carousel-wrapper { height: 380px; }
+  .section-header h2 { font-size: 1.9rem; }
+  .carousel-item {
+    width: 270px;
+    height: 190px;
+    margin-left: -135px;
+    margin-top: -95px;
+    --carousel-radius: 360px;
+  }
+  .carousel-nav { margin-top: 2rem; gap: 1.5rem; }
+  .vmv-card { padding: 2.5rem 1.5rem; }
 }
 
 @media (max-width: 360px) {
-  .hero-content h1 { font-size: 2.8rem; }
-  .logo-glow { width: 240px; height: 240px; }
-  .carousel-item { 
-    width: 280px; 
-    height: 200px; 
-    margin-left: -140px; 
-    margin-top: -100px; 
-    --carousel-radius: 350px;
+  .hero-section { padding-top: 85px; }
+  .hero-content h1 { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+  .hero-content p { font-size: 0.95rem; margin-bottom: 1.5rem; }
+  .hero-content .badge { font-size: 0.75rem; letter-spacing: 1px; }
+  .logo-glow img { width: min(190px, 65%); }
+  .section-header h2 { font-size: 1.6rem; }
+  .section-header p { font-size: 0.95rem; }
+  .section-header { margin-bottom: 2.5rem; }
+  .gallery-carousel-wrapper { height: 330px; }
+  .carousel-3d { height: 220px; }
+  .carousel-item {
+    width: 240px;
+    height: 170px;
+    margin-left: -120px;
+    margin-top: -85px;
+    --carousel-radius: 280px;
   }
-  .carousel-3d { perspective: 1200px; }
-
+  .carousel-nav { margin-top: 1.5rem; gap: 1.2rem; }
+  .carousel-nav button { width: 44px; height: 44px; }
+  .vmv-card { padding: 2rem 1.2rem; border-radius: 20px; }
+  .vmv-card h3 { font-size: 1.3rem; }
+  .vmv-card p, .vmv-card ul li { font-size: 0.88rem; }
+  .icon-circle { width: 64px; height: 64px; margin-bottom: 1.2rem; }
 }

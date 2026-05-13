@@ -23,6 +23,7 @@
   align-items: center;
   gap: 0.8rem;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .logo img {
@@ -33,6 +34,7 @@
   border: 2px solid white;
   box-shadow: var(--shadow-sm);
   transition: var(--transition-smooth);
+  flex-shrink: 0;
 }
 
 .logo span {
@@ -42,6 +44,9 @@
   color: var(--primary-dark);
   letter-spacing: -0.5px;
   transition: var(--transition-smooth);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .desktop-nav {
@@ -85,7 +90,7 @@
   background: var(--primary-gradient);
   color: white !important;
   border: none;
-  padding: 0.9rem 3rem;
+  padding: 0.9rem 2rem;
   border-radius: 10px;
   font-weight: 700;
   font-size: 0.95rem;
@@ -102,6 +107,7 @@
   outline: none;
   transition: var(--transition-bounce);
   overflow: hidden;
+  white-space: nowrap;
 }
 
 
@@ -222,6 +228,7 @@
   font-size: 1.8rem;
   color: var(--primary-dark);
   transition: var(--transition-smooth);
+  flex-shrink: 0;
 }
 
 .mobile-nav {
@@ -288,13 +295,18 @@
 }
 
 @media (max-width: 480px) {
-  .logo span { font-size: 1.2rem; }
+  .logo span { font-size: 1.1rem; }
   .logo img { height: 40px; width: 40px; }
-  .navbar-container { padding: 0 1.5rem; }
+  .navbar-container { padding: 0 1.2rem; }
+  .mobile-nav { padding: 2rem 1.5rem; gap: 1.2rem; }
+  .donate-btn-mobile { font-size: 1rem; }
 }
 
 @media (max-width: 360px) {
-  .logo span { font-size: 1.1rem; }
-  .logo img { height: 35px; width: 35px; }
-  .navbar-container { padding: 0 1rem; }
+  .logo span { font-size: 0.95rem; max-width: 150px; }
+  .logo img { height: 32px; width: 32px; }
+  .navbar-container { padding: 0 0.8rem; }
+  .mobile-nav { padding: 1.5rem 1rem; gap: 1rem; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
+  .mobile-nav a { font-size: 1rem; }
+  .donate-btn-mobile { font-size: 0.9rem; padding: 0.85rem; }
 }

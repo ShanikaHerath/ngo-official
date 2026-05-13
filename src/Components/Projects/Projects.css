@@ -2,12 +2,32 @@
   background: var(--bg-soft);
 }
 
-.search-wrapper {
+/* Page header re-use (also used by GetInvolved) */
+.page-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.page-header h1 {
+  font-size: clamp(1.9rem, 5vw, 3.5rem);
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
   max-width: 600px;
-  margin: 3rem auto 0;
+  margin: 0 auto;
+}
+
+.search-wrapper {
+  max-width: 560px;
+  margin: 2rem auto 0;
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .search-icon {
@@ -18,7 +38,7 @@
 
 .search-wrapper input {
   width: 100%;
-  padding: 1.2rem 1.5rem 1.2rem 4rem;
+  padding: 1.1rem 1.5rem 1.1rem 4rem;
   border-radius: 50px;
   border: 2px solid transparent;
   background: white;
@@ -36,9 +56,9 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 3rem;
-  margin-top: 5rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
 }
 
 .project-card-premium {
@@ -48,6 +68,7 @@
   box-shadow: var(--shadow-premium);
   border: 1px solid rgba(0, 0, 0, 0.03);
   transition: var(--transition-smooth);
+  width: 100%;
 }
 
 .project-card-premium:hover {
@@ -56,7 +77,7 @@
 
 .project-image-wrapper {
   position: relative;
-  height: 250px;
+  height: 240px;
   overflow: hidden;
 }
 
@@ -73,44 +94,46 @@
 
 .category-tag {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: 1.2rem;
+  right: 1.2rem;
   background: var(--primary);
   color: white;
-  padding: 0.5rem 1.2rem;
+  padding: 0.4rem 1rem;
   border-radius: 50px;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
   backdrop-filter: blur(10px);
 }
 
 .project-content {
-  padding: 2.5rem;
+  padding: 2rem;
 }
 
 .project-content h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--primary-dark);
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .project-content p {
   color: var(--text-muted);
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  font-size: 0.95rem;
 }
 
 .project-actions {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
 }
 
 .icon-btn {
@@ -118,7 +141,7 @@
   align-items: center;
   gap: 0.5rem;
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
   transition: var(--transition-smooth);
 }
@@ -130,35 +153,43 @@
 .view-more {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.6rem;
   color: var(--primary);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
 }
 
 .no-results {
   text-align: center;
   margin-top: 5rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
 }
 
 @media (max-width: 768px) {
-  .projects-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; gap: 2rem; }
   .project-content { padding: 1.5rem; }
 }
 
 @media (max-width: 480px) {
-  .projects-page { padding-top: 120px; }
-  .projects-grid { gap: 2rem; }
+  .projects-page { padding-top: 100px; }
+  .projects-grid { gap: 1.5rem; margin-top: 2.5rem; }
   .project-image-wrapper { height: 200px; }
-  .search-wrapper input { padding: 1rem 1.5rem 1rem 3.5rem; }
+  .search-wrapper input { padding: 0.95rem 1.2rem 0.95rem 3.5rem; font-size: 0.9rem; }
+  .search-wrapper { margin-top: 1.5rem; }
+  .page-header { margin-bottom: 2.5rem; }
 }
 
 @media (max-width: 360px) {
-  .project-content { padding: 1.2rem; }
-  .project-content h3 { font-size: 1.3rem; }
-  .project-actions { gap: 1rem; }
+  .project-content { padding: 1rem; }
+  .project-content h3 { font-size: 1.2rem; }
+  .project-content p { font-size: 0.88rem; margin-bottom: 1.2rem; }
+  .project-actions { gap: 0.8rem; padding-bottom: 1.2rem; margin-bottom: 1.2rem; }
+  .icon-btn { font-size: 0.82rem; }
+  .project-image-wrapper { height: 180px; }
+  .search-wrapper input { font-size: 0.85rem; }
+  .projects-grid { gap: 1.2rem; }
+  .page-header p { font-size: 0.95rem; }
 }
