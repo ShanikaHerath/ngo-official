@@ -39,7 +39,7 @@ const Home = () => {
               <span className="badge">Compassion in Action</span>
               <h1>Empowering Lives, <span>Restoring Hope.</span></h1>
               <p>
-                Join <strong>Suwa Diwiya Social Care Foundation</strong> in our mission to uplift communities through wellness, education, and compassion.
+                Under the guidance of <strong>Ven. Badirukke Suditha Thero</strong>, <strong>Suwa Diwiya Social Care Foundation</strong> uplifts communities through wellness, education, and compassion.
               </p>
               <div className="hero-btns">
                 <a href="/donate" className="btn-primary">

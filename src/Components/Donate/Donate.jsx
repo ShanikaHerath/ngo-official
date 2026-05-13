@@ -14,7 +14,7 @@ const Donate = () => {
         >
           <div className="heart-icon"><Heart size={48} fill="currentColor" /></div>
           <h1>Empower Change</h1>
-          <p>Your generosity fuels our mission to provide care, healing, and hope to those who need it most.</p>
+          <p>සුව දිවිය පදනමේ නිර්මාතෘ බැදිරැක්කේ සුදිත හිමියන්ගේ මූලිකත්වයෙන් පවත්වාගෙන යන මෙම පදනමේ පුණ්යකටයුතු සදහා මාසිකව සාමාජික මුදලකින් දායක වීමට කැමති පිංවතුන් පහත ගිනුමට මුදල් බැර කර දායකත්වය ලබා දෙන්න.</p>
         </motion.section>
 
         <div className="donate-grid">
@@ -31,7 +31,7 @@ const Donate = () => {
             <div className="bank-info">
               <div className="info-row">
                 <span>Bank</span>
-                <strong>People's Bank</strong>
+                <strong>Sampath Bank</strong>
               </div>
               <div className="info-row">
                 <span>Account Name</span>
@@ -39,11 +39,11 @@ const Donate = () => {
               </div>
               <div className="info-row">
                 <span>Account Number</span>
-                <strong>123-456-789-0</strong>
+                <strong>101914035864</strong>
               </div>
               <div className="info-row">
                 <span>Branch</span>
-                <strong>Colombo City Branch</strong>
+                <strong>Piliyandala Branch</strong>
               </div>
             </div>
             <div className="card-footer">
@@ -61,8 +61,8 @@ const Donate = () => {
             <h3>Small Acts, Big Impacts</h3>
             <p>Every contribution, no matter the size, helps us build a healthier and more compassionate world for all.</p>
             <div className="cta-actions">
-              <button className="donate-now-btn">Join Our Mission</button>
-              <button className="support-btn">Contact Support</button>
+              <a href="https://chat.whatsapp.com/Ie93UVTpoxXAa7WiXE9lle" target="_blank" rel="noreferrer" className="donate-now-btn">Join Monthly Membership</a>
+              <a href="tel:0777102801" className="support-btn">Call: 0777102801</a>
             </div>
             <div className="impact-stats">
               <div className="stat">
