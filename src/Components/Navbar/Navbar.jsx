@@ -16,6 +16,17 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [menuOpen]);
+
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
 
@@ -64,8 +75,16 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
-          <motion.nav
-            className="mobile-nav"
+          <>
+            <motion.div 
+              className="nav-overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeMenu}
+            />
+            <motion.nav
+              className="mobile-nav"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -85,7 +104,8 @@ const Navbar = () => {
               <Heart size={20} fill="currentColor" />
               Donate
             </Link>
-          </motion.nav>
+            </motion.nav>
+          </>
         )}
       </AnimatePresence>
     </header>

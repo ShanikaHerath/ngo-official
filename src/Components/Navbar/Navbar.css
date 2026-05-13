@@ -16,6 +16,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 1005;
 }
 
 .logo {
@@ -223,6 +225,18 @@
 }
 
 /* Mobile Styling */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 998;
+}
+
 .mobile-toggle {
   display: none;
   font-size: 1.8rem;
@@ -245,6 +259,7 @@
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
+  z-index: 1001;
 }
 
 .mobile-nav a {
