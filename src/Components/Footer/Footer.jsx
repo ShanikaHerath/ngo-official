@@ -30,7 +30,7 @@ const Footer = () => {
 
         <div className="footer-col">
           <h4>Contact</h4>
-          <p>Email: info@suwadiwiya.org</p>
+          <p>Email: suwadiwiyafoundation@gmail.com</p>
           <p>Phone: 0777102801</p>
           <p>Colombo, Sri Lanka</p>
         </div>
@@ -61,4 +61,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Footer;

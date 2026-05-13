@@ -29,7 +29,7 @@ const ContactUs = () => {
   return (
     <div className="contact-page section-padding">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="contact-header"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ const ContactUs = () => {
         </motion.div>
 
         <div className="contact-grid">
-          <motion.div 
+          <motion.div
             className="contact-info-cards"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -49,7 +49,7 @@ const ContactUs = () => {
               <div className="icon-box"><Mail /></div>
               <div>
                 <h4>Email Us</h4>
-                <p>info@suwadiwiya.org</p>
+                <p>suwadiwiyafoundation@gmail.com</p>
               </div>
             </div>
             <div className="info-card">
@@ -68,7 +68,7 @@ const ContactUs = () => {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="contact-form-wrapper"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
