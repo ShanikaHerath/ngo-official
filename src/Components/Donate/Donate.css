@@ -4,32 +4,32 @@
 
 .donate-header {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 }
 
 .heart-icon {
   color: #e63946;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   display: inline-block;
   animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
   100% { transform: scale(1); }
 }
 
 .donate-header h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(1.9rem, 5vw, 3.5rem);
   color: var(--primary-dark);
   margin-bottom: 1rem;
 }
 
 .donate-header p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
-  max-width: 700px;
+  max-width: 680px;
   margin: 0 auto;
 }
 
@@ -42,7 +42,7 @@
 
 .donate-card {
   background: white;
-  padding: 3rem;
+  padding: 2.5rem;
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-premium);
   display: flex;
@@ -53,12 +53,12 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   color: var(--primary);
 }
 
 .card-header h3 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: var(--primary-dark);
 }
 
@@ -69,32 +69,34 @@
 .info-row {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .info-row span {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   color: var(--text-muted);
   letter-spacing: 1px;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
 }
 
 .info-row strong {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--primary-dark);
+  word-break: break-word;
 }
 
 .card-footer {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   color: var(--primary-light);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
+  flex-wrap: wrap;
 }
 
 .cta-card {
@@ -103,41 +105,45 @@
 }
 
 .cta-card h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
   color: var(--accent);
 }
 
 .cta-card p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   opacity: 0.9;
   line-height: 1.8;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .cta-actions {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .donate-now-btn {
   background: var(--primary-gradient);
   color: white;
-  padding: 1.2rem;
-  border-radius: 15px;
+  padding: 1.1rem;
+  border-radius: 14px;
   font-weight: 700;
   box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.2);
+  text-align: center;
+  display: block;
+  text-decoration: none;
 }
 
 .support-btn {
   background: rgba(255, 255, 255, 0.1);
   color: white;
-  padding: 1.2rem;
-  border-radius: 15px;
+  padding: 1.1rem;
+  border-radius: 14px;
   font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
 }
 
 .impact-stats {
@@ -145,35 +151,45 @@
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   margin-top: auto;
-  padding-top: 2rem;
+  padding-top: 1.8rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .stat strong {
   display: block;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(--accent);
 }
 
 .stat span {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   opacity: 0.7;
 }
 
 @media (max-width: 968px) {
-  .donate-grid { grid-template-columns: 1fr; }
+  .donate-grid { grid-template-columns: 1fr; gap: 2rem; }
   .donate-card { padding: 2rem; }
 }
 
 @media (max-width: 480px) {
-  .donate-page { padding-top: 120px; }
-  .donate-card { padding: 2rem 1.5rem; }
-  .cta-card h3 { font-size: 1.5rem; }
-  .stat strong { font-size: 1.2rem; }
+  .donate-page { padding-top: 100px; }
+  .donate-card { padding: 1.6rem 1.2rem; }
+  .cta-card h3 { font-size: 1.4rem; }
+  .stat strong { font-size: 1.15rem; }
+  .donate-header { margin-bottom: 2.5rem; }
+  .donate-now-btn, .support-btn { padding: 0.95rem; }
 }
 
 @media (max-width: 360px) {
-  .donate-header h1 { font-size: 2.2rem; }
-  .card-header h3 { font-size: 1.3rem; }
-  .info-row strong { font-size: 0.95rem; }
+  .donate-header h1 { font-size: 1.8rem; }
+  .donate-header p { font-size: 0.95rem; }
+  .card-header h3 { font-size: 1.2rem; }
+  .info-row strong { font-size: 0.88rem; }
+  .donate-card { padding: 1.4rem 1rem; }
+  .impact-stats { gap: 0.8rem; }
+  .stat strong { font-size: 1.1rem; }
+  .stat span { font-size: 0.72rem; }
+  .donate-now-btn, .support-btn { font-size: 0.88rem; padding: 0.85rem; border-radius: 10px; }
+  .cta-card h3 { font-size: 1.2rem; }
+  .cta-card p { font-size: 0.9rem; }
 }

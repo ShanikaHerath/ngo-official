@@ -1,12 +1,10 @@
 .ayurvedha-landing {
-  padding: 3rem 2rem 8rem;
+  padding: 3rem 2rem 6rem;
   background-color: var(--bg-soft);
   min-height: 100vh;
   position: relative;
   overflow: hidden;
 }
-
-
 
 .overlay-glow {
   position: absolute;
@@ -21,14 +19,14 @@
 
 .ayurvedha-header {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
   position: relative;
   z-index: 1;
 }
 
 .subtitle {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   text-transform: uppercase;
   letter-spacing: 4px;
   color: #2e7d65;
@@ -37,19 +35,19 @@
 }
 
 .ayurvedha-header h1 {
-  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-size: clamp(1.8rem, 5vw, 4rem);
   color: var(--primary-dark);
-  margin-bottom: 1.5rem;
-  line-height: 1.1;
+  margin-bottom: 1.2rem;
+  line-height: 1.15;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 }
 
 .header-desc {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
-  max-width: 700px;
+  max-width: 680px;
   margin: 0 auto;
   line-height: 1.8;
 }
@@ -57,7 +55,7 @@
 
 .offerings-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 2.5rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -69,7 +67,7 @@
   display: flex;
   flex-direction: column;
   background: white;
-  border-radius: 32px;
+  border-radius: 28px;
   text-decoration: none;
   color: var(--text-main);
   overflow: hidden;
@@ -80,13 +78,13 @@
 }
 
 .offering-card:hover {
-  transform: translateY(-15px) scale(1.02);
+  transform: translateY(-12px) scale(1.02);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
   border-color: var(--primary-light);
 }
 
 .card-image-wrapper {
-  height: 280px;
+  height: 260px;
   position: relative;
   overflow: hidden;
 }
@@ -115,7 +113,7 @@
 }
 
 .card-content {
-  padding: 3rem 2.5rem;
+  padding: 2.5rem 2rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -124,26 +122,26 @@
 }
 
 .card-content h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1.2rem;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
   color: var(--primary-dark);
   font-weight: 700;
 }
 
 .card-content p {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.7;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .card-action {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.7rem;
   font-weight: 700;
   color: var(--primary);
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   transition: gap 0.3s ease;
@@ -155,9 +153,10 @@
 }
 
 .card-action svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 
@@ -166,26 +165,33 @@
 }
 
 @media (max-width: 768px) {
-  .ayurvedha-landing {
-    padding: 6rem 1.5rem;
-  }
-  
-  .ayurvedha-header {
-    margin-bottom: 3rem;
-  }
+  .ayurvedha-landing { padding: 5rem 1.5rem 4rem; }
+  .ayurvedha-header { margin-bottom: 3rem; }
+  .offerings-grid { gap: 2rem; }
 }
 
 @media (max-width: 480px) {
-  .ayurvedha-landing { padding-top: 120px; }
+  .ayurvedha-landing { padding-top: 100px; padding-left: 1.2rem; padding-right: 1.2rem; padding-bottom: 3rem; }
   .card-content { padding: 2rem 1.5rem; }
-  .card-image-placeholder { height: 180px; }
+  .card-image-wrapper { height: 220px; }
+  .header-desc { font-size: 0.95rem; }
+  .ayurvedha-header { margin-bottom: 2.5rem; }
 }
 
 @media (max-width: 360px) {
-  .ayurvedha-header h1 { font-size: 2.2rem; }
-  .subtitle { font-size: 0.8rem; letter-spacing: 2px; }
+  .ayurvedha-landing { padding-top: 90px; padding-left: 1rem; padding-right: 1rem; padding-bottom: 2.5rem; }
+  .ayurvedha-header h1 { font-size: clamp(1.6rem, 7vw, 2.2rem); letter-spacing: 0; }
+  .subtitle { font-size: 0.72rem; letter-spacing: 2px; }
+  .header-desc { font-size: 0.9rem; }
+  .card-content { padding: 1.5rem 1.2rem; }
   .card-content h2 { font-size: 1.3rem; }
+<<<<<<< HEAD
   .card-image-placeholder { height: 120px; }
+=======
+  .card-content p { font-size: 0.9rem; margin-bottom: 1.5rem; }
+  .card-image-wrapper { height: 200px; }
+  .offerings-grid { gap: 1.5rem; }
+>>>>>>> newImplementations
 }
 
 

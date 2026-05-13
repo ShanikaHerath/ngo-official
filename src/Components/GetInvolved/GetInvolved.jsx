@@ -7,28 +7,28 @@ import './GetInvolved.css';
 const GetInvolved = () => {
   const options = [
     {
-      title: "Volunteer",
+      title: "Monthly Membership",
       icon: <Users size={32} />,
-      desc: "Join our dedicated team and help create positive change on the ground.",
-      action: "Register with Google",
-      link: "https://forms.gle/ZpPBjoEkZ36R7qgi6",
+      desc: "Join as a monthly member under the guidance of Ven. Badirukke Suditha Thero.",
+      action: "Join WhatsApp",
+      link: "https://chat.whatsapp.com/Ie93UVTpoxXAa7WiXE9lle",
       isExternal: true
     },
     {
       title: "Donate",
       icon: <Heart size={32} />,
       desc: "Every contribution counts toward providing essential services to those in need.",
-      action: "Learn More",
+      action: "Bank Details",
       link: "/donate",
       isExternal: false
     },
     {
-      title: "Events",
+      title: "Volunteer",
       icon: <Calendar size={32} />,
-      desc: "Participate in our community meals, clean-up campaigns, and retreats.",
-      action: "View Projects",
-      link: "/projects",
-      isExternal: false
+      desc: "Join our dedicated team and help create positive change on the ground.",
+      action: "Register",
+      link: "https://docs.google.com/forms/d/e/1FAIpQLSddjgXsSPKkl3TWfIWX8Rcc3_UAxGkyq738su8CjF8LU7kbUw/viewform",
+      isExternal: true
     }
   ];
 
@@ -80,7 +80,7 @@ const GetInvolved = () => {
             <h2>Ready to Join Us?</h2>
             <p>Become a part of our movement today and help us sow seeds of hope.</p>
             <div className="cta-btns">
-              <a href="https://forms.gle/ZpPBjoEkZ36R7qgi6" target="_blank" rel="noopener noreferrer" className="btn-primary">Join Now</a>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSddjgXsSPKkl3TWfIWX8Rcc3_UAxGkyq738su8CjF8LU7kbUw/viewform" target="_blank" rel="noopener noreferrer" className="btn-primary">Join Now</a>
               <Link to="/contact-us" className="btn-outline">Contact Us</Link>
             </div>
           </motion.div>

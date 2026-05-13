@@ -1,10 +1,10 @@
 /* --- 1. Variables & Color Palette --- */
 :root {
-  --primary-green: #2d6a4f;   /* Deep herbal green */
-  --secondary-green: #40916c; /* Lighter green for hover states */
-  --accent-gold: #d4a373;     /* Gold for categories/accents */
-  --bg-cream: #fefae0;        /* Soft background color */
-  --text-dark: #1b4332;       /* Dark green text */
+  --primary-green: #2d6a4f;
+  --secondary-green: #40916c;
+  --accent-gold: #d4a373;
+  --bg-cream: #fefae0;
+  --text-dark: #1b4332;
   --white: #ffffff;
   --gray-light: #eeeeee;
 }
@@ -16,27 +16,29 @@
   min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: relative;
+  box-sizing: border-box;
 }
 
 .back-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.7rem;
   background: none;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 0.8rem 1.5rem;
+  padding: 0.7rem 1.3rem;
   border-radius: 50px;
   color: var(--primary-green);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-bottom: 2rem;
+  font-size: 0.9rem;
 }
 
 .back-btn:hover {
   background: var(--primary-green);
   color: white;
-  transform: translateX(-5px);
+  transform: translateX(-4px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -44,26 +46,29 @@
 /* Header */
 .products-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   color: var(--text-dark);
 }
 
 .products-header h1 {
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
   margin-bottom: 0.5rem;
   font-weight: 700;
 }
 
 .products-header p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--secondary-green);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
 }
 
 /* Grid Layout */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 1.8rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -78,6 +83,7 @@
   display: flex;
   flex-direction: column;
   border: 1px solid rgba(0,0,0,0.05);
+  width: 100%;
 }
 
 .product-card:hover {
@@ -87,53 +93,53 @@
 
 /* Image Placeholder */
 .card-image-placeholder {
-  height: 200px;
-  background-color: #e9edc9; /* Light sage green background */
+  height: 180px;
+  background-color: #e9edc9;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--primary-green);
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 /* Card Body */
 .card-content {
-  padding: 1.5rem;
+  padding: 1.4rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
 .category-tag {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--accent-gold);
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   display: block;
 }
 
 .product-card h3 {
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(--text-dark);
 }
 
 .sinhala-title {
-  margin: 4px 0 12px 0;
-  font-size: 1rem;
+  margin: 4px 0 10px 0;
+  font-size: 0.95rem;
   color: var(--secondary-green);
   font-weight: normal;
 }
 
 .product-card p {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: #555;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
-  flex-grow: 1; /* Pushes footer to bottom */
+  margin-bottom: 1.2rem;
+  flex-grow: 1;
 }
 
 /* Card Footer */
@@ -143,11 +149,13 @@
   align-items: center;
   margin-top: auto;
   border-top: 1px solid var(--gray-light);
-  padding-top: 1rem;
+  padding-top: 0.9rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .price {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--text-dark);
 }
@@ -155,27 +163,27 @@
 /* Buttons */
 .button-group {
   display: flex;
-  gap: 10px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-/* "Buy Now" Button */
 .add-btn {
   background-color: var(--primary-green);
   color: var(--white);
   border: none;
-  padding: 8px 16px;
+  padding: 8px 14px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   transition: background-color 0.2s;
+  white-space: nowrap;
 }
 
 .add-btn:hover {
   background-color: var(--secondary-green);
 }
 
-/* "Ingredients" Button (Outline) */
 .outline-btn {
   background-color: transparent;
   color: var(--primary-green);
@@ -184,8 +192,9 @@
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   transition: all 0.2s;
+  white-space: nowrap;
 }
 
 .outline-btn:hover {
@@ -193,50 +202,52 @@
 }
 
 /* --- 4. Popup Modal Styles --- */
-
-/* Dark Overlay */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  padding: 20px;
+  padding: 16px;
   animation: fadeIn 0.3s ease;
+  box-sizing: border-box;
 }
 
-/* Modal Box */
 .modal-content {
   background-color: var(--white);
   padding: 2rem;
   border-radius: 12px;
   width: 100%;
-  max-width: 500px;
+  max-width: 480px;
+  max-height: 88vh;
+  overflow-y: auto;
   position: relative;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
   animation: slideUp 0.3s ease;
+  box-sizing: border-box;
 }
 
 .modal-content h2 {
   color: var(--primary-green);
   margin-top: 0;
   margin-bottom: 5px;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
+  padding-right: 2rem; /* space for close btn */
 }
 
 .modal-sinhala-subtitle {
   color: var(--accent-gold);
   margin-top: 0;
   font-weight: normal;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   border-bottom: 1px solid var(--gray-light);
   padding-bottom: 10px;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 .modal-body p {
@@ -245,30 +256,27 @@
   margin-bottom: 10px;
 }
 
-/* Ingredient List */
 .ingredient-list {
   list-style-type: disc;
-  padding-left: 20px;
-  margin-bottom: 2rem;
+  padding: 1.2rem 1.2rem 1.2rem 2.2rem;
+  margin-bottom: 1.8rem;
   background-color: #f9f9f9;
-  padding: 1.5rem 1.5rem 1.5rem 2.5rem; /* extra padding for bullets */
   border-radius: 8px;
   color: #444;
 }
 
 .ingredient-list li {
   margin-bottom: 8px;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
 }
 
-/* Close 'X' Button (Top Right) */
 .close-modal-btn {
   position: absolute;
-  top: 15px;
-  right: 20px;
+  top: 14px;
+  right: 18px;
   background: none;
   border: none;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 1;
   cursor: pointer;
   color: #999;
@@ -279,15 +287,14 @@
   color: var(--text-dark);
 }
 
-/* Bottom Close Button */
 .modal-action-btn {
   width: 100%;
-  padding: 12px;
+  padding: 11px;
   background-color: var(--primary-green);
   color: white;
   border: none;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.2s;
@@ -300,12 +307,12 @@
 /* --- 5. Animations --- */
 @keyframes fadeIn {
   from { opacity: 0; }
-  to { opacity: 1; }
+  to   { opacity: 1; }
 }
 
 @keyframes slideUp {
   from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  to   { transform: translateY(0); opacity: 1; }
 }
 
 /* --- 6. Responsive Styles --- */
@@ -321,27 +328,29 @@
 
 
 @media (max-width: 600px) {
-  .products-container {
-    padding: 1rem;
-  }
-  
-  .products-header h1 {
-    font-size: 2rem;
-  }
-  
-  .card-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-  
-  .button-group {
-    width: 100%;
-    justify-content: space-between;
-  }
-  
-  .add-btn, .outline-btn {
-    flex: 1; /* Make buttons equal width on mobile */
-    text-align: center;
-  }
+  .products-container { padding: 1.2rem; }
+  .products-header h1 { font-size: 1.7rem; }
+  .card-footer { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .button-group { width: 100%; justify-content: space-between; }
+  .add-btn, .outline-btn { flex: 1; text-align: center; }
+}
+
+@media (max-width: 360px) {
+  .products-container { padding: 0.9rem; }
+  .products-header h1 { font-size: 1.4rem; }
+  .products-header p { font-size: 0.88rem; }
+  .product-grid { gap: 1rem; }
+  .card-image-placeholder { height: 150px; }
+  .card-content { padding: 1.1rem; }
+  .product-card h3 { font-size: 1.1rem; }
+  .sinhala-title { font-size: 0.85rem; }
+  .product-card p { font-size: 0.84rem; }
+  .back-btn { padding: 0.55rem 1rem; font-size: 0.8rem; }
+  .modal-overlay { padding: 10px; }
+  .modal-content { padding: 1.4rem; }
+  .modal-content h2 { font-size: 1.3rem; }
+  .modal-sinhala-subtitle { font-size: 0.9rem; }
+  .add-btn, .outline-btn { font-size: 0.8rem; padding: 6px 8px; }
+  .ingredient-list { padding: 1rem 1rem 1rem 2rem; }
+  .ingredient-list li { font-size: 0.85rem; }
 }

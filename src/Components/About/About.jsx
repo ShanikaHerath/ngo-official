@@ -6,7 +6,7 @@ import { BsClipboardCheck, BsHeart } from "react-icons/bs";
 import "./About.css";
 
 const teamMembers = [
-  { name: "Ven. Suditha Thero", role: "Founder", image: "https://i.postimg.cc/bwsbrF7m/founder.jpg" },
+  { name: "Ven. Badirukke Suditha Thero", role: "Founder", image: "https://i.postimg.cc/bwsbrF7m/founder.jpg" },
   { name: "C. D. Silva", role: "Director", image: "https://i.postimg.cc/85hLDJ2D/director1.jpg" },
   { name: "S. R. Herath", role: "Director", image: "https://i.postimg.cc/XYzfg0KM/director2.jpg" },
   { name: "K. M. C. Gunasekara", role: "Director", image: "https://i.postimg.cc/G20vZJSq/director4.jpg" },
@@ -132,7 +132,7 @@ const About = () => {
             For many years, our team quietly engaged in social work, driven by compassion and a shared vision for a better future. 
             In 2023, that collective spirit gave birth to a formal mission — the founding of the <strong>Suwa Diwiya Social Care Foundation</strong>.
             <br /><br />
-            Under the guidance of our founder, <strong>Ven. Bedirekke Suditha Thero</strong>, we focus on community wellness, education, and mindful service.
+            Under the guidance of our founder, <strong>Ven. Badirukke Suditha Thero</strong>, we focus on community wellness, education, and mindful service.
             Every act of kindness is a step toward building a healthier, more compassionate world.
           </motion.p>
           <motion.div

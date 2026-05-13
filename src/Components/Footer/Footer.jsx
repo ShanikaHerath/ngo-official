@@ -31,18 +31,18 @@ const Footer = () => {
         <div className="footer-col">
           <h4>Contact</h4>
           <p>Email: info@suwadiwiya.org</p>
-          <p>Phone: +94 77 123 4567</p>
+          <p>Phone: 0777102801</p>
           <p>Colombo, Sri Lanka</p>
         </div>
 
         <div className="footer-col">
           <h4>Social Media</h4>
           <div className="social-links">
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaTiktok /></a>
-            <a href="#"><FaYoutube /></a>
-            <a href="#"><FaWhatsapp /></a>
+            <a href="https://www.facebook.com/profile.php?id=61554831736749&mibextid=ZbWKw" target="_blank" rel="noreferrer"><FaFacebookF /></a>
+            <a href="https://www.instagram.com/ngo.lk" target="_blank" rel="noreferrer"><FaInstagram /></a>
+            <a href="https://www.tiktok.com/@ngo.lk" target="_blank" rel="noreferrer"><FaTiktok /></a>
+            <a href="https://youtube.com/@suwadiwiyasocialcarefoundation?si=nX2oPUPOUitLdu6N" target="_blank" rel="noreferrer"><FaYoutube /></a>
+            <a href="https://chat.whatsapp.com/Ie93UVTpoxXAa7WiXE9lle" target="_blank" rel="noreferrer"><FaWhatsapp /></a>
           </div>
         </div>
 

@@ -56,7 +56,7 @@ const ContactUs = () => {
               <div className="icon-box"><Phone /></div>
               <div>
                 <h4>Call Us</h4>
-                <p>+94 11 234 5678</p>
+                <p>0777102801</p>
               </div>
             </div>
             <div className="info-card">

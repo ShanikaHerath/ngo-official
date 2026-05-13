@@ -16,6 +16,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 1005;
 }
 
 .logo {
@@ -23,6 +25,7 @@
   align-items: center;
   gap: 0.8rem;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .logo img {
@@ -33,6 +36,7 @@
   border: 2px solid white;
   box-shadow: var(--shadow-sm);
   transition: var(--transition-smooth);
+  flex-shrink: 0;
 }
 
 .logo span {
@@ -42,6 +46,9 @@
   color: var(--primary-dark);
   letter-spacing: -0.5px;
   transition: var(--transition-smooth);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .desktop-nav {
@@ -85,8 +92,8 @@
   background: var(--primary-gradient);
   color: white !important;
   border: none;
-  padding: 0.9rem 3rem;
-  border-radius: 50px;
+  padding: 0.9rem 2rem;
+  border-radius: 10px;
   font-weight: 700;
   font-size: 0.95rem;
   text-transform: uppercase;
@@ -94,7 +101,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
   box-shadow: 0 8px 25px rgba(var(--primary-rgb), 0.25);
   position: relative;
   z-index: 1;
@@ -102,6 +109,7 @@
   outline: none;
   transition: var(--transition-bounce);
   overflow: hidden;
+  white-space: nowrap;
 }
 
 
@@ -217,11 +225,24 @@
 }
 
 /* Mobile Styling */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 998;
+}
+
 .mobile-toggle {
   display: none;
   font-size: 1.8rem;
   color: var(--primary-dark);
   transition: var(--transition-smooth);
+  flex-shrink: 0;
 }
 
 .mobile-nav {
@@ -238,8 +259,12 @@
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
+<<<<<<< HEAD
   max-height: 85vh;
   overflow-y: auto;
+=======
+  z-index: 1001;
+>>>>>>> newImplementations
 }
 
 
@@ -291,17 +316,28 @@
 }
 
 @media (max-width: 480px) {
-  .logo span { font-size: 1.2rem; }
+  .logo span { font-size: 1.1rem; }
   .logo img { height: 40px; width: 40px; }
-  .navbar-container { padding: 0 1.5rem; }
+  .navbar-container { padding: 0 1.2rem; }
+  .mobile-nav { padding: 2rem 1.5rem; gap: 1.2rem; }
+  .donate-btn-mobile { font-size: 1rem; }
 }
 
 @media (max-width: 360px) {
+<<<<<<< HEAD
   .logo span { font-size: 1.1rem; }
   .logo img { height: 35px; width: 35px; }
   .navbar-container { padding: 0 1rem; }
   .mobile-nav { padding: 1.5rem; gap: 1rem; }
   .mobile-nav a { font-size: 1.1rem; padding: 0.4rem; }
   .donate-btn-mobile { padding: 0.8rem; margin-top: 0.5rem; font-size: 1rem; }
+=======
+  .logo span { font-size: 0.95rem; max-width: 150px; }
+  .logo img { height: 32px; width: 32px; }
+  .navbar-container { padding: 0 0.8rem; }
+  .mobile-nav { padding: 1.5rem 1rem; gap: 1rem; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
+  .mobile-nav a { font-size: 1rem; }
+  .donate-btn-mobile { font-size: 0.9rem; padding: 0.85rem; }
+>>>>>>> newImplementations
 }
 

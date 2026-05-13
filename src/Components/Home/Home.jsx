@@ -39,13 +39,13 @@ const Home = () => {
               <span className="badge">Compassion in Action</span>
               <h1>Empowering Lives, <span>Restoring Hope.</span></h1>
               <p>
-                Join <strong>Suwa Diwiya Social Care Foundation</strong> in our mission to uplift communities through wellness, education, and compassion.
+                Under the guidance of <strong>Ven. Badirukke Suditha Thero</strong>, <strong>Suwa Diwiya Social Care Foundation</strong> uplifts communities through wellness, education, and compassion.
               </p>
               <div className="hero-btns">
                 <a href="/donate" className="btn-primary">
                   Support Our Mission <ArrowRight size={18} />
                 </a>
-                <a href="/get-involved" className="btn-outline">Join As Volunteer</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSddjgXsSPKkl3TWfIWX8Rcc3_UAxGkyq738su8CjF8LU7kbUw/viewform" target="_blank" rel="noopener noreferrer" className="btn-outline">Join As Volunteer</a>
               </div>
             </motion.div>
             

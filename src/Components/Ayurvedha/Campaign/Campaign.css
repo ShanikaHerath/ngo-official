@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Variables for Earthy Ayurveda Theme */
 :root {
   --primary-green: #3a5a40;
@@ -143,4 +144,184 @@
   .subtitle { font-size: 1rem; }
   .service-card { padding: 1.5rem; }
   .card-icon { width: 60px; height: 60px; font-size: 1.8rem; margin-bottom: 1rem; }
-}
+}
+=======
+/* Variables for Earthy Ayurveda Theme */
+:root {
+  --primary-green: #3a5a40;
+  --secondary-green: #588157;
+  --light-bg: #fdfbf7;
+  --card-bg: #ffffff;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --accent-gold: #dad7cd;
+  --highlight-gold: #a3b18a;
+}
+
+.campaign-section {
+  background-color: var(--light-bg);
+  padding: 2rem;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Back Button */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.7rem 1.3rem;
+  border-radius: 50px;
+  color: var(--primary-green);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.back-btn:hover {
+  background: var(--primary-green);
+  color: white;
+  transform: translateX(-4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- HEADER STYLING --- */
+.header-content {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-content h1 {
+  color: var(--primary-green);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.tagline {
+  display: inline-block;
+  background-color: var(--highlight-gold);
+  color: #fff;
+  padding: 0.25rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 580px;
+  margin: 0;
+}
+
+.divider {
+  height: 4px;
+  width: 72px;
+  background-color: var(--secondary-green);
+  border-radius: 2px;
+  margin-top: 0.3rem;
+}
+
+/* Grid Layout */
+.campaign-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Card Styling */
+.service-card {
+  background-color: var(--card-bg);
+  border-radius: 14px;
+  padding: 2.2rem 1.8rem;
+  box-shadow: 0 4px 20px rgba(58, 90, 64, 0.08);
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(58, 90, 64, 0.15);
+  border-color: var(--accent-gold);
+}
+
+.card-icon {
+  font-size: 2.8rem;
+  margin-bottom: 1.2rem;
+  background: var(--light-bg);
+  width: 85px;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid var(--accent-gold);
+  color: var(--primary-green);
+  flex-shrink: 0;
+}
+
+.card-content h3 {
+  color: var(--primary-green);
+  margin: 0 0 0.8rem 0;
+  font-size: 1.25rem;
+}
+
+.card-content p {
+  color: var(--text-light);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .campaign-section { padding: 3rem 1.5rem; }
+  .header-content h1 { font-size: 1.9rem; }
+  .campaign-grid { gap: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .campaign-section { padding: 2.5rem 1.2rem; }
+  .header-content h1 { font-size: 1.7rem; }
+  .service-card { padding: 2rem 1.5rem; }
+  .card-icon { width: 75px; height: 75px; font-size: 2.5rem; }
+}
+
+@media (max-width: 360px) {
+  .campaign-section { padding: 2rem 1rem; }
+  .header-content h1 { font-size: 1.5rem; }
+  .subtitle { font-size: 0.9rem; }
+  .campaign-grid { gap: 1.2rem; }
+  .service-card { padding: 1.5rem 1rem; border-radius: 12px; }
+  .card-icon { width: 68px; height: 68px; font-size: 2.2rem; margin-bottom: 1rem; }
+  .card-content h3 { font-size: 1.1rem; }
+  .card-content p { font-size: 0.88rem; }
+  .back-btn { padding: 0.6rem 1.1rem; font-size: 0.82rem; }
+}
+>>>>>>> newImplementations
