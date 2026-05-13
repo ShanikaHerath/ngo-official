@@ -7,7 +7,7 @@ const Donate = () => {
   return (
     <div className="donate-page section-padding">
       <div className="container">
-        <motion.section 
+        <motion.section
           className="donate-header"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -18,7 +18,7 @@ const Donate = () => {
         </motion.section>
 
         <div className="donate-grid">
-          <motion.div 
+          <motion.div
             className="donate-card bank-details"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -43,7 +43,7 @@ const Donate = () => {
               </div>
               <div className="info-row">
                 <span>Branch</span>
-                <strong>Piliyandala Branch</strong>
+                <strong>Piliyandala</strong>
               </div>
             </div>
             <div className="card-footer">
@@ -52,7 +52,7 @@ const Donate = () => {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="donate-card cta-card"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
