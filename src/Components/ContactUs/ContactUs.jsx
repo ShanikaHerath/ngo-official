@@ -63,7 +63,7 @@ const ContactUs = () => {
               <div className="icon-box"><MapPin /></div>
               <div>
                 <h4>Visit Us</h4>
-                <p>123 Main Street, Colombo, Sri Lanka</p>
+                <p>Colombo, Sri Lanka</p>
               </div>
             </div>
           </motion.div>

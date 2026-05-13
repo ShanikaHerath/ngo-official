@@ -89,22 +89,26 @@
 }
 
 /* Hero Buttons */
+.hero-btns .btn-primary,
+.hero-btns .btn-outline {
+  flex: 1;
+  min-width: 240px;
+  max-width: 280px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 1rem;
+  transition: var(--transition-bounce);
+}
+
 .hero-btns .btn-primary {
   background: white;
   color: var(--primary) !important;
   border: none;
   font-weight: 800;
-  padding: 1rem 2rem;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  flex: 1 1 auto;
-  text-align: center;
-  justify-content: center;
-}
-
-.hero-btns .btn-primary:hover {
-  background: var(--bg-soft);
-  transform: translateY(-5px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
 }
 
 .hero-btns .btn-outline {
@@ -112,15 +116,14 @@
   backdrop-filter: blur(10px);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 1rem 2rem;
   border-radius: 50px;
   font-weight: 700;
-  transition: var(--transition-bounce);
-  flex: 1 1 auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+}
+
+.hero-btns .btn-primary:hover {
+  background: var(--bg-soft);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
 }
 
 .hero-btns .btn-outline:hover {
@@ -380,7 +383,16 @@
 
 @media (max-width: 480px) {
   .hero-section { padding-top: 100px; }
-  .hero-btns { flex-direction: column; align-items: stretch; }
+  .hero-btns { flex-direction: column; align-items: center; gap: 0.8rem; }
+  .hero-btns .btn-primary, 
+  .hero-btns .btn-outline {
+    width: 100%;
+    min-width: unset;
+    max-width: 320px;
+    padding: 0.95rem 1.5rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+  }
   .logo-glow img { width: min(220px, 70%); }
   .carousel-3d { height: 260px; }
   .gallery-carousel-wrapper { height: 380px; }
@@ -401,6 +413,13 @@
   .hero-content h1 { font-size: clamp(1.8rem, 8vw, 2.5rem); }
   .hero-content p { font-size: 0.95rem; margin-bottom: 1.5rem; }
   .hero-content .badge { font-size: 0.75rem; letter-spacing: 1px; }
+  .hero-btns .btn-primary, 
+  .hero-btns .btn-outline {
+    padding: 0.85rem 1.2rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    max-width: 280px;
+  }
   .logo-glow img { width: min(190px, 65%); }
   .section-header h2 { font-size: 1.6rem; }
   .section-header p { font-size: 0.95rem; }
