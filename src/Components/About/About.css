@@ -112,21 +112,6 @@
   text-align: center;
 }
 
-.story-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  text-align: left;
-}
-
-.story-image img {
-  width: 100%;
-  border-radius: 30px;
-  box-shadow: var(--shadow-md);
-}
-
-
 .section-title {
   font-size: clamp(1.6rem, 4vw, 2.5rem);
   color: var(--primary-dark);
@@ -274,39 +259,6 @@
 }
 
 @media (max-width: 360px) {
-<<<<<<< HEAD
-  .team-title { font-size: 1.8rem; margin-bottom: 1.5rem; }
-  .member-name { font-size: 1.3rem; }
-  .section-title { font-size: 1.6rem; }
-  .carousel-container { width: 100%; height: 320px; overflow: hidden; }
-  .card { 
-    width: 140px; 
-    height: 190px; 
-    left: 50%; 
-    top: 50%; 
-  }
-  .card.center { transform: translate(-50%, -50%) scale(1.1); z-index: 10; }
-  .card.left-1 { transform: translate(calc(-50% - 60px), -50%) scale(0.8); opacity: 0.6; z-index: 1; }
-  .card.right-1 { transform: translate(calc(-50% + 60px), -50%) scale(0.8); opacity: 0.6; z-index: 1; }
-  .card.hidden { opacity: 0; pointer-events: none; }
-  
-  .nav-arrow { width: 35px; height: 35px; font-size: 1.1rem; z-index: 20; }
-  .nav-arrow.left { left: 5px; }
-  .nav-arrow.right { right: 5px; }
-  
-  .member-info { margin-top: 1rem; padding: 0 1rem; }
-  .dots { margin-top: 1.5rem; }
-
-  .story-section { padding: 30px 15px; margin-top: 60px; }
-  .story-grid { display: flex; flex-direction: column; gap: 2rem; }
-  .story-image img { border-radius: 20px; }
-  .section-paragraph { font-size: 1rem; line-height: 1.6; padding: 0 5px; }
-}
-
-
-
-
-=======
   .team-title { font-size: 1.7rem; letter-spacing: 1px; }
   .member-name { font-size: 1.2rem; }
   .member-role { font-size: 0.85rem; }
@@ -327,4 +279,3 @@
   .contact-button { padding: 0.85rem 2rem; font-size: 0.88rem; }
   .nav-arrow { width: 32px; height: 32px; font-size: 1.1rem; }
 }
->>>>>>> newImplementations

@@ -185,13 +185,7 @@
   .header-desc { font-size: 0.9rem; }
   .card-content { padding: 1.5rem 1.2rem; }
   .card-content h2 { font-size: 1.3rem; }
-<<<<<<< HEAD
-  .card-image-placeholder { height: 120px; }
-=======
   .card-content p { font-size: 0.9rem; margin-bottom: 1.5rem; }
   .card-image-wrapper { height: 200px; }
   .offerings-grid { gap: 1.5rem; }
->>>>>>> newImplementations
 }
-
-
