@@ -45,7 +45,7 @@ const Home = () => {
                 <a href="/donate" className="btn-primary">
                   Support Our Mission <ArrowRight size={18} />
                 </a>
-                <a href="/get-involved" className="btn-outline">Join As Volunteer</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSddjgXsSPKkl3TWfIWX8Rcc3_UAxGkyq738su8CjF8LU7kbUw/viewform" target="_blank" rel="noopener noreferrer" className="btn-outline">Join As Volunteer</a>
               </div>
             </motion.div>
             
