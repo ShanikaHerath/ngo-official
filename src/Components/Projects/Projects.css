@@ -193,3 +193,192 @@
   .projects-grid { gap: 1.2rem; }
   .page-header p { font-size: 0.95rem; }
 }
+
+/* Project Modal Styles */
+.project-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.project-modal-content {
+  background: white;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-soft);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  color: var(--primary-dark);
+}
+
+.modal-header {
+  padding: 3rem 3rem 2rem;
+  background: var(--bg-soft);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.modal-category {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: var(--primary);
+  color: white;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.modal-header h2 {
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.modal-date {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.modal-scroll-area {
+  padding: 2.5rem 3rem;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.modal-section {
+  margin-bottom: 2.5rem;
+}
+
+.modal-section h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+  color: var(--primary-dark);
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.modal-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.requirements-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.requirements-list li {
+  padding: 0.8rem 1.2rem;
+  background: var(--bg-soft);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.requirements-list li::before {
+  content: '✓';
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.bank-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.bank-card {
+  padding: 1.5rem;
+  border: 2px solid var(--bg-soft);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.bank-card h4 {
+  color: var(--primary);
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+
+.bank-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: var(--text-muted);
+}
+
+.bank-card p strong {
+  color: var(--primary-dark);
+}
+
+.contact-info p {
+  margin-bottom: 0.5rem;
+}
+
+.modal-actions {
+  padding: 2rem 3rem;
+  background: var(--bg-soft);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.whatsapp-btn {
+  background: #25d366;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+}
+
+@media (max-width: 768px) {
+  .modal-header { padding: 2.5rem 1.5rem 1.5rem; }
+  .modal-scroll-area { padding: 1.5rem; }
+  .modal-header h2 { font-size: 1.6rem; }
+  .requirements-list, .bank-grid { grid-template-columns: 1fr; }
+  .modal-actions { padding: 1.5rem; }
+  .project-modal-content { border-radius: 20px; }
+}
